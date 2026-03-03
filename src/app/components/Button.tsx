@@ -12,9 +12,9 @@ export function Button({ children, variant = 'filled', className = '', onClick }
   const baseStyles = 'px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer';
   
   const variantStyles = {
-    filled: 'bg-black text-white hover:bg-gray-800',
-    outlined: 'bg-transparent text-black border border-black hover:bg-black hover:text-white',
-    text: 'bg-transparent text-black hover:text-gray-600'
+    filled: 'bg-cta text-white hover:bg-cta-hover',
+    outlined: 'bg-transparent text-primary border border-primary hover:bg-primary hover:text-primary-foreground',
+    text: 'bg-transparent text-primary hover:text-gray-600'
   };
 
   return (

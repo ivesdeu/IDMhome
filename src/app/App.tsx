@@ -10,7 +10,6 @@ import { Team } from './components/Team';
 import { Pricing } from './components/Pricing';
 import { FAQ } from './components/FAQ';
 import { Testimonials } from './components/Testimonials';
-import { Blog } from './components/Blog';
 import { FooterCTA } from './components/FooterCTA';
 import { Footer } from './components/Footer';
 
@@ -28,7 +27,6 @@ export default function App() {
       <Pricing />
       <FAQ />
       <Testimonials />
-      <Blog />
       <FooterCTA />
       <Footer />
     </div>

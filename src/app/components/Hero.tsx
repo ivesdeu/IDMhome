@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from './Button';
-import { Play } from 'lucide-react';
+import { ShinyButton } from './ui/shiny-button';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { motion } from 'motion/react';
 
@@ -15,29 +14,17 @@ export function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-black leading-tight mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-primary leading-tight mb-6">
               Performance Marketing Built for Scalable Growth.
             </h1>
             <p className="text-lg text-[#666666] mb-8 leading-relaxed">
               We design and execute data-driven acquisition systems that turn attention into revenue.
             </p>
             <div className="flex items-center gap-6">
-              <button className="flex items-center gap-2 text-black hover:text-gray-600 transition-colors">
-                
+              <a href="#works" className="flex items-center gap-2 text-primary hover:text-gray-600 hover:underline underline-offset-4 active:scale-[0.98] cursor-pointer transition-all duration-200 font-medium">
                 <span>View Case Studies</span>
-              </button>
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.05, 1],
-                }}
-                transition={{ 
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Button>Book a Strategy Call</Button>
-              </motion.div>
+              </a>
+              <ShinyButton>Book a Strategy Call</ShinyButton>
             </div>
           </motion.div>
           
@@ -55,15 +42,6 @@ export function Hero() {
                 className="w-full h-[600px] object-cover"
               />
             </div>
-            <motion.div 
-              className="absolute -bottom-6 -left-6 bg-white border border-[#E5E5E5] rounded-2xl p-4 shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-            >
-              <div className="text-sm text-[#666666]">Trusted by</div>
-              <div className="text-2xl font-bold text-black">50+ Brands</div>
-            </motion.div>
           </motion.div>
         </div>
       </div>

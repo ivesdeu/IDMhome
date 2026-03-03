@@ -52,32 +52,32 @@ export function Testimonials() {
         <div className="flex items-start justify-between mb-12">
           <div>
             <SectionLabel>Testimonial</SectionLabel>
-            <h2 className="text-5xl font-semibold text-black">Words that inspire us.</h2>
+            <h2 className="text-5xl font-semibold text-primary">Words that inspire us.</h2>
           </div>
-          <a href="#works" className="text-black hover:text-gray-600 flex items-center gap-2">
+          <a href="#works" className="text-primary hover:text-gray-600 flex items-center gap-2">
             Visit Case Studies <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
         
         <div className="relative bg-[#F9F9F9] rounded-2xl p-12">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-3xl italic text-black mb-8 leading-relaxed">
+            <p className="text-3xl italic text-foreground mb-8 leading-relaxed">
               "{testimonials[currentIndex].quote}"
             </p>
-            <h4 className="font-bold text-black text-xl">{testimonials[currentIndex].name}</h4>
+            <h4 className="font-bold text-primary text-xl">{testimonials[currentIndex].name}</h4>
             <p className="text-[#666666]">{testimonials[currentIndex].title}</p>
           </div>
           
           <div className="flex items-center justify-center gap-4 mt-12">
             <button 
               onClick={prev}
-              className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+              className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             
             <div className="flex items-center gap-2">
-              <span className="text-black font-semibold">
+              <span className="text-primary font-semibold">
                 {String(currentIndex + 1).padStart(2, '0')}
               </span>
               <span className="text-[#666666]">/</span>
@@ -88,7 +88,7 @@ export function Testimonials() {
             
             <button 
               onClick={next}
-              className="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center hover:bg-black hover:text-white transition-colors"
+              className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
             >
               <ChevronRight className="w-6 h-6" />
             </button>

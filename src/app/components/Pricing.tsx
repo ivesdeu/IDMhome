@@ -1,76 +1,200 @@
 import React from 'react';
 import { SectionLabel } from './SectionLabel';
 import { Button } from './Button';
-import { Check, TrendingUp, Handshake, Zap } from 'lucide-react';
+import { Check, Layers, TrendingUp, Zap } from 'lucide-react';
 import { motion } from 'motion/react';
 
-export function Pricing() {
-  const plans = [
-    {
-      name: 'Growth Foundation',
-      badge: 'For brands building structured acquisition',
-      badgeIcon: TrendingUp,
-      price: '$2,500',
-      services: ['Paid Media Strategy & Management', 'Search Engine Optimization', 'Analytics & Attribution Infrastructure', 'Monthly Performance Reporting']
-    },
-    {
-      name: 'Scale Accelerator',
-      badge: 'For brands optimizing and expanding paid acquisition',
-      badgeIcon: Handshake,
-      price: '$5,000',
-      services: ['Paid Media Strategy & Management', 'Search Engine Optimization', 'Conversion Rate Optimization', 'Brand Positioning & Messaging', 'Analytics & Attribution Infrastructure']
-    },
-    {
-      name: 'Full Growth Partner',
-      badge: 'Dedicated strategy, execution, and analytics oversight',
-      badgeIcon: Zap,
-      price: 'Custom',
-      services: ['Paid Media Strategy & Management', 'Search Engine Optimization', 'Conversion Rate Optimization', 'Brand Positioning & Messaging', 'Analytics & Attribution Infrastructure', 'Growth Consulting']
-    }
-  ];
+type PlanSection = { title: string; items: string[] };
 
+const plans = [
+  {
+    name: 'Tier 1 — Foundation',
+    tagline: 'Launch with structure. Be visible. Track everything.',
+    builtFor: 'Small businesses, early-stage brands, or companies without a formal digital infrastructure.',
+    icon: Layers,
+    sections: [
+      {
+        title: 'Website',
+        items: [
+          'Custom high-performance website',
+          'Mobile-first build',
+          'Conversion-optimized layout',
+          'Core service pages',
+          'Basic speed optimization',
+        ],
+      },
+      {
+        title: 'Analytics',
+        items: [
+          'Google Analytics 4 setup',
+          'Google Tag Manager configuration',
+          'Conversion tracking (forms, calls, purchases)',
+          'Baseline KPI reporting dashboard',
+        ],
+      },
+      {
+        title: 'SEO',
+        items: [
+          'Foundational keyword research',
+          'Technical SEO setup',
+          'On-page optimization',
+          'Search Console integration',
+        ],
+      },
+    ] as PlanSection[],
+    outcome: 'You leave this phase with a professional digital presence and a measurable system in place.',
+  },
+  {
+    name: 'Tier 2 — Growth',
+    tagline: 'Turn traffic into predictable acquisition.',
+    builtFor: 'Businesses ready to actively generate leads or sales through paid and organic channels.',
+    icon: TrendingUp,
+    sections: [
+      {
+        title: 'Website & CRO',
+        items: [
+          'Campaign-specific landing pages',
+          'Conversion rate optimization framework',
+          'Heatmaps + behavioral tracking',
+          'A/B testing capability',
+        ],
+      },
+      {
+        title: 'Analytics & Reporting',
+        items: [
+          'Custom KPI dashboard',
+          'Funnel tracking',
+          'Attribution mapping',
+          'Ongoing performance reporting',
+        ],
+      },
+      {
+        title: 'SEO',
+        items: [
+          'Ongoing keyword expansion',
+          'Content strategy development',
+          'Competitor research',
+          'Technical audits',
+        ],
+      },
+      {
+        title: 'Google Ads',
+        items: [
+          'Multi-campaign structure',
+          'Strategic keyword sculpting',
+          'Continuous optimization',
+          'Conversion-focused bidding strategy',
+        ],
+      },
+    ] as PlanSection[],
+    outcome: 'You move from having traffic to generating consistent, measurable growth.',
+  },
+  {
+    name: 'Tier 3 — Performance Partner',
+    tagline: 'Scale with full-funnel strategy and executive-level data.',
+    builtFor: 'Companies serious about aggressive growth and long-term market positioning.',
+    icon: Zap,
+    sections: [
+      {
+        title: 'Advanced Conversion Strategy',
+        items: [
+          'Dedicated testing roadmap',
+          'Copy refinement & messaging optimization',
+          'Ongoing landing page builds',
+          'Conversion experimentation cycles',
+        ],
+      },
+      {
+        title: 'Advanced Analytics',
+        items: [
+          'Cohort analysis',
+          'LTV modeling',
+          'Multi-touch attribution',
+          'Forecasting models',
+        ],
+      },
+      {
+        title: 'Paid Media Expansion',
+        items: [
+          'Full Google ecosystem (Search, Display, YouTube, Shopping)',
+          'Advanced audience segmentation',
+          'Budget scaling strategy',
+          'Testing frameworks',
+        ],
+      },
+      {
+        title: 'SEO Authority Strategy',
+        items: [
+          'Content cluster architecture',
+          'Link-building initiatives',
+          'Authority positioning strategy',
+        ],
+      },
+      {
+        title: 'Executive Strategy',
+        items: [
+          'Monthly strategic review',
+          'Quarterly growth roadmap',
+          'Market positioning refinement',
+        ],
+      },
+    ] as PlanSection[],
+    outcome: 'You operate with a data-driven growth engine instead of isolated marketing efforts.',
+  },
+];
+
+export function Pricing() {
   return (
-    <section className="w-full bg-white py-24">
+    <section id="pricing" className="w-full bg-white py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionLabel>Engagement Models</SectionLabel>
-        <h2 className="text-5xl font-semibold text-black mb-12">Flexible structures. Clear deliverables.</h2>
-        
+        <h2 className="text-5xl font-semibold text-primary mb-12">Flexible structures. Clear deliverables.</h2>
+
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan, index) => {
-            const BadgeIcon = plan.badgeIcon;
+            const PlanIcon = plan.icon;
             return (
-              <motion.div 
+              <motion.div
                 key={index}
-                className="bg-white border-2 border-black rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-white border-2 border-primary rounded-2xl p-8 hover:shadow-lg transition-shadow flex flex-col min-h-0"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className="flex items-start gap-2 text-sm text-[#666666] mb-4 min-h-[40px]">
-                  <BadgeIcon className="w-4 h-4 flex-shrink-0 mt-0.5" />
-                  <span>{plan.badge}</span>
+                <div className="flex items-center gap-2 mb-2">
+                  <PlanIcon className="w-5 h-5 text-primary flex-shrink-0" />
+                  <h3 className="text-2xl font-bold text-primary">{plan.name}</h3>
                 </div>
-                <h3 className="text-3xl font-bold text-black mb-2">{plan.name}</h3>
-                <div className="text-5xl font-bold text-black mb-6">
-                  {plan.price === 'Custom' ? (
-                    <span>{plan.price}</span>
-                  ) : (
-                    <>{plan.price}<span className="text-xl text-[#666666]">/mo</span></>
-                  )}
+                <p className="text-sm text-[#666666] mb-4">{plan.tagline}</p>
+                <div className="mb-6">
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Built For</p>
+                  <p className="text-sm text-[#666666]">{plan.builtFor}</p>
                 </div>
-                
-                <div className="space-y-3 mb-8">
-                  {plan.services.map((service, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-black flex-shrink-0 mt-0.5" />
-                      <span className="text-black">{service}</span>
+
+                <div className="space-y-5 mb-8 flex-1">
+                  {plan.sections.map((section, si) => (
+                    <div key={si}>
+                      <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-2">{section.title}</p>
+                      <ul className="space-y-2">
+                        {section.items.map((item, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm text-foreground">
+                            <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   ))}
                 </div>
-                
-                <Button className="w-full">Request Proposal</Button>
+
+                <div className="mb-6 pt-4 border-t border-border">
+                  <p className="text-xs font-semibold text-primary uppercase tracking-wide mb-1">Outcome</p>
+                  <p className="text-sm text-[#666666]">{plan.outcome}</p>
+                </div>
+
+                <Button className="w-full mt-auto">Request Proposal</Button>
               </motion.div>
             );
           })}

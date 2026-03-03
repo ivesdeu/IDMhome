@@ -36,7 +36,7 @@ export function FooterCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <Button className="bg-white text-black hover:bg-gray-100">Schedule Your Strategy Call</Button>
+          <Button className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary">Schedule Your Strategy Call</Button>
         </motion.div>
       </div>
     </section>

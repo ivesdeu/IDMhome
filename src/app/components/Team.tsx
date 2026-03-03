@@ -7,39 +7,15 @@ import { motion } from 'motion/react';
 export function Team() {
   const team = [
     {
-      name: 'Diya Maryam',
-      role: 'Performance Lead',
+      name: 'Mark Deutschmann',
+      role: 'Performance Analyst',
       quote: 'Revenue growth requires precision, not guesswork.',
       image: 'https://images.unsplash.com/photo-1689600944138-da3b150d9cb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHdvbWFufGVufDF8fHx8MTc3MjU2Njg4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     },
     {
-      name: 'Ethan Miles',
+      name: 'Otto Ives',
       role: 'SEO Strategist',
       quote: 'Visibility is earned through technical excellence.',
-      image: 'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMG1hbnxlbnwxfHx8fDE3NzI0NTcyNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-    },
-    {
-      name: 'Tina Tuhfa',
-      role: 'Paid Media Manager',
-      quote: 'Every dollar should have a measurable return.',
-      image: 'https://images.unsplash.com/photo-1689600944138-da3b150d9cb8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHdvbWFufGVufDF8fHx8MTc3MjU2Njg4OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-    },
-    {
-      name: 'Mason Reid',
-      role: 'Growth Analyst',
-      quote: 'Data clarity enables confident decisions.',
-      image: 'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMG1hbnxlbnwxfHx8fDE3NzI0NTcyNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-    },
-    {
-      name: 'Noah Bennett',
-      role: 'CRO Specialist',
-      quote: 'Conversion is a science, not a hope.',
-      image: 'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMG1hbnxlbnwxfHx8fDE3NzI0NTcyNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-    },
-    {
-      name: 'Caleb Morgan',
-      role: 'Attribution Lead',
-      quote: 'Accurate tracking drives strategic allocation.',
       image: 'https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMG1hbnxlbnwxfHx8fDE3NzI0NTcyNTd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     }
   ];
@@ -50,19 +26,19 @@ export function Team() {
         <div className="flex items-start justify-between mb-12">
           <div>
             <SectionLabel>Team</SectionLabel>
-            <h2 className="text-5xl font-semibold text-black">Your growth partners.</h2>
+            <h2 className="text-5xl font-semibold text-primary">Your growth partners.</h2>
           </div>
-          <a href="#" className="text-black hover:text-gray-600 flex items-center gap-2">
+          <a href="#" className="text-primary hover:text-gray-600 flex items-center gap-2">
             More about us <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
         
         <div className="overflow-x-auto pb-4">
-          <div className="flex gap-6">
+          <div className="flex gap-6 justify-center">
             {team.map((member, index) => (
               <motion.div 
                 key={index}
-                className="flex-shrink-0 w-[350px] bg-white border border-[#E5E5E5] rounded-2xl p-6"
+                className="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -75,7 +51,7 @@ export function Team() {
                   className="w-24 h-24 rounded-full object-cover mb-4 mx-auto"
                 />
                 <p className="text-lg italic text-[#666666] mb-4 text-center">"{member.quote}"</p>
-                <h3 className="font-semibold text-black text-center">{member.name}</h3>
+                <h3 className="font-semibold text-primary text-center">{member.name}</h3>
                 <p className="text-sm text-[#666666] text-center">{member.role}</p>
               </motion.div>
             ))}

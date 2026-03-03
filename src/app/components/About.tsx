@@ -4,10 +4,10 @@ import { motion } from 'motion/react';
 
 export function About() {
   const stats = [
-    { label: 'Clients Served', value: '50+' },
-    { label: 'Campaigns Launched', value: '200+' },
+    { label: 'Clients Served', value: '3+' },
+    { label: 'Campaigns', value: '5+' },
     { label: 'Avg. ROAS Improvement', value: '2.8x' },
-    { label: 'Industries Served', value: '12+' }
+    { label: 'Industries Served', value: '3+' }
   ];
 
   return (
@@ -16,7 +16,7 @@ export function About() {
         <SectionLabel>About Us</SectionLabel>
         
         <motion.h2 
-          className="text-4xl md:text-5xl font-semibold text-black mb-12 max-w-4xl leading-snug"
+          className="text-4xl md:text-5xl font-semibold text-primary mb-12 max-w-4xl leading-snug"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -39,14 +39,14 @@ export function About() {
           {stats.map((stat, index) => (
             <motion.div 
               key={index} 
-              className="border-t-2 border-black pt-6"
+              className="border-t-2 border-primary pt-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <div className="text-5xl font-bold text-black mb-2">{stat.value}</div>
+              <div className="text-5xl font-bold text-primary mb-2">{stat.value}</div>
               <div className="text-lg text-[#666666]">{stat.label}</div>
             </motion.div>
           ))}

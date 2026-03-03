@@ -44,19 +44,19 @@ export function FAQ() {
     <section className="w-full bg-[#F9F9F9] py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         <SectionLabel>FAQ</SectionLabel>
-        <h2 className="text-5xl font-semibold text-black mb-12">Direct answers to strategic questions.</h2>
+        <h2 className="text-5xl font-semibold text-primary mb-12">Direct answers to strategic questions.</h2>
         
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left: Image and CTA */}
-          <div className="bg-white border border-[#E5E5E5] rounded-2xl p-8 flex flex-col items-center justify-center text-center">
+          <div className="bg-white border border-border rounded-2xl p-8 flex flex-col items-center justify-center text-center">
             <ImageWithFallback 
-              src="https://images.unsplash.com/photo-1758873268631-fa944fc5cad2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3b3Jrc3BhY2UlMjB0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NzI0NjQ0NTR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
               alt="Contact support"
               className="w-48 h-48 rounded-full object-cover mb-6"
             />
-            <h3 className="text-2xl font-semibold text-black mb-4">Didn't get the answer?</h3>
+            <h3 className="text-2xl font-semibold text-primary mb-4">Didn't get the answer?</h3>
             <p className="text-[#666666] mb-6">Talk with a human expert on our team</p>
-            <Button>Contact Support</Button>
+            <Button>Contact Us</Button>
           </div>
           
           {/* Right: Accordion */}
@@ -64,18 +64,18 @@ export function FAQ() {
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className="bg-white border border-[#E5E5E5] rounded-2xl overflow-hidden"
+                className="bg-white border border-border rounded-2xl overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                   className="w-full p-6 flex items-start justify-between text-left hover:bg-gray-50 transition-colors"
                 >
                   <div className="flex-1">
-                    <h4 className="font-semibold text-black mb-2">{faq.question}</h4>
+                    <h4 className="font-semibold text-primary mb-2">{faq.question}</h4>
                     <div className="text-xs text-[#666666]">Answered by {faq.answeredBy}</div>
                   </div>
                   <ChevronDown 
-                    className={`w-5 h-5 text-black flex-shrink-0 ml-4 transition-transform ${
+                    className={`w-5 h-5 text-primary flex-shrink-0 ml-4 transition-transform ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />

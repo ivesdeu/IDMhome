@@ -40,19 +40,19 @@ export function Services() {
   return (
     <section id="services" className="w-full bg-white py-24">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="flex items-start justify-between mb-12">
-          <div>
-            <SectionLabel>Core Capabilities</SectionLabel>
-            <h2 className="text-5xl font-semibold text-black">Everything required to scale acquisition.</h2>
+        <div className="mb-12">
+          <SectionLabel>Core Capabilities</SectionLabel>
+          <div className="flex flex-wrap items-center gap-6 mt-2">
+            <h2 className="text-5xl font-semibold text-primary">Everything required to scale acquisition.</h2>
+            <Button className="hidden md:inline-block shrink-0">Request Proposal</Button>
           </div>
-          <Button className="hidden md:inline-block">Request Proposal</Button>
         </div>
         
         <div className="space-y-0">
           {services.map((service, index) => (
             <motion.div 
               key={index}
-              className="border-b border-[#E5E5E5] py-8 grid md:grid-cols-12 gap-6 items-center hover:bg-gray-50 transition-colors cursor-pointer"
+              className="border-b border-border py-8 grid md:grid-cols-12 gap-6 items-center hover:bg-gray-50 transition-colors cursor-pointer"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -60,10 +60,10 @@ export function Services() {
               whileHover={{ x: 10 }}
             >
               <div className="md:col-span-2">
-                <span className="text-7xl font-light text-black opacity-30">{service.number}</span>
+                <span className="text-7xl font-light text-primary opacity-30">{service.number}</span>
               </div>
               <div className="md:col-span-10">
-                <h3 className="text-2xl font-semibold text-black mb-2">{service.title}</h3>
+                <h3 className="text-2xl font-semibold text-primary mb-2">{service.title}</h3>
                 <p className="text-[#666666]">{service.description}</p>
               </div>
             </motion.div>

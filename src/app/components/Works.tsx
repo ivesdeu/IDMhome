@@ -7,18 +7,18 @@ import { motion } from 'motion/react';
 export function Works() {
   const works = [
     {
-      tags: ['E-commerce', 'Paid Media'],
+      tags: ['Home Service', 'Paid Media'],
       metric: '+142%',
       title: 'Revenue Growth in 6 Months',
       subtitle: '3.1x Return on Ad Spend',
-      image: 'https://images.unsplash.com/photo-1698942436085-3cf5103f3a88?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBmYXNoaW9uJTIwY2xvdGhpbmd8ZW58MXx8fHwxNzcyNTY2ODg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+      image: '/revenue-growth-6months.png'
     },
     {
-      tags: ['SaaS', 'CRO'],
+      tags: ['Home Service', 'Website Creation'],
       metric: '-38%',
       title: 'Cost Per Acquisition Reduction',
       subtitle: '2.4x Conversion Rate Increase',
-      image: 'https://images.unsplash.com/photo-1683394541762-f96c0d03dc38?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdXBwbGVtZW50cyUyMGhlYWx0aCUyMHByb2R1Y3R8ZW58MXx8fHwxNzcyNTY2ODg4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+      image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080'
     }
   ];
 
@@ -28,12 +28,12 @@ export function Works() {
         <div className="flex items-start justify-between mb-12">
           <div>
             <SectionLabel>Case Studies</SectionLabel>
-            <h2 className="text-5xl font-semibold text-black mb-4">Real performance. Documented results.</h2>
+            <h2 className="text-5xl font-semibold text-primary mb-4">Real performance. Documented results.</h2>
             <p className="text-lg text-[#666666] max-w-2xl">
               We don't measure success in impressions. We measure it in revenue, efficiency, and sustained growth.
             </p>
           </div>
-          <a href="#" className="text-black hover:text-gray-600 flex items-center gap-2">
+          <a href="#" className="text-primary hover:text-gray-600 flex items-center gap-2">
             Explore All Case Studies <ArrowUpRight className="w-4 h-4" />
           </a>
         </div>
