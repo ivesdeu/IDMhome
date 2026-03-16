@@ -27,7 +27,7 @@ export function Navbar() {
           <Link to="/case-studies" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
             Case Studies
           </Link>
-          <Link to="/#services" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+          <Link to="/#core-capabilities" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]" onClick={() => document.getElementById('core-capabilities')?.scrollIntoView({ behavior: 'smooth' })}>
             Capabilities
           </Link>
           <Link to="/#contact" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">

@@ -13,7 +13,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="w-full py-24 font-body">
+    <section id="core-capabilities" className="w-full py-24 font-body">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-12">
           <SectionLabel>Core Capabilities</SectionLabel>

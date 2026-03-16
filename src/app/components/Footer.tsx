@@ -36,7 +36,7 @@ export function Footer() {
             <h4 className="font-semibold text-primary mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#about" className="text-[#666666] hover:text-primary transition-colors">About</a></li>
-              <li><a href="#services" className="text-[#666666] hover:text-primary transition-colors">Services</a></li>
+              <li><a href="#core-capabilities" className="text-[#666666] hover:text-primary transition-colors">Services</a></li>
               <li><a href="/case-studies" className="text-[#666666] hover:text-primary transition-colors">Case Studies</a></li>
               <li><a href="#contact" className="text-[#666666] hover:text-primary transition-colors">Contact</a></li>
             </ul>

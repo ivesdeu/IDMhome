@@ -8,10 +8,20 @@ type PlanSection = { title: string; items: string[] };
 
 const plans = [
   {
-    name: 'Tier 1 — Foundation',
+    name: 'Tier 1 — Essentials',
+    tagline: 'Get online and stay online.',
+    builtFor: 'Businesses that need a presence and reliability.',
+    icon: Layers,
+    sections: [
+      { title: 'Website', items: ['Build & deploy', 'Hosting', 'On-call maintenance'] },
+    ] as PlanSection[],
+    outcome: 'A reliable online presence.',
+  },
+  {
+    name: 'Tier 2 — Foundation',
     tagline: 'Launch with structure. Be visible. Track everything.',
     builtFor: 'Small businesses and early-stage brands.',
-    icon: Layers,
+    icon: TrendingUp,
     sections: [
       { title: 'Website', items: ['Custom site', 'Mobile-first', 'Core pages'] },
       { title: 'Analytics', items: ['GA4 + GTM', 'Conversion tracking', 'KPI dashboard'] },
@@ -20,30 +30,17 @@ const plans = [
     outcome: 'A professional digital presence and measurable system.',
   },
   {
-    name: 'Tier 2 — Growth',
+    name: 'Tier 3 — Growth',
     tagline: 'Turn traffic into predictable acquisition.',
     builtFor: 'Brands ready to generate leads and sales.',
-    icon: TrendingUp,
+    icon: Zap,
     sections: [
       { title: 'Website & CRO', items: ['Landing pages', 'CRO framework', 'A/B testing'] },
       { title: 'Analytics', items: ['Custom dashboard', 'Funnel tracking', 'Attribution'] },
       { title: 'SEO', items: ['Keyword expansion', 'Content strategy', 'Technical audits'] },
       { title: 'Google Ads', items: ['Campaign structure', 'Optimization', 'Conversion bidding'] },
     ] as PlanSection[],
-    outcome: 'Consistent, measurable growth from traffic.',
-  },
-  {
-    name: 'Tier 3 — Performance Partner',
-    tagline: 'Scale with full-funnel strategy and executive data.',
-    builtFor: 'Companies serious about aggressive growth.',
-    icon: Zap,
-    sections: [
-      { title: 'Conversion', items: ['Testing roadmap', 'Messaging optimization', 'Landing pages'] },
-      { title: 'Analytics', items: ['Cohort & LTV', 'Attribution', 'Forecasting'] },
-      { title: 'Paid Media', items: ['Full Google ecosystem', 'Audience segmentation', 'Scaling'] },
-      { title: 'SEO & Strategy', items: ['Content clusters', 'Link-building', 'Executive reviews'] },
-    ] as PlanSection[],
-    outcome: 'A data-driven growth engine.',
+    outcome: 'Consistent, measurable growth from traffic',
   },
 ];
 

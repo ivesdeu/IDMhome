@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { StatsBar } from '../components/StatsBar';
@@ -15,6 +16,13 @@ import { FooterCTA } from '../components/FooterCTA';
 import { Footer } from '../components/Footer';
 
 export function HomePage() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash === '#core-capabilities') {
+      document.getElementById('core-capabilities')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [location.hash]);
+
   return (
     <div className="min-h-screen bg-gradient-page">
       <Navbar />
