@@ -36,7 +36,7 @@ export function HomePage() {
       <Team />
       <Pricing />
       <FAQ />
-      <Testimonials />
+      {false && <Testimonials />}
       <FooterCTA />
       <Footer />
     </div>

@@ -1,0 +1,14 @@
+INSTALLING THE THEME
+====================
+
+Use the file:  ibmcustom.zip  (in this folder)
+
+1. In WordPress: Appearance → Themes → Add New → Upload Theme
+2. Choose  ibmcustom.zip  (NOT a zip of the whole repo or of "wp-theme")
+3. Install Now, then Activate
+
+If you see "The theme is missing the style.css stylesheet":
+- You may have zipped the whole repo or the "wp-theme" folder. WordPress needs a zip that contains a single theme folder with style.css inside it.
+- Use the pre-built  ibmcustom.zip  from this folder instead.
+
+After activating: go to Settings → Permalinks and click Save to enable case study links (/case-studies, /case-studies/revenue-growth, etc.).

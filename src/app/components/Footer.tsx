@@ -14,7 +14,7 @@ export function Footer() {
             </p>
             <p className="text-sm text-[#666666]">
               Milwaukee, WI 53211<br />
-              growth.deutschmannivessolutions@gmail.com
+              contact@ivesdeu.com
             </p>
           </div>
           
@@ -45,8 +45,8 @@ export function Footer() {
           {/* Creator Info */}
           <div>
             <h4 className="font-semibold text-primary mb-4">Get In Touch</h4>
-            <p className="text-sm text-[#666666] mb-2">Email: hello@deutschmannivessolutions.com</p>
-            <p className="text-sm text-[#666666] mb-2">Phone: +1 (555) 123-4567</p>
+            <p className="text-sm text-[#666666] mb-2">Email: contact@ivesdeu.com</p>
+            <p className="text-sm text-[#666666] mb-2">Phone: +1 (224) 602-5112</p>
             <p className="text-sm text-[#666666]">Available Mon-Fri, 9am-6pm PST</p>
           </div>
         </div>
