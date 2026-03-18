@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
 
@@ -6,6 +6,33 @@ const fadeUp = {
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
 };
+
+const GLITCH_CHARS = '*#@$%&!?<>';
+const GLITCH_INTERVAL_MS = 100;
+
+function GlitchChars() {
+  const [chars, setChars] = useState(['*', '#']);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setChars([
+        GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)],
+        GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)],
+      ]);
+    }, GLITCH_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <span
+      className="inline-flex font-mono w-[2ch] min-w-[2ch] h-[1.2em] flex-shrink-0 items-center justify-center align-middle overflow-hidden"
+      style={{ lineHeight: 1, flexWrap: 'nowrap' }}
+      aria-hidden
+    >
+      <span className="whitespace-nowrap">{chars[0]}{chars[1]}</span>
+    </span>
+  );
+}
 
 export function Hero() {
   return (
@@ -27,7 +54,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <span className="block text-primary">Stop getting</span>
-          <span className="block text-primary">Sh*# <span className="text-cta">leads.</span></span>
+          <span className="block text-primary">Sh<GlitchChars /> <span className="text-cta">leads.</span></span>
         </motion.h1>
         <motion.p
           className="text-muted-foreground text-lg max-w-xl mx-auto mb-10 font-body font-normal"
