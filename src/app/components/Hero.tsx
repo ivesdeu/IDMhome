@@ -26,8 +26,8 @@ export function Hero() {
           {...fadeUp}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <span className="block text-primary">Built for</span>
-          <span className="block text-primary">scalable <span className="text-cta">growth.</span></span>
+          <span className="block text-primary">Stop getting</span>
+          <span className="block text-primary">Sh*# <span className="text-cta">leads.</span></span>
         </motion.h1>
         <motion.p
           className="text-muted-foreground text-lg max-w-xl mx-auto mb-10 font-body font-normal"
