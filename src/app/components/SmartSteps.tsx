@@ -4,10 +4,10 @@ import { MessageCircle, ClipboardList, Settings, Trophy, Film, Handshake, Messag
 import { motion } from 'motion/react';
 
 const calendarEvents = [
-  { date: '01', label: 'Reel Spotlight', icon: Film },
-  { date: '06', label: 'Outreach', icon: Handshake },
-  { date: '17', label: 'Collab', icon: MessageSquare },
-  { date: '30', label: 'Launch', icon: Flame },
+  { date: '01', label: 'Discovery', icon: Film },
+  { date: '06', label: 'Website', icon: Handshake },
+  { date: '17', label: 'Data Review', icon: MessageSquare },
+  { date: '30', label: 'SEO Execution', icon: Flame },
 ];
 
 const steps = [
@@ -17,7 +17,7 @@ const steps = [
   { number: '04', label: 'Succeed', icon: Trophy },
 ];
 
-const serviceTags = ['Paid Media', 'SEO', 'CRO', 'Analytics', 'Attribution'];
+const serviceTags = ['Paid Media', 'SEO', 'CRO', 'Analytics', 'Optimization'];
 
 const dayLabels = ['S', 'M', 'T', 'W', 'TH', 'F', 'S'];
 
