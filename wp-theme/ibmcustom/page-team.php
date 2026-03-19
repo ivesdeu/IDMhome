@@ -49,9 +49,6 @@ if ( ! in_array( $founder, array( 'mark', 'otto' ), true ) ) {
         <p class="text-base leading-relaxed mb-6" style="color: #888582;">
           Mark leads paid media performance and analytics systems across campaigns. He focuses on precision tracking, attribution clarity, and revenue-centric optimization.
         </p>
-        <blockquote class="pl-4 italic mb-6" style="border-left: 4px solid #e84c1e; color: #111110;">
-          Revenue growth requires precision, not guesswork.
-        </blockquote>
         <div class="flex flex-wrap gap-2 mb-8">
           <span class="px-3 py-1.5 rounded-full bg-white border text-sm" style="border-color: rgba(0,0,0,0.12); color: #111110;">Paid Media</span>
           <span class="px-3 py-1.5 rounded-full bg-white border text-sm" style="border-color: rgba(0,0,0,0.12); color: #111110;">Attribution</span>
@@ -72,9 +69,6 @@ if ( ! in_array( $founder, array( 'mark', 'otto' ), true ) ) {
         <p class="text-base leading-relaxed mb-6" style="color: #888582;">
           Otto drives organic visibility through technical SEO and high-intent content systems. His work centers on structure, authority, and compounding search performance.
         </p>
-        <blockquote class="pl-4 italic mb-6" style="border-left: 4px solid #e84c1e; color: #111110;">
-          Visibility is earned through technical excellence.
-        </blockquote>
         <div class="flex flex-wrap gap-2 mb-8">
           <span class="px-3 py-1.5 rounded-full bg-white border text-sm" style="border-color: rgba(0,0,0,0.12); color: #111110;">Technical SEO</span>
           <span class="px-3 py-1.5 rounded-full bg-white border text-sm" style="border-color: rgba(0,0,0,0.12); color: #111110;">Content Strategy</span>

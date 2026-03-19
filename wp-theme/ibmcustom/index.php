@@ -453,7 +453,6 @@ get_header();
               alt="Mark Deutschmann"
               class="w-24 h-24 rounded-full object-cover mb-4 mx-auto"
             />
-            <p class="text-lg italic text-[#666666] mb-4 text-center">Revenue growth requires precision, not guesswork.</p>
             <h3 class="font-semibold text-primary text-center">Mark Deutschmann</h3>
             <p class="text-sm text-[#666666] text-center">Co-Founder</p>
             <p class="text-sm text-[#666666] text-center">Performance Analyst</p>
@@ -465,7 +464,6 @@ get_header();
               alt="Otto Ives"
               class="w-24 h-24 rounded-full object-cover mb-4 mx-auto"
             />
-            <p class="text-lg italic text-[#666666] mb-4 text-center">Visibility is earned through technical excellence.</p>
             <h3 class="font-semibold text-primary text-center">Otto Ives</h3>
             <p class="text-sm text-[#666666] text-center">Co-Founder</p>
             <p class="text-sm text-[#666666] text-center">SEO Strategist</p>
