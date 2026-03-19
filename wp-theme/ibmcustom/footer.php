@@ -23,13 +23,18 @@
       <div>
         <h4 class="font-semibold text-primary mb-4">Follow Us</h4>
         <div class="flex gap-4">
-          <a href="#" class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-            <span class="sr-only">Instagram</span>
-            <!-- Replace with SVG icon if desired -->
-            <span class="text-sm font-bold">IG</span>
+          <a
+            href="<?php echo esc_url( 'https://www.linkedin.com/in/markdeutschmann/' ); ?>"
+            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <span class="sr-only">LinkedIn - Mark Deutschmann</span>
+            <span class="text-sm font-bold">in</span>
           </a>
-          <a href="#" class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-            <span class="sr-only">LinkedIn</span>
+          <a
+            href="<?php echo esc_url( 'https://www.linkedin.com/in/william-otto-ives/' ); ?>"
+            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+          >
+            <span class="sr-only">LinkedIn - William Otto Ives</span>
             <span class="text-sm font-bold">in</span>
           </a>
         </div>
