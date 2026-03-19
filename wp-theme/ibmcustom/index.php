@@ -762,7 +762,7 @@ get_header();
           Get your free website assessment
         </h2>
         <a
-          href="#contact"
+          href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>"
           class="relative z-10 shrink-0 px-8 py-3.5 rounded-full bg-white text-cta font-semibold hover:bg-white/95 transition-colors"
         >
           Schedule Your Strategy Call

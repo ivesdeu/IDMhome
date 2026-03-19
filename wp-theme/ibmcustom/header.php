@@ -52,7 +52,7 @@ $contact_href = is_front_page() ? '#contact' : home_url( '/#contact' );
     </div>
 
     <a
-      href="<?php echo esc_url( $contact_href ); ?>"
+      href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>"
       class="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center"
     >
       Book a Call
