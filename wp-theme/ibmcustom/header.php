@@ -15,6 +15,7 @@
 <body <?php body_class(); ?>>
 <?php
 $about_href = is_front_page() ? '#about' : home_url( '/#about' );
+$team_href = is_front_page() ? '#team' : home_url( '/#team' );
 $capabilities_href = is_front_page() ? '#core-capabilities' : home_url( '/#core-capabilities' );
 $contact_href = is_front_page() ? '#contact' : home_url( '/#contact' );
 ?>
@@ -38,6 +39,9 @@ $contact_href = is_front_page() ? '#contact' : home_url( '/#contact' );
       </a>
       <a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         Case Studies
+      </a>
+      <a href="<?php echo esc_url( $team_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+        Team
       </a>
       <a href="<?php echo esc_url( $capabilities_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         Capabilities

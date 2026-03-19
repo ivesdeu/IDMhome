@@ -71,11 +71,14 @@ function ibmhome_register_page_templates_routes() {
   add_rewrite_rule( '^whirly-wash/?$', 'index.php?ibmhome_template=whirly-wash', 'top' );
   add_rewrite_rule( '^ama-uwm/?$', 'index.php?ibmhome_template=ama-uwm', 'top' );
   add_rewrite_rule( '^about/?$', 'index.php?ibmhome_template=about', 'top' );
+  add_rewrite_rule( '^team/?$', 'index.php?ibmhome_template=team', 'top' );
+  add_rewrite_rule( '^team/(mark|otto)/?$', 'index.php?ibmhome_template=team&founder=$matches[1]', 'top' );
 }
 add_action( 'init', 'ibmhome_register_page_templates_routes' );
 
 function ibmhome_template_query_vars( $vars ) {
   $vars[] = 'ibmhome_template';
+  $vars[] = 'founder';
   return $vars;
 }
 add_filter( 'query_vars', 'ibmhome_template_query_vars' );
@@ -91,6 +94,7 @@ function ibmhome_template_include( $template ) {
     'whirly-wash'  => 'page-whirly-wash.php',
     'ama-uwm'      => 'page-ama-uwm.php',
     'about'        => 'page-about.php',
+    'team'         => 'page-team.php',
   );
 
   if ( isset( $template_map[ $template_key ] ) ) {

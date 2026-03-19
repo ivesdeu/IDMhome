@@ -433,7 +433,7 @@ get_header();
   </section>
 
   <?php /* Team section (from Team.tsx) */ ?>
-  <section class="w-full py-24">
+  <section id="team" class="w-full py-24">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="mb-12">
         <div class="flex items-center gap-3 text-cta mb-2 ">
@@ -447,7 +447,7 @@ get_header();
 
       <div class="overflow-x-auto pb-4">
         <div class="flex gap-6 justify-center">
-          <div class="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6">
+          <a href="<?php echo esc_url( home_url( '/team/mark' ) ); ?>" class="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6 block hover:shadow-lg transition-shadow">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/mark-deutschmann.png"
               alt="Mark Deutschmann"
@@ -457,9 +457,9 @@ get_header();
             <h3 class="font-semibold text-primary text-center">Mark Deutschmann</h3>
             <p class="text-sm text-[#666666] text-center">Co-Founder</p>
             <p class="text-sm text-[#666666] text-center">Performance Analyst</p>
-          </div>
+          </a>
 
-          <div class="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6">
+          <a href="<?php echo esc_url( home_url( '/team/otto' ) ); ?>" class="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6 block hover:shadow-lg transition-shadow">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/otto-ives.png"
               alt="Otto Ives"
@@ -469,7 +469,7 @@ get_header();
             <h3 class="font-semibold text-primary text-center">Otto Ives</h3>
             <p class="text-sm text-[#666666] text-center">Co-Founder</p>
             <p class="text-sm text-[#666666] text-center">SEO Strategist</p>
-          </div>
+          </a>
         </div>
       </div>
     </div>
