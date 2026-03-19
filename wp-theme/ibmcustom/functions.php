@@ -88,7 +88,7 @@ add_filter( 'query_vars', 'ibmhome_template_query_vars' );
  * This avoids requiring manual "Permalinks -> Save Changes" after updates.
  */
 function ibmhome_maybe_flush_rewrites_for_team() {
-  // Bump this to force WordPress to regenerate rewrite rules once per deployment.
+  // Bump this value whenever we change rewrite routing so WP regenerates them.
   $current = 'team_routes_v2';
   $stored = get_option( 'ibmhome_rewrite_flush_version', '' );
   if ( $stored === $current ) {
