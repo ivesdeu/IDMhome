@@ -43,15 +43,15 @@ get_header();
     <dl class="border-t border-border divide-y divide-border mb-16">
       <div class="flex justify-between items-center py-4 gap-4">
         <dt class="text-[#666666] font-medium">Client</dt>
-        <dd class="text-primary font-semibold text-right">Whirly Wash®</dd>
+        <dd class="text-primary font-semibold text-right">Whirly Wash</dd>
       </div>
       <div class="flex justify-between items-center py-4 gap-4">
         <dt class="text-[#666666] font-medium">Category</dt>
-        <dd class="text-primary font-semibold text-right">E-commerce Marketing Strategy</dd>
+        <dd class="text-primary font-semibold text-right">Digital Marketing Analytics &amp; Web Development</dd>
       </div>
       <div class="flex justify-between items-center py-4 gap-4">
         <dt class="text-[#666666] font-medium">Work Period</dt>
-        <dd class="text-primary font-semibold text-right">March 2023 - July 2023</dd>
+        <dd class="text-primary font-semibold text-right">January 2025 – March 2025</dd>
       </div>
       <div class="flex justify-between items-center py-4 gap-4">
         <dt class="text-[#666666] font-medium">Industry</dt>
@@ -65,26 +65,26 @@ get_header();
         <div>
           <h2 class="text-xl font-bold text-primary mb-4">• The Challenge</h2>
           <p class="text-[#666666] leading-relaxed">
-            Had high site traffic from social channels but suffered from low conversion rates and cart abandonment. Their marketing was sporadic, lacking clear funnels and optimization.
+            Whirly Wash had an outdated web presence and no structured approach to paid or organic search. Despite offering competitive services, they were invisible in local search results and had no reliable channel for generating new leads.
           </p>
         </div>
         <div>
           <h2 class="text-xl font-bold text-primary mb-4">• Our Strategy</h2>
           <ul class="space-y-3 text-[#666666] leading-relaxed list-disc list-inside">
-            <li>Email &amp; SMS Funnels: Designed lifecycle email automations and SMS campaigns to recover abandoned carts and re-engage users.</li>
-            <li>Retargeting Ads: Rolled out Meta and TikTok retargeting ads focused on cart abandoners and social engagers.</li>
-            <li>UX Audit &amp; Optimization: Simplified checkout flow and improved product page hierarchy.</li>
-            <li>Influencer Collaborations: Partnered with niche micro-influencers to drive direct response.</li>
+            <li>Website Development: Built a clean, conversion-focused site with clear service pages, strong calls to action, and mobile-first structure designed to turn visitors into leads.</li>
+            <li>SEO &amp; Keyword Optimization: Conducted a full keyword audit targeting high-intent local search terms. Restructured page content and metadata to improve organic ranking across their service area.</li>
+            <li>Google Ads Campaigns: Launched and managed search campaigns targeting service-area keywords with high purchase intent. Continuously refined match types, negatives, and ad copy to improve efficiency.</li>
+            <li>Analytics Setup: Implemented full tracking infrastructure including conversion events, call tracking, and campaign attribution so every dollar of spend could be tied to an outcome.</li>
           </ul>
         </div>
       </div>
       <div class="bg-primary rounded-2xl p-8 sticky top-24">
         <h2 class="text-xl font-bold text-white mb-4">• The Results</h2>
         <ul class="space-y-3 text-white/95 leading-relaxed list-disc list-inside">
-          <li>64% drop in cart abandonment</li>
-          <li>2.7x ROI from SMS campaigns</li>
-          <li>112% growth in repeat customers</li>
-          <li>$180K+ revenue generated from email automations</li>
+          <li>2.7x return on ad spend within the first 60 days</li>
+          <li>2x increase in inbound leads compared to the prior period</li>
+          <li>Significant improvement in local search visibility across target keywords</li>
+          <li>Fully attributable lead pipeline established for the first time</li>
         </ul>
       </div>
     </div>
