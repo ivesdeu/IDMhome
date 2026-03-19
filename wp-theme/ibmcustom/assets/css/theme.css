@@ -74,3 +74,14 @@ body {
   }
 }
 
+/* Team founder gray quotes (defensive hide) */
+/* Homepage: the quotes are italic paragraphs inside the #team section. */
+#team p.italic {
+  display: none !important;
+}
+
+/* /team page: quotes are rendered as <blockquote> inside founder profiles. */
+[data-founder-profile] blockquote {
+  display: none !important;
+}
+
