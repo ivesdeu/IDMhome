@@ -83,6 +83,23 @@ function ibmhome_template_query_vars( $vars ) {
 }
 add_filter( 'query_vars', 'ibmhome_template_query_vars' );
 
+/**
+ * Ensure rewrite rules are flushed after code changes.
+ * This avoids requiring manual "Permalinks -> Save Changes" after updates.
+ */
+function ibmhome_maybe_flush_rewrites_for_team() {
+  $current = 'team_routes_v1';
+  $stored = get_option( 'ibmhome_rewrite_flush_version', '' );
+  if ( $stored === $current ) {
+    return;
+  }
+
+  ibmhome_register_page_templates_routes();
+  flush_rewrite_rules();
+  update_option( 'ibmhome_rewrite_flush_version', $current );
+}
+add_action( 'init', 'ibmhome_maybe_flush_rewrites_for_team', 0 );
+
 function ibmhome_template_include( $template ) {
   $template_key = get_query_var( 'ibmhome_template' );
   if ( ! $template_key ) {
