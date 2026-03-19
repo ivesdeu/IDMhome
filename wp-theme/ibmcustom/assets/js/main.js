@@ -1,4 +1,81 @@
 (() => {
+  // Hero glitch chars
+  const glitchRoots = document.querySelectorAll('[data-glitch-hero]');
+  if (glitchRoots.length) {
+    const GLITCH_CHARS = '*#@$%&!?<>';
+    const GLITCH_INTERVAL_MS = 100;
+
+    const tick = () => {
+      glitchRoots.forEach((root) => {
+        const a = root.querySelector('[data-glitch-char-a]');
+        const b = root.querySelector('[data-glitch-char-b]');
+        if (a) a.textContent = GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+        if (b) b.textContent = GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)];
+      });
+    };
+
+    tick();
+    setInterval(tick, GLITCH_INTERVAL_MS);
+  }
+
+  // Stats count-up (runs once when each [data-countup-root] enters the viewport)
+  const countupRoots = document.querySelectorAll('[data-countup-root]');
+  if (countupRoots.length && 'IntersectionObserver' in window) {
+    const duration = 1600;
+    const easeOutQuart = (t) => 1 - (1 - t) ** 4;
+
+    const animateNumber = (el) => {
+      if (el.dataset.countupDone === '1' || el.dataset.countupRunning === '1') return;
+      el.dataset.countupRunning = '1';
+
+      const value = parseFloat(el.getAttribute('data-stat-value') || '0');
+      const decimals = parseInt(el.getAttribute('data-stat-decimals') || '0', 10);
+
+      let start = null;
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const elapsed = timestamp - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutQuart(progress);
+        const current = value * eased;
+
+        if (decimals > 0) el.textContent = current.toFixed(decimals);
+        else el.textContent = String(Math.round(current));
+
+        if (progress < 1) requestAnimationFrame(step);
+        else el.dataset.countupDone = '1';
+      };
+
+      requestAnimationFrame(step);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const root = entry.target;
+          const numEls = root.querySelectorAll('[data-stat-value]');
+          numEls.forEach(animateNumber);
+          observer.unobserve(root);
+        });
+      },
+      { threshold: 0.3, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    countupRoots.forEach((root) => observer.observe(root));
+  } else if (countupRoots.length) {
+    // Fallback for very old browsers: just set final values.
+    countupRoots.forEach((root) => {
+      const numEls = root.querySelectorAll('[data-stat-value]');
+      numEls.forEach((el) => {
+        const value = parseFloat(el.getAttribute('data-stat-value') || '0');
+        const decimals = parseInt(el.getAttribute('data-stat-decimals') || '0', 10);
+        if (decimals > 0) el.textContent = value.toFixed(decimals);
+        else el.textContent = String(Math.round(value));
+      });
+    });
+  }
+
   // FAQ accordion
   const accordions = document.querySelectorAll('[data-faq-accordion]');
   accordions.forEach((accordion) => {

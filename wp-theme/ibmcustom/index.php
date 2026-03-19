@@ -19,8 +19,20 @@ get_header();
         <span class="text-[0.72rem] uppercase tracking-[0.18em]">Performance Marketing</span>
       </p>
       <h1 class="font-headline text-6xl md:text-7xl lg:text-8xl mb-6 leading-[0.92]">
-        <span class="block text-primary">Built for</span>
-        <span class="block text-primary">scalable <span class="text-cta">growth.</span></span>
+        <span class="block text-primary">Stop getting</span>
+        <span class="block text-primary">Sh
+          <span
+            class="inline-flex font-mono w-[2ch] min-w-[2ch] h-[1.2em] flex-shrink-0 items-center justify-center align-middle overflow-hidden"
+            style="line-height: 1; flex-wrap: nowrap;"
+            data-glitch-hero
+            aria-hidden="true"
+          >
+            <span class="whitespace-nowrap">
+              <span data-glitch-char-a>*</span><span data-glitch-char-b>#</span>
+            </span>
+          </span>
+          <span class="text-cta">leads.</span>
+        </span>
       </h1>
       <p class="text-muted-foreground text-lg max-w-xl mx-auto mb-10 font-body font-normal">
         We design and execute data-driven acquisition systems that turn attention into revenue.
@@ -41,12 +53,16 @@ get_header();
           </a>
         </div>
         <div class="flex flex-wrap items-stretch justify-center gap-8">
-          <div class="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between">
-            <div class="font-headline text-3xl md:text-4xl text-cta">3+</div>
+          <div class="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between" data-countup-root>
+            <div class="font-headline text-3xl md:text-4xl text-cta">
+              <span class="stat-number" data-stat-value="3" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
+            </div>
             <div class="text-xs text-muted-foreground font-body mt-1">Clients Served</div>
           </div>
-          <div class="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between">
-            <div class="font-headline text-3xl md:text-4xl text-cta">2.8x</div>
+          <div class="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between" data-countup-root>
+            <div class="font-headline text-3xl md:text-4xl text-cta">
+              <span class="stat-number" data-stat-value="2.8" data-stat-decimals="1">0</span><span class="text-cta stat-suffix">x</span>
+            </div>
             <div class="text-xs text-muted-foreground font-body mt-1">Avg. ROAS improvement</div>
           </div>
         </div>
@@ -57,25 +73,26 @@ get_header();
   <?php /* StatsBar section (from StatsBar.tsx) */ ?>
   <section
     class="w-full border-t border-b border-border"
+    data-countup-root
     style="border-color: rgba(0,0,0,0.08);"
   >
     <div class="max-w-[1200px] mx-auto">
       <div class="grid grid-cols-3 divide-x font-body" style="border-color: rgba(0,0,0,0.08);">
         <div class="py-8 px-8 text-center">
           <div class="font-headline text-4xl md:text-5xl text-primary">
-            3<span class="text-cta">+</span>
+            <span class="stat-number" data-stat-value="3" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
           </div>
           <div class="text-sm text-muted-foreground mt-1">Clients Served</div>
         </div>
         <div class="py-8 px-8 text-center">
           <div class="font-headline text-4xl md:text-5xl text-primary">
-            5<span class="text-cta">+</span>
+            <span class="stat-number" data-stat-value="5" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
           </div>
           <div class="text-sm text-muted-foreground mt-1">Campaigns Launched</div>
         </div>
         <div class="py-8 px-8 text-center">
           <div class="font-headline text-4xl md:text-5xl text-primary">
-            2.8<span class="text-cta">x</span>
+            <span class="stat-number" data-stat-value="2.8" data-stat-decimals="1">0</span><span class="text-cta stat-suffix">x</span>
           </div>
           <div class="text-sm text-muted-foreground mt-1">Avg. ROAS Improvement</div>
         </div>
@@ -253,7 +270,7 @@ get_header();
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <a href="<?php echo esc_url( home_url( '/case-studies/revenue-growth' ) ); ?>">
+        <a href="<?php echo esc_url( home_url( '/whirly-wash' ) ); ?>">
           <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/revenue-growth-6months.png"
@@ -272,7 +289,7 @@ get_header();
           </div>
         </a>
 
-        <a href="<?php echo esc_url( home_url( '/case-studies/cost-per-acquisition' ) ); ?>">
+        <a href="<?php echo esc_url( home_url( '/ama-uwm' ) ); ?>">
           <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/ama-uwm-case-study.png"
@@ -284,9 +301,9 @@ get_header();
                 <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Home Service</span>
                 <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Website Creation</span>
               </div>
-              <div class="text-6xl font-bold text-white mb-2">+250% Event Attendance</div>
+              <div class="text-6xl font-bold text-white mb-2">+$12,000 dollars raised</div>
               <h3 class="text-2xl font-semibold text-white mb-1">Growth Marketing &amp; Partnerships</h3>
-              <p class="text-lg text-white/80">$12K+ Sponsor Revenue Generated</p>
+              <p class="text-lg text-white/80">10+ corporate sponsors</p>
             </div>
           </div>
         </a>

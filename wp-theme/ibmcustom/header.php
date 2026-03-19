@@ -10,32 +10,6 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title><?php bloginfo( 'name' ); ?></title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'primary': 'var(--primary)',
-            'foreground': 'var(--foreground)',
-            'background': 'var(--background)',
-            'cta': '#FF4D2E',
-            'cta-hover': 'var(--cta-hover)',
-            'muted-foreground': 'var(--muted-foreground)',
-            'border': 'var(--border)',
-            'card': 'var(--card)',
-            'muted': 'var(--muted)',
-            'secondary': 'var(--secondary)',
-            'accent': 'var(--accent)',
-          },
-          fontFamily: {
-            'headline': 'var(--font-headline)',
-            'body': 'var(--font-body)',
-          }
-        }
-      }
-    }
-  </script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
