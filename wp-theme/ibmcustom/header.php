@@ -13,6 +13,11 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php
+$about_href = is_front_page() ? '#about' : home_url( '/#about' );
+$capabilities_href = is_front_page() ? '#core-capabilities' : home_url( '/#core-capabilities' );
+$contact_href = is_front_page() ? '#contact' : home_url( '/#contact' );
+?>
 
 <nav
   class="fixed top-0 left-0 right-0 z-50 border-b border-border"
@@ -28,22 +33,22 @@
     </a>
 
     <div class="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-      <a href="<?php echo esc_url( home_url( '/#about' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+      <a href="<?php echo esc_url( $about_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         About
       </a>
       <a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         Case Studies
       </a>
-      <a href="<?php echo esc_url( home_url( '/#core-capabilities' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+      <a href="<?php echo esc_url( $capabilities_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         Capabilities
       </a>
-      <a href="<?php echo esc_url( home_url( '/#contact' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+      <a href="<?php echo esc_url( $contact_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
         Contact
       </a>
     </div>
 
     <a
-      href="<?php echo esc_url( home_url( '/#contact' ) ); ?>"
+      href="<?php echo esc_url( $contact_href ); ?>"
       class="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center"
     >
       Book a Call

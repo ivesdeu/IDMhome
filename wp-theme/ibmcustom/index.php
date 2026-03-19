@@ -128,7 +128,7 @@ get_header();
         <h2 class="text-4xl md:text-5xl font-bold text-primary">Trusted across industries.</h2>
       </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 collaborations-grid">
         <div class="bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 h-full min-h-[260px]">
           <h3 class="font-bold text-primary text-lg mb-1">Home Improvement</h3>
           <p class="text-sm text-[#666666] mb-4">Working for 1 year</p>

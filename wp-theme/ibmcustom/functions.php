@@ -63,3 +63,50 @@ function ibmhome_theme_setup() {
 }
 add_action( 'after_setup_theme', 'ibmhome_theme_setup' );
 
+/**
+ * Route key marketing pages directly to theme templates.
+ */
+function ibmhome_register_page_templates_routes() {
+  add_rewrite_rule( '^case-studies/?$', 'index.php?ibmhome_template=case-studies', 'top' );
+  add_rewrite_rule( '^whirly-wash/?$', 'index.php?ibmhome_template=whirly-wash', 'top' );
+  add_rewrite_rule( '^ama-uwm/?$', 'index.php?ibmhome_template=ama-uwm', 'top' );
+  add_rewrite_rule( '^about/?$', 'index.php?ibmhome_template=about', 'top' );
+}
+add_action( 'init', 'ibmhome_register_page_templates_routes' );
+
+function ibmhome_template_query_vars( $vars ) {
+  $vars[] = 'ibmhome_template';
+  return $vars;
+}
+add_filter( 'query_vars', 'ibmhome_template_query_vars' );
+
+function ibmhome_template_include( $template ) {
+  $template_key = get_query_var( 'ibmhome_template' );
+  if ( ! $template_key ) {
+    return $template;
+  }
+
+  $template_map = array(
+    'case-studies' => 'page-case-studies.php',
+    'whirly-wash'  => 'page-whirly-wash.php',
+    'ama-uwm'      => 'page-ama-uwm.php',
+    'about'        => 'page-about.php',
+  );
+
+  if ( isset( $template_map[ $template_key ] ) ) {
+    $path = get_template_directory() . '/' . $template_map[ $template_key ];
+    if ( file_exists( $path ) ) {
+      return $path;
+    }
+  }
+
+  return $template;
+}
+add_filter( 'template_include', 'ibmhome_template_include', 99 );
+
+function ibmhome_flush_rewrite_rules_on_theme_switch() {
+  ibmhome_register_page_templates_routes();
+  flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'ibmhome_flush_rewrite_rules_on_theme_switch' );
+
