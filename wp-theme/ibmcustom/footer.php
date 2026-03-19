@@ -25,14 +25,14 @@
         <div class="flex gap-4">
           <a
             href="<?php echo esc_url( 'https://www.linkedin.com/in/markdeutschmann/' ); ?>"
-            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors no-underline hover:no-underline"
           >
             <span class="sr-only">LinkedIn - Mark Deutschmann</span>
             <span class="text-sm font-bold">in</span>
           </a>
           <a
             href="<?php echo esc_url( 'https://www.linkedin.com/in/william-otto-ives/' ); ?>"
-            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+            class="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors no-underline hover:no-underline"
           >
             <span class="sr-only">LinkedIn - William Otto Ives</span>
             <span class="text-sm font-bold">in</span>
