@@ -48,7 +48,7 @@
       <div>
         <h4 class="font-semibold text-primary mb-4">Get In Touch</h4>
         <p class="text-sm text-[#666666] mb-2">Email: contact@ivesdeu.com</p>
-        <p class="text-sm text-[#666666] mb-2">Phone: +1 (555) 123-4567</p>
+        <p class="text-sm text-[#666666] mb-2">Phone: 224-602-5112</p>
         <p class="text-sm text-[#666666]">Available Mon-Fri, 9am-6pm PST</p>
       </div>
     </div>
