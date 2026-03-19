@@ -59,7 +59,6 @@
     </div>
 
     <div class="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-      <a href="#" class="text-sm text-[#666666] hover:text-primary transition-colors">Privacy Policy</a>
       <div class="text-sm text-[#666666]">©<?php echo esc_html( date_i18n( 'Y' ) ); ?> Ives Deutschmann Marketing. All rights reserved.</div>
       <div class="font-bold text-primary">Ives Deutschmann Marketing</div>
     </div>
