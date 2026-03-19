@@ -647,7 +647,7 @@ get_header();
           />
           <h3 class="text-2xl font-semibold text-primary mb-4">Didn't get the answer?</h3>
           <p class="text-[#666666] mb-6">Talk with a human expert on our team</p>
-          <button class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover">Contact Us</button>
+          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover">Contact Us</a>
         </div>
 
         <div class="space-y-4" data-faq-accordion>
