@@ -747,60 +747,6 @@ get_header();
     </div>
   </section>
 
-  <?php /* Testimonials section (from Testimonials.tsx) */ ?>
-  <section class="w-full py-24">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="flex items-start justify-between mb-12">
-        <div>
-          <div class="flex items-center gap-3 text-cta mb-2 ">
-            <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
-            <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">
-              Testimonial
-            </span>
-          </div>
-          <h2 class="text-5xl font-semibold text-primary">Words that inspire us.</h2>
-        </div>
-        <a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-primary hover:text-gray-600 flex items-center gap-2">
-          Visit Case Studies
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M7 7H17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-      </div>
-
-      <div class="relative bg-[#F9F9F9] rounded-2xl p-12" data-testimonials>
-        <div class="max-w-3xl mx-auto text-center">
-          <p class="text-3xl italic text-foreground mb-8 leading-relaxed" data-testimonial-quote>
-            "Ives Deutschmann Marketing transformed our paid acquisition strategy. We scaled from $50K to $500K monthly revenue while improving ROAS by 2.7x."
-          </p>
-          <h4 class="font-bold text-primary text-xl" data-testimonial-name>Sarah Johnson</h4>
-          <p class="text-[#666666]" data-testimonial-title>CEO, UrbanThread</p>
-        </div>
-
-        <div class="flex items-center justify-center gap-4 mt-12">
-          <button class="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" data-testimonial-prev aria-label="Previous testimonial">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </button>
-
-          <div class="flex items-center gap-2">
-            <span class="text-primary font-semibold" data-testimonial-index>01</span>
-            <span class="text-[#666666]">/</span>
-            <span class="text-[#666666]" data-testimonial-total>06</span>
-          </div>
-
-          <button class="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" data-testimonial-next aria-label="Next testimonial">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <?php /* FooterCTA section (from FooterCTA.tsx) */ ?>
   <section id="contact" class="w-full py-16 font-body">
     <div class="max-w-[1200px] mx-auto px-6">
