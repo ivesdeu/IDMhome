@@ -337,7 +337,7 @@ get_header();
 
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px] bg-cta/15 ring-1 ring-cta/40">
               <span class="font-bold text-primary">01</span>
-              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Reel Spotlight</span>
+              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Discovery</span>
             </div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">2</span></div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">3</span></div>
@@ -345,7 +345,7 @@ get_header();
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">5</span></div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px] bg-cta/15 ring-1 ring-cta/40">
               <span class="font-bold text-primary">06</span>
-              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Outreach</span>
+              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Website</span>
             </div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">7</span></div>
 
@@ -361,7 +361,7 @@ get_header();
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">16</span></div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px] bg-cta/15 ring-1 ring-cta/40">
               <span class="font-bold text-primary">17</span>
-              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Collab</span>
+              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Data Review</span>
             </div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">18</span></div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">19</span></div>
@@ -379,7 +379,7 @@ get_header();
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px]"><span class="text-muted-foreground/50">29</span></div>
             <div class="rounded flex flex-col items-center justify-center text-[10px] py-1 min-h-[28px] bg-cta/15 ring-1 ring-cta/40">
               <span class="font-bold text-primary">30</span>
-              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">Launch</span>
+              <span class="text-[9px] text-muted-foreground truncate w-full px-0.5">SEO Execution</span>
             </div>
             <div></div>
             <div></div>
@@ -426,7 +426,7 @@ get_header();
           <span class="px-4 py-2 rounded-lg text-white text-sm font-semibold uppercase tracking-wide" style="background: #0F2A44; transform: rotate(1.5deg);">SEO</span>
           <span class="px-4 py-2 rounded-lg text-white text-sm font-semibold uppercase tracking-wide" style="background: #0F2A44; transform: rotate(-1deg);">CRO</span>
           <span class="px-4 py-2 rounded-lg text-white text-sm font-semibold uppercase tracking-wide" style="background: #0F2A44; transform: rotate(2deg);">Analytics</span>
-          <span class="px-4 py-2 rounded-lg text-white text-sm font-semibold uppercase tracking-wide" style="background: #0F2A44; transform: rotate(-0.5deg);">Attribution</span>
+          <span class="px-4 py-2 rounded-lg text-white text-sm font-semibold uppercase tracking-wide" style="background: #0F2A44; transform: rotate(-0.5deg);">Optimization</span>
         </div>
       </div>
     </div>
