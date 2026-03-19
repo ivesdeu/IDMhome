@@ -63,13 +63,13 @@ get_header();
     <div class="grid md:grid-cols-[1fr,1fr] gap-8 mb-24 items-start">
       <div class="space-y-12">
         <div>
-          <h2 class="text-xl font-bold text-primary mb-4">• The Challenge</h2>
+          <h2 class="text-xl font-bold text-primary mb-4">The Challenge</h2>
           <p class="text-[#666666] leading-relaxed">
             Whirly Wash had an outdated web presence and no structured approach to paid or organic search. Despite offering competitive services, they were invisible in local search results and had no reliable channel for generating new leads.
           </p>
         </div>
         <div>
-          <h2 class="text-xl font-bold text-primary mb-4">• Our Strategy</h2>
+          <h2 class="text-xl font-bold text-primary mb-4">Our Strategy</h2>
           <ul class="space-y-3 text-[#666666] leading-relaxed list-disc list-inside">
             <li>Website Development: Built a clean, conversion-focused site with clear service pages, strong calls to action, and mobile-first structure designed to turn visitors into leads.</li>
             <li>SEO &amp; Keyword Optimization: Conducted a full keyword audit targeting high-intent local search terms. Restructured page content and metadata to improve organic ranking across their service area.</li>
@@ -79,7 +79,7 @@ get_header();
         </div>
       </div>
       <div class="bg-primary rounded-2xl p-8 sticky top-24">
-        <h2 class="text-xl font-bold text-white mb-4">• The Results</h2>
+        <h2 class="text-xl font-bold text-white mb-4">The Results</h2>
         <ul class="space-y-3 text-white/95 leading-relaxed list-disc list-inside">
           <li>2.7x return on ad spend within the first 60 days</li>
           <li>2x increase in inbound leads compared to the prior period</li>

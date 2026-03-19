@@ -63,13 +63,13 @@ get_header();
     <div class="grid md:grid-cols-[1fr,1fr] gap-8 mb-24 items-start">
       <div class="space-y-12">
         <div>
-          <h2 class="text-xl font-bold text-primary mb-4">• The Challenge</h2>
+          <h2 class="text-xl font-bold text-primary mb-4">The Challenge</h2>
           <p class="text-[#666666] leading-relaxed">
             Growing a student organization while delivering meaningful professional development events required stronger partnerships, clearer internal structure, and a more scalable event strategy. Previous events had limited corporate involvement and inconsistent attendance, making it difficult to create sustained impact for members.
           </p>
         </div>
         <div>
-          <h2 class="text-xl font-bold text-primary mb-4">• Our Strategy</h2>
+          <h2 class="text-xl font-bold text-primary mb-4">Our Strategy</h2>
           <ul class="space-y-3 text-[#666666] leading-relaxed list-disc list-inside">
             <li>Corporate Partnership Development: Secured sponsorships from local and national organizations to fund programming and increase industry involvement.</li>
             <li>Event Strategy &amp; Execution: Planned and executed the 3rd Annual AMA Regional Conference featuring competitions, workshops, and networking opportunities.</li>
@@ -79,7 +79,7 @@ get_header();
         </div>
       </div>
       <div class="bg-primary rounded-2xl p-8 sticky top-24">
-        <h2 class="text-xl font-bold text-white mb-4">• The Results</h2>
+        <h2 class="text-xl font-bold text-white mb-4">The Results</h2>
         <ul class="space-y-3 text-white/95 leading-relaxed list-disc list-inside">
           <li>$12,000+ in corporate sponsorships secured</li>
           <li>3rd Annual AMA Regional Conference successfully executed</li>
