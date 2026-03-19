@@ -523,7 +523,7 @@ get_header();
             <p class="text-sm text-muted-foreground">A reliable online presence.</p>
           </div>
 
-          <button class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</button>
+          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
 
         <div class="bg-white border-2 border-primary rounded-2xl p-6 hover:shadow-lg transition-shadow flex flex-col min-h-0">
@@ -569,7 +569,7 @@ get_header();
             <p class="text-sm text-muted-foreground">A professional digital presence and measurable system.</p>
           </div>
 
-          <button class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</button>
+          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
 
         <div class="bg-white border-2 border-primary rounded-2xl p-6 hover:shadow-lg transition-shadow flex flex-col min-h-0">
@@ -623,7 +623,7 @@ get_header();
             <p class="text-sm text-muted-foreground">Consistent, measurable growth from traffic</p>
           </div>
 
-          <button class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</button>
+          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
       </div>
     </div>
