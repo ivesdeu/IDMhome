@@ -597,7 +597,7 @@ get_header();
               <ul class="space-y-1">
                 <li class="flex items-start gap-2 text-sm text-foreground"><span class="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5">✓</span><span>Custom dashboard</span></li>
                 <li class="flex items-start gap-2 text-sm text-foreground"><span class="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5">✓</span><span>Funnel tracking</span></li>
-                <li class="flex items-start gap-2 text-sm text-foreground"><span class="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5">✓</span><span>Attribution</span></li>
+                <li class="flex items-start gap-2 text-sm text-foreground"><span class="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5">✓</span><span>GEO Analytics</span></li>
               </ul>
             </div>
             <div>
