@@ -298,7 +298,6 @@ get_header();
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
               <div class="flex gap-2 mb-4">
-                <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Home Service</span>
                 <span class="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">Website Creation</span>
               </div>
               <div class="text-6xl font-bold text-white mb-2">+$12,000 dollars raised</div>
