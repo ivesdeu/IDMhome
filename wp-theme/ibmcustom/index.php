@@ -444,8 +444,8 @@ get_header();
         <h2 class="text-5xl font-semibold text-primary">Your growth partners.</h2>
       </div>
 
-      <div class="overflow-x-auto pb-4">
-        <div class="flex gap-6 justify-center">
+      <div class="overflow-x-visible md:overflow-x-auto pb-4">
+        <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
           <div class="flex-shrink-0 w-[350px] bg-white border border-border rounded-2xl p-6 block hover:shadow-lg transition-shadow">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/mark-deutschmann.png"
