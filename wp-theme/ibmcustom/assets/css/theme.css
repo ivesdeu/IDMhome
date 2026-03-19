@@ -85,3 +85,8 @@ body {
   display: none !important;
 }
 
+/* Defensive: hide any privacy policy link that may be rendered by cached/alternate markup */
+footer a[href*="privacy"] {
+  display: none !important;
+}
+
