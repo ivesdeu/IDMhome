@@ -25,9 +25,9 @@ get_header();
   </section>
 
   <section class="w-full pb-24">
-    <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[1fr_420px] gap-12 items-start">
+    <div class="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
 
-      <div class="bg-white border border-border rounded-2xl p-8 md:p-10">
+      <div class="md:col-span-2 bg-white border border-border rounded-2xl p-8 md:p-10">
         <div id="contact-success" class="hidden flex-col items-center justify-center py-16 text-center">
           <span class="text-5xl mb-6" aria-hidden="true">✓</span>
           <h2 class="font-headline text-3xl text-primary mb-3">Message received.</h2>
@@ -104,7 +104,7 @@ get_header();
         </form>
       </div>
 
-      <div class="space-y-6">
+      <div class="md:col-span-1 space-y-6">
         <div class="bg-white border border-border rounded-2xl p-8">
           <h3 class="font-semibold text-primary mb-6">Contact Details</h3>
           <ul class="space-y-5 text-sm font-body">

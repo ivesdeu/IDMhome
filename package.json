@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
+    "build:wp-css": "tailwindcss -i wp-theme/ibmcustom/assets/css/tailwind.css -o wp-theme/ibmcustom/assets/css/tailwind-built.css --minify",
     "dev": "vite",
     "wp:start": "wp-env start",
     "wp:stop": "wp-env stop",
     "wp:destroy": "wp-env destroy",
     "wp:logs": "wp-env logs",
-    "zip-theme": "cd wp-theme && zip -r ../ibmcustom-wp-theme.zip ibmcustom -x '**/.DS_Store' -x '**/__MACOSX/**' && cd .. && node scripts/verify-wp-theme-package.mjs",
+    "zip-theme": "npm run build:wp-css && cd wp-theme && zip -r ../ibmcustom-wp-theme.zip ibmcustom -x '**/.DS_Store' -x '**/__MACOSX/**' && cd .. && node scripts/verify-wp-theme-package.mjs",
     "verify-theme-zip": "node scripts/verify-wp-theme-package.mjs"
   },
   "dependencies": {
@@ -71,9 +72,10 @@
     "vaul": "1.1.2"
   },
   "devDependencies": {
-    "@wordpress/env": "^10.26.0",
+    "@tailwindcss/cli": "^4.2.2",
     "@tailwindcss/vite": "4.1.12",
     "@vitejs/plugin-react": "4.7.0",
+    "@wordpress/env": "^10.26.0",
     "tailwindcss": "4.1.12",
     "vite": "6.3.5"
   },

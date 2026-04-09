@@ -1,5 +1,7 @@
 @import 'tailwindcss' source(none);
 @source '../../src/**/*.{js,ts,jsx,tsx}';
+@source '../../*.php';
+@source '../../assets/js/**/*.js';
 
 @import 'tw-animate-css';
 

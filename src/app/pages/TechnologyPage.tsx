@@ -177,14 +177,14 @@ export function TechnologyPage() {
                     ))}
                   </div>
 
-                  <h3 className="font-headline text-3xl text-primary mb-3">{product.name}</h3>
+                  <h3 className="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">{product.name}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed mb-6">{product.tagline}</p>
 
                   {/* Stats */}
                   <div className="flex gap-8 border-t border-border pt-5 mb-6">
                     {product.stats.map((stat, i) => (
                       <div key={i}>
-                        <div className="font-headline text-xl text-primary">{stat.value}</div>
+                        <div className="font-body text-xl font-bold tracking-tight text-primary">{stat.value}</div>
                         <div className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">{stat.label}</div>
                       </div>
                     ))}
@@ -245,7 +245,7 @@ export function TechnologyPage() {
       <section id="custom" className="w-full py-16">
         <div className="max-w-[1200px] mx-auto px-6">
           <motion.div
-            className="relative w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl py-12 px-8 md:py-16 md:px-12 lg:px-20 flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-10"
+            className="relative isolate w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl px-8 py-10 sm:px-10 md:px-14 lg:px-16 min-h-[180px] md:min-h-[220px] flex flex-col md:grid md:grid-cols-[1fr_auto] md:items-center gap-6 md:gap-8"
             style={{ background: 'var(--primary)' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -253,23 +253,23 @@ export function TechnologyPage() {
             transition={{ duration: 0.5 }}
           >
             <span
-              className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none font-body font-bold text-[clamp(3.5rem,11vw,7.5rem)] uppercase leading-none tracking-tight"
-              style={{ color: 'rgba(255, 255, 255, 0.06)' }}
+              className="absolute right-[14%] top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none font-body font-bold text-[clamp(3.6rem,10vw,7.2rem)] uppercase leading-none tracking-tight"
+              style={{ color: 'rgba(255, 255, 255, 0.05)' }}
               aria-hidden
             >
               BUILD
             </span>
-            <div className="relative z-10 max-w-xl">
-              <h2 className="font-body text-3xl sm:text-4xl md:text-[2.25rem] lg:text-5xl font-bold uppercase tracking-tight text-white leading-tight mb-3 md:mb-4">
+            <div className="relative z-10 max-w-[620px]">
+              <h2 className="font-body text-[2.1rem] sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-[1.02] mb-3">
                 Need Something Built for You?
               </h2>
-              <p className="font-body text-sm md:text-base text-white leading-relaxed max-w-md">
+              <p className="font-body text-[0.98rem] md:text-base leading-relaxed max-w-[520px]" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                 Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
               </p>
             </div>
             <Link
               to="/contact"
-              className="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-9 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
+              className="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-10 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
             >
               Start a Custom Project
             </Link>

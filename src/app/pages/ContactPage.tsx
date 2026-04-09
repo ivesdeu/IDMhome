@@ -84,11 +84,11 @@ export function ContactPage() {
 
       {/* Main grid */}
       <section className="w-full pb-24">
-        <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-[1fr_420px] gap-12 items-start">
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 items-start">
 
           {/* Form */}
           <motion.div
-            className="bg-white border border-border rounded-2xl p-8 md:p-10"
+            className="md:col-span-2 bg-white border border-border rounded-2xl p-8 md:p-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -250,7 +250,7 @@ export function ContactPage() {
           </motion.div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="md:col-span-1 space-y-6">
 
             {/* Contact details */}
             <motion.div

@@ -57,14 +57,14 @@ $cta = home_url( '/contact' );
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Business Intelligence</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Dashboard</span>
             </div>
-            <h3 class="font-headline text-3xl text-primary mb-3">Runway</h3>
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">Runway</h3>
             <p class="text-sm text-muted-foreground leading-relaxed mb-6">
               A modular business intelligence dashboard built for small to mid-size businesses. Track revenue, ad spend, lead volume, and operational KPIs — all in one place, without enterprise pricing.
             </p>
             <div class="flex gap-8 border-t border-border pt-5 mb-6">
-              <div><div class="font-headline text-xl text-primary">Real-Time</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Data Sync</div></div>
-              <div><div class="font-headline text-xl text-primary">Custom</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Per Client</div></div>
-              <div><div class="font-headline text-xl text-primary">No-Code</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Setup</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Real-Time</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Data Sync</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Custom</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Per Client</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">No-Code</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Setup</div></div>
             </div>
             <a href="<?php echo esc_url( $cta ); ?>" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
           </div>
@@ -80,14 +80,14 @@ $cta = home_url( '/contact' );
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Personal Finance</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">SaaS</span>
             </div>
-            <h3 class="font-headline text-3xl text-primary mb-3">MoneyMate</h3>
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">MoneyMate</h3>
             <p class="text-sm text-muted-foreground leading-relaxed mb-6">
               A personal finance and portfolio analytics platform built for young professionals who want more than a spreadsheet. Connects to accounts via Plaid, tracks spending, and surfaces insights automatically.
             </p>
             <div class="flex gap-8 border-t border-border pt-5 mb-6">
-              <div><div class="font-headline text-xl text-primary">Plaid</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Connected</div></div>
-              <div><div class="font-headline text-xl text-primary">AI</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Insights</div></div>
-              <div><div class="font-headline text-xl text-primary">Beta</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Access Open</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Plaid</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Connected</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">AI</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Insights</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Beta</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Access Open</div></div>
             </div>
             <a href="<?php echo esc_url( $cta ); ?>" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Join Beta <span>→</span></a>
           </div>
@@ -143,25 +143,25 @@ $cta = home_url( '/contact' );
   <section id="custom" class="w-full py-16">
     <div class="max-w-[1200px] mx-auto px-6">
       <div
-        class="relative w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl py-12 px-8 md:py-16 md:px-12 lg:px-20 flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-10"
+        class="relative isolate w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl px-8 py-10 sm:px-10 md:px-14 lg:px-16 min-h-[180px] md:min-h-[220px] flex flex-col md:grid md:grid-cols-[1fr_auto] md:items-center gap-6 md:gap-8"
         style="background: var(--primary);"
       >
         <span
-          class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none font-body font-bold text-[clamp(3.5rem,11vw,7.5rem)] uppercase leading-none tracking-tight"
-          style="color: rgba(255, 255, 255, 0.06);"
+          class="absolute right-[14%] top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none font-body font-bold text-[clamp(3.6rem,10vw,7.2rem)] uppercase leading-none tracking-tight"
+          style="color: rgba(255, 255, 255, 0.05);"
           aria-hidden="true"
         >BUILD</span>
-        <div class="relative z-10 max-w-xl">
-          <h2 class="font-body text-3xl sm:text-4xl md:text-[2.25rem] lg:text-5xl font-bold uppercase tracking-tight text-white leading-tight mb-3 md:mb-4">
+        <div class="relative z-10 max-w-[620px]">
+          <h2 class="font-body text-[2.1rem] sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-[1.02] mb-3">
             Need Something Built for You?
           </h2>
-          <p class="font-body text-sm md:text-base text-white leading-relaxed max-w-md">
+          <p class="font-body text-[0.98rem] md:text-base leading-relaxed max-w-[520px]" style="color: rgba(255, 255, 255, 0.9);">
             Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
           </p>
         </div>
         <a
           href="<?php echo esc_url( $cta ); ?>"
-          class="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-9 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
+          class="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-10 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
         >Start a Custom Project</a>
       </div>
     </div>
