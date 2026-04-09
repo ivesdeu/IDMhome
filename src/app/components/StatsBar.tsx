@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import { NumberTicker } from './ui/number-ticker';
 
 const stats: { value: number; suffix: string; label: string; decimalPlaces?: number }[] = [
-  { value: 3, suffix: '+', label: 'Clients Served' },
+  { value: 4, suffix: '+', label: 'Clients Served' },
   { value: 5, suffix: '+', label: 'Campaigns Launched' },
   { value: 2.8, suffix: 'x', label: 'Avg. ROAS Improvement', decimalPlaces: 1 },
 ];

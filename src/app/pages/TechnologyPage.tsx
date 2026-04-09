@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { SectionLabel } from '../components/SectionLabel';
@@ -8,7 +9,6 @@ import { motion } from 'motion/react';
 
 const products = [
   {
-    number: '01',
     name: 'Runway',
     tagline: 'A modular business intelligence dashboard built for small to mid-size businesses. Track revenue, ad spend, lead volume, and operational KPIs — all in one place, without enterprise pricing.',
     tags: [{ label: 'Live', highlight: true }, { label: 'Business Intelligence' }, { label: 'Dashboard' }],
@@ -21,7 +21,6 @@ const products = [
     mockup: 'runway',
   },
   {
-    number: '02',
     name: 'MoneyMate',
     tagline: 'A personal finance and portfolio analytics platform built for young professionals who want more than a spreadsheet. Connects to accounts via Plaid, tracks spending, and surfaces insights automatically.',
     tags: [{ label: 'Beta', highlight: true }, { label: 'Personal Finance' }, { label: 'SaaS' }],
@@ -106,9 +105,9 @@ export function TechnologyPage() {
               <a href="#products">
                 <Button>Explore Products</Button>
               </a>
-              <a href="#custom">
-                <Button variant="outlined">Request Custom Build</Button>
-              </a>
+              <Button to="/contact" variant="outlined">
+                Request Custom Build
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -131,18 +130,13 @@ export function TechnologyPage() {
             {products.map((product, index) => (
               <motion.div
                 key={product.name}
-                className="bg-white border border-border rounded-2xl overflow-hidden relative"
+                className="bg-white border border-border rounded-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.15 }}
                 whileHover={{ y: -5 }}
               >
-                {/* Large watermark number */}
-                <span className="absolute top-4 right-6 font-headline text-8xl text-cta/20 leading-none pointer-events-none select-none">
-                  {product.number}
-                </span>
-
                 {/* Mockup */}
                 <div
                   className={`h-52 w-full overflow-hidden flex items-center justify-center ${
@@ -194,9 +188,12 @@ export function TechnologyPage() {
                     ))}
                   </div>
 
-                  <a href="#" className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">
-                    {product.cta} <span>→</span>
-                  </a>
+                <Link
+                  to="/contact"
+                  className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
+                >
+                  {product.cta} <span>→</span>
+                </Link>
                 </div>
               </motion.div>
             ))}
@@ -262,12 +259,12 @@ export function TechnologyPage() {
                 Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
               </p>
             </div>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="relative z-10 shrink-0 px-8 py-3.5 rounded-full bg-cta text-white font-semibold hover:bg-cta-hover transition-colors"
             >
               Start a Custom Project
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -314,7 +311,7 @@ export function TechnologyPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button variant={plan.featured ? 'filled' : 'outlined'} className="w-full">
+                  <Button to="/contact" variant={plan.featured ? 'filled' : 'outlined'} className="w-full">
                     {plan.cta}
                   </Button>
                 </div>

@@ -43,17 +43,20 @@ export function Navbar() {
           <Link to="/case-studies" className={navLinkClass}>
             Case Studies
           </Link>
-          <Link to="/#contact" className={navLinkClass}>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) => `${navLinkClass} ${isActive ? navLinkActive : ''}`}
+          >
             Contact
-          </Link>
+          </NavLink>
         </div>
 
-        <Link
-          to="/#contact"
+        <NavLink
+          to="/contact"
           className="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center"
         >
           Book a Call
-        </Link>
+        </NavLink>
       </div>
     </motion.nav>
   );

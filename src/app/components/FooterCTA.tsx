@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { motion } from 'motion/react';
 
 export function FooterCTA() {
@@ -23,12 +24,12 @@ export function FooterCTA() {
         <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white relative z-10 max-w-xl">
           Get your free website assessment
         </h2>
-        <a
-          href="#contact"
+        <Link
+          to="/contact"
           className="relative z-10 shrink-0 px-8 py-3.5 rounded-full bg-white text-cta font-semibold hover:bg-white/95 transition-colors"
         >
           Schedule Your Strategy Call
-        </a>
+        </Link>
       </motion.div>
       </div>
     </section>

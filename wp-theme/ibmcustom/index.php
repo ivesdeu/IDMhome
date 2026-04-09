@@ -55,7 +55,7 @@ get_header();
         <div class="flex flex-wrap items-stretch justify-center gap-8">
           <div class="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between" data-countup-root>
             <div class="font-headline text-3xl md:text-4xl text-cta">
-              <span class="stat-number" data-stat-value="3" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
+              <span class="stat-number" data-stat-value="4" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
             </div>
             <div class="text-xs text-muted-foreground font-body mt-1">Clients Served</div>
           </div>
@@ -80,7 +80,7 @@ get_header();
       <div class="grid grid-cols-3 divide-x font-body" style="border-color: rgba(0,0,0,0.08);">
         <div class="py-8 px-8 text-center">
           <div class="font-headline text-4xl md:text-5xl text-primary">
-            <span class="stat-number" data-stat-value="3" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
+            <span class="stat-number" data-stat-value="4" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
           </div>
           <div class="text-sm text-muted-foreground mt-1">Clients Served</div>
         </div>

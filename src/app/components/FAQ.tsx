@@ -56,7 +56,7 @@ export function FAQ() {
             />
             <h3 className="text-2xl font-semibold text-primary mb-4">Didn't get the answer?</h3>
             <p className="text-[#666666] mb-6">Talk with a human expert on our team</p>
-            <Button>Contact Us</Button>
+            <Button to="/contact">Contact Us</Button>
           </div>
           
           {/* Right: Accordion */}

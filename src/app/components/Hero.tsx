@@ -69,12 +69,12 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="px-6 py-3 rounded-full bg-cta text-white font-medium hover:bg-cta-hover transition-colors text-sm font-body"
             >
               Book a Call
-            </a>
+            </Link>
             <Link
               to="/case-studies"
               className="px-6 py-3 rounded-full bg-white border border-border text-primary font-medium hover:bg-gray-50 transition-colors text-sm font-body"
@@ -84,7 +84,7 @@ export function Hero() {
           </div>
           <div className="flex flex-wrap items-stretch justify-center gap-8">
             <div className="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between">
-              <div className="font-headline text-3xl md:text-4xl text-cta">3+</div>
+              <div className="font-headline text-3xl md:text-4xl text-cta">4+</div>
               <div className="text-xs text-muted-foreground font-body mt-1">Clients Served</div>
             </div>
             <div className="w-[140px] md:w-[160px] bg-white rounded-lg border-2 border-cta p-4 shadow-lg flex flex-col justify-between">

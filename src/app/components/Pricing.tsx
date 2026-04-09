@@ -95,7 +95,9 @@ export function Pricing() {
                   <p className="text-sm text-muted-foreground">{plan.outcome}</p>
                 </div>
 
-                <Button className="w-full mt-auto">Request Proposal</Button>
+                <Button to="/contact" className="w-full mt-auto">
+                  Request Proposal
+                </Button>
               </motion.div>
             );
           })}
