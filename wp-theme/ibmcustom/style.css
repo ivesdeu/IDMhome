@@ -1,14 +1,23 @@
 /*
-Theme Name: IBM Custom Theme
-Theme URI: https://example.com/
-Author: Your Name
-Author URI: https://example.com/
-Description: Custom WordPress theme converted from the existing static site.
-Version: 1.0.1
+Theme Name: Ives Deutschmann Marketing
+Theme URI: https://ivesdeu.com/
+Author: Ives Deutschmann Marketing
+Author URI: https://ivesdeu.com/
+Description: Custom WordPress theme for the IDM marketing site (Tailwind + templates).
+Version: 1.0.2
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ibmhome
+Tags: custom-theme, full-width-template
 */
+
+/*
+ * WordPress requires this file at the theme root (same folder as functions.php).
+ * When zipping for upload: the zip must contain one folder, e.g. ibmcustom/style.css — not wp-theme/ibmcustom/...
+ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600&display=swap');
@@ -20,4 +29,3 @@ Text Domain: ibmhome
 html {
   scroll-behavior: smooth;
 }
-
