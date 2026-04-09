@@ -49,30 +49,57 @@ function Card({ client, logo }: { client: (typeof clients)[0]; logo: React.React
   );
 }
 
+/** Repeat slides so the loop + auto-scroll feels continuous (few logos otherwise stutter). */
+const LOOP_COPIES = 4;
+
 export function Collaborations() {
+  const slides = Array.from({ length: LOOP_COPIES }, (_, copy) =>
+    clients.map((client, index) => ({
+      client,
+      index,
+      key: `${copy}-${index}`,
+      logo: mockLogos[index % mockLogos.length],
+    })),
+  ).flat();
+
   return (
-    <section className="w-full bg-[#F5F5F5] py-24">
+    <section className="w-full bg-[#F5F5F5] py-24 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-10">
           <h2 className="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
         </div>
-
-        <Carousel
-          opts={{ loop: true, align: "start", dragFree: true }}
-          plugins={[AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: false })]}
-        >
-          <CarouselContent className="-ml-4 md:-ml-6">
-            {clients.map((client, index) => (
-              <CarouselItem
-                key={index}
-                className="pl-4 md:pl-6 basis-[85%] sm:basis-1/2 lg:basis-1/3"
-              >
-                <Card client={client} logo={mockLogos[index]} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
       </div>
+
+      <Carousel
+        className="w-full"
+        opts={{
+          loop: true,
+          align: "start",
+          dragFree: true,
+          containScroll: false,
+        }}
+        plugins={[
+          AutoScroll({
+            speed: 1.35,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false,
+            stopOnFocusIn: false,
+            playOnInit: true,
+            startDelay: 0,
+          }),
+        ]}
+      >
+        <CarouselContent className="-ml-4 md:-ml-6">
+          {slides.map(({ client, index, key, logo }) => (
+            <CarouselItem
+              key={key}
+              className="pl-4 md:pl-6 basis-[85%] sm:basis-[45%] md:basis-[38%] lg:basis-[32%] xl:basis-[28%] max-w-[380px]"
+            >
+              <Card client={client} logo={logo} />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
     </section>
   );
 }

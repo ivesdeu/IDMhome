@@ -74,6 +74,37 @@ body {
   }
 }
 
+/* Collaborations: infinite horizontal marquee (matches React auto-scroll carousel) */
+.ibm-collab-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ibm-collab-marquee-track {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: max-content;
+  animation: ibm-collab-marquee-scroll 48s linear infinite;
+}
+
+.ibm-collab-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ibm-collab-marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ibm-collab-marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
 /* Team founder gray quotes (defensive hide) */
 /* Homepage: the quotes are italic paragraphs inside the #team section. */
 #team p.italic {

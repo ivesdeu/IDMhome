@@ -120,65 +120,64 @@ get_header();
     </div>
   </section>
 
-  <?php /* Collaborations section (from Collaborations.tsx) */ ?>
-  <section class="w-full bg-[#F5F5F5] py-24">
+  <?php
+  /* Collaborations section (from Collaborations.tsx): infinite marquee */
+  $ibm_collab_clients = array(
+    array(
+      'category' => 'Home Improvement',
+      'service'  => 'Website Construction & SEO',
+      'logo'     => 'whirly-wash-logo.png',
+      'alt'      => 'Whirly Wash',
+    ),
+    array(
+      'category' => 'Professional Development Services',
+      'service'  => 'Website Construction & SEO',
+      'logo'     => 'amauwm-logo.png',
+      'alt'      => 'AMAUWM',
+    ),
+    array(
+      'category' => 'Home Services',
+      'service'  => 'Full Growth Partner',
+      'logo'     => 'badger-window-cleaners-logo.png',
+      'alt'      => 'Badger Window Cleaners West',
+    ),
+  );
+  $ibm_collab_uri = get_template_directory_uri();
+  ?>
+  <section class="w-full bg-[#F5F5F5] py-24 overflow-hidden">
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="mb-10">
-        <p class="text-sm text-primary/80 mb-2">• Collaborations</p>
-        <h2 class="text-4xl md:text-5xl font-bold text-primary">Trusted across industries.</h2>
+        <h2 class="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
       </div>
+    </div>
 
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 collaborations-grid">
-        <div class="bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 h-full min-h-[260px]">
-          <h3 class="font-bold text-primary text-lg mb-1">Home Improvement</h3>
-          <p class="text-sm text-[#666666] mb-4">Working for 1 year</p>
+    <div class="ibm-collab-marquee" aria-label="<?php echo esc_attr__( 'Client logos', 'ibmhome' ); ?>">
+      <div class="ibm-collab-marquee-track">
+        <?php
+        for ( $ibm_half = 0; $ibm_half < 2; $ibm_half++ ) :
+          for ( $ibm_copy = 0; $ibm_copy < 4; $ibm_copy++ ) :
+            foreach ( $ibm_collab_clients as $ibm_c ) :
+              ?>
+        <div class="ibm-collab-card bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 min-h-[260px] shrink-0" style="width:min(100vw - 3rem, 380px);max-width:380px;">
+          <h3 class="font-bold text-primary text-lg mb-1"><?php echo esc_html( $ibm_c['category'] ); ?></h3>
           <span class="inline-block w-fit px-3 py-1.5 rounded-full bg-[#f0f0f0] text-sm text-primary/90 font-medium mb-6">
-            Website Construction &amp; SEO
+            <?php echo esc_html( $ibm_c['service'] ); ?>
           </span>
           <div class="mt-auto pt-2">
             <div class="w-full rounded-full bg-white py-5 px-4 flex items-center justify-center min-h-[72px] shadow-inner text-primary">
               <img
-                src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/whirly-wash-logo.png"
-                alt="Whirly Wash"
+                src="<?php echo esc_url( $ibm_collab_uri . '/assets/images/' . $ibm_c['logo'] ); ?>"
+                alt="<?php echo esc_attr( $ibm_c['alt'] ); ?>"
                 class="h-14 w-auto object-contain"
               />
             </div>
           </div>
         </div>
-
-        <div class="bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 h-full min-h-[260px]">
-          <h3 class="font-bold text-primary text-lg mb-1">Professional Development Services</h3>
-          <p class="text-sm text-[#666666] mb-4">Working for 2 years</p>
-          <span class="inline-block w-fit px-3 py-1.5 rounded-full bg-[#f0f0f0] text-sm text-primary/90 font-medium mb-6">
-            Website Construction &amp; SEO
-          </span>
-          <div class="mt-auto pt-2">
-            <div class="w-full rounded-full bg-white py-5 px-4 flex items-center justify-center min-h-[72px] shadow-inner text-primary">
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/amauwm-logo.png"
-                alt="AMAUWM"
-                class="h-14 w-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div class="bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 h-full min-h-[260px]">
-          <h3 class="font-bold text-primary text-lg mb-1">Industrial Cleaning Services</h3>
-          <p class="text-sm text-[#666666] mb-4">Working for 1 year</p>
-          <span class="inline-block w-fit px-3 py-1.5 rounded-full bg-[#f0f0f0] text-sm text-primary/90 font-medium mb-6">
-            Full Growth Partner
-          </span>
-          <div class="mt-auto pt-2">
-            <div class="w-full rounded-full bg-white py-5 px-4 flex items-center justify-center min-h-[72px] shadow-inner text-primary">
-              <img
-                src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/badger-window-cleaners-logo.png"
-                alt="Badger Window Cleaners West"
-                class="h-14 w-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
+              <?php
+            endforeach;
+          endfor;
+        endfor;
+        ?>
       </div>
     </div>
   </section>
