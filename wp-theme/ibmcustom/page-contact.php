@@ -39,10 +39,12 @@ get_header();
           </button>
         </div>
 
-        <form id="contact-form" class="space-y-6" method="post" action="#" novalidate>
+        <form id="contact-form" class="space-y-6" method="post" action="<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>" novalidate>
+          <?php wp_nonce_field( 'ibmhome_contact', 'nonce' ); ?>
           <div>
             <h2 class="font-body text-xl font-bold uppercase tracking-wide text-primary">Start the conversation</h2>
           </div>
+          <div id="contact-form-error" class="hidden rounded-xl border border-destructive/40 bg-destructive/10 px-4 py-3 text-sm text-destructive" role="alert"></div>
 
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
@@ -97,7 +99,7 @@ get_header();
             <textarea id="cf-message" name="message" required rows="5" placeholder="What are you trying to achieve? What's working, what isn't?" class="w-full bg-muted/30 border border-border rounded-xl px-4 py-3 text-sm text-primary placeholder:text-border focus:outline-none focus:ring-2 focus:ring-cta/30 transition resize-none"></textarea>
           </div>
 
-          <button type="submit" class="w-full py-4 rounded-full bg-cta hover:bg-cta-hover text-white font-semibold text-sm uppercase tracking-wide transition-colors">
+          <button type="submit" id="cf-submit" class="w-full py-4 rounded-full bg-cta hover:bg-cta-hover text-white font-semibold text-sm uppercase tracking-wide transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
             Send Message
           </button>
           <p class="text-xs text-center text-muted-foreground">We respond to every message within one business day.</p>
@@ -193,7 +195,22 @@ get_header();
   var success = document.getElementById('contact-success');
   var resetBtn = document.getElementById('contact-reset');
   var budgetInput = document.getElementById('cf-budget');
+  var errBox = document.getElementById('contact-form-error');
+  var submitBtn = document.getElementById('cf-submit');
+  var ajaxUrl = <?php echo wp_json_encode( esc_url_raw( admin_url( 'admin-ajax.php' ) ) ); ?>;
   if (!form || !success) return;
+
+  function hideError() {
+    if (!errBox) return;
+    errBox.textContent = '';
+    errBox.classList.add('hidden');
+  }
+
+  function showError(msg) {
+    if (!errBox) return;
+    errBox.textContent = msg || 'Something went wrong. Please try again.';
+    errBox.classList.remove('hidden');
+  }
 
   document.querySelectorAll('.cf-budget-chip').forEach(function (btn) {
     btn.addEventListener('click', function () {
@@ -210,19 +227,57 @@ get_header();
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    hideError();
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
-    form.classList.add('hidden');
-    success.classList.remove('hidden');
-    success.classList.add('flex');
+
+    var fd = new FormData(form);
+    fd.append('action', 'ibmhome_contact');
+
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute('aria-busy', 'true');
+    }
+
+    fetch(ajaxUrl, {
+      method: 'POST',
+      body: fd,
+      credentials: 'same-origin',
+    })
+      .then(function (res) {
+        return res.json();
+      })
+      .then(function (data) {
+        if (data && data.success) {
+          form.classList.add('hidden');
+          success.classList.remove('hidden');
+          success.classList.add('flex');
+          return;
+        }
+        var msg =
+          data && data.data && data.data.message
+            ? data.data.message
+            : 'Could not send your message. Please try again.';
+        showError(msg);
+      })
+      .catch(function () {
+        showError('Network error. Check your connection and try again.');
+      })
+      .finally(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute('aria-busy');
+        }
+      });
   });
 
   if (resetBtn) {
     resetBtn.addEventListener('click', function () {
       form.reset();
       budgetInput.value = '';
+      hideError();
       document.querySelectorAll('.cf-budget-chip').forEach(function (b) {
         b.classList.remove('bg-primary', 'text-primary-foreground', 'border-primary');
         b.classList.add('bg-muted/30', 'border-border', 'text-muted-foreground');

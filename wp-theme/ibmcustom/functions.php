@@ -136,3 +136,89 @@ function ibmhome_flush_rewrite_rules_on_theme_switch() {
 }
 add_action( 'after_switch_theme', 'ibmhome_flush_rewrite_rules_on_theme_switch' );
 
+/**
+ * Contact form: send email via AJAX (logged-in and guest visitors).
+ */
+add_action( 'wp_ajax_ibmhome_contact', 'ibmhome_handle_contact_form' );
+add_action( 'wp_ajax_nopriv_ibmhome_contact', 'ibmhome_handle_contact_form' );
+
+/**
+ * Handle contact form submission from page-contact.php.
+ *
+ * Deliverability: wp_mail() uses PHP mail by default on many hosts. Install WP Mail SMTP
+ * (or similar) and route through Gmail, SendGrid, etc., so messages reach the inbox.
+ */
+function ibmhome_handle_contact_form() {
+	check_ajax_referer( 'ibmhome_contact', 'nonce' );
+
+	$name    = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
+	$email   = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+	$company = isset( $_POST['company'] ) ? sanitize_text_field( wp_unslash( $_POST['company'] ) ) : '';
+	$phone   = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
+	$service = isset( $_POST['service'] ) ? sanitize_text_field( wp_unslash( $_POST['service'] ) ) : '';
+	$budget  = isset( $_POST['budget'] ) ? sanitize_text_field( wp_unslash( $_POST['budget'] ) ) : '';
+	$message = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
+
+	if ( '' === $name || '' === $email || ! is_email( $email ) || '' === $service || '' === $message ) {
+		wp_send_json_error(
+			array( 'message' => __( 'Please fill in all required fields with a valid email.', 'ibmhome' ) ),
+			422
+		);
+	}
+
+	if ( strlen( $message ) > 10000 ) {
+		wp_send_json_error(
+			array( 'message' => __( 'Your message is too long. Please shorten it and try again.', 'ibmhome' ) ),
+			422
+		);
+	}
+
+	/**
+	 * Filter the contact form notification recipient.
+	 *
+	 * @param string $to Default: contact@ivesdeu.com
+	 */
+	$to = apply_filters( 'ibmhome_contact_mail_to', 'contact@ivesdeu.com' );
+
+	$subject = sprintf(
+		/* translators: %s: submitter name */
+		__( '[IDM] Contact from %s', 'ibmhome' ),
+		$name
+	);
+
+	$body_lines = array(
+		sprintf( "Name: %s", $name ),
+		sprintf( "Email: %s", $email ),
+		sprintf( "Company: %s", $company !== '' ? $company : '—' ),
+		sprintf( "Phone: %s", $phone !== '' ? $phone : '—' ),
+		sprintf( "Service: %s", $service ),
+		sprintf( "Monthly budget: %s", $budget !== '' ? $budget : '—' ),
+		'',
+		'Message:',
+		$message,
+		'',
+		sprintf( 'Submitted: %s', gmdate( 'Y-m-d H:i:s \G\M\T' ) ),
+		sprintf( 'IP: %s', isset( $_SERVER['REMOTE_ADDR'] ) ? sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ) : '—' ),
+	);
+
+	$body = implode( "\n", $body_lines );
+
+	$headers = array(
+		'Content-Type: text/plain; charset=UTF-8',
+		sprintf( 'Reply-To: %s', $email ),
+	);
+
+	$sent = wp_mail( $to, $subject, $body, $headers );
+
+	if ( ! $sent ) {
+		wp_send_json_error(
+			array( 'message' => __( 'Could not send your message. Please try again or email us directly.', 'ibmhome' ) ),
+			500
+		);
+	}
+
+	wp_send_json_success(
+		array( 'message' => __( 'Message sent.', 'ibmhome' ) )
+	);
+}
+
