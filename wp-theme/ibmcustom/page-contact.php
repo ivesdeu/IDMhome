@@ -15,7 +15,7 @@ get_header();
         <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
         <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Contact</span>
       </div>
-      <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl text-primary mb-4 max-w-2xl">
+      <h1 class="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 max-w-2xl leading-[1.08] tracking-tight uppercase">
         Let's Build Something.
       </h1>
       <p class="text-lg text-muted-foreground max-w-xl">
@@ -41,8 +41,7 @@ get_header();
 
         <form id="contact-form" class="space-y-6" method="post" action="#" novalidate>
           <div>
-            <h2 class="font-headline text-2xl text-primary mb-1">Start the conversation</h2>
-            <p class="text-sm text-muted-foreground">No fluff. No obligation. Just a real conversation.</p>
+            <h2 class="font-body text-xl font-bold uppercase tracking-wide text-primary">Start the conversation</h2>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-4">
@@ -108,70 +107,74 @@ get_header();
       <div class="space-y-6">
         <div class="bg-white border border-border rounded-2xl p-8">
           <h3 class="font-semibold text-primary mb-6">Contact Details</h3>
-          <ul class="space-y-5 text-sm">
-            <li class="flex items-start gap-3">
-              <svg class="w-4 h-4 text-cta mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              <div>
+          <ul class="space-y-5 text-sm font-body">
+            <li class="flex items-center gap-3.5">
+              <svg class="w-5 h-5 shrink-0" style="color: var(--cta);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <div class="min-w-0">
                 <div class="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Email</div>
-                <a href="mailto:contact@ivesdeu.com" class="text-primary hover:text-cta transition-colors font-medium">contact@ivesdeu.com</a>
+                <a href="mailto:contact@ivesdeu.com" class="text-primary hover:text-cta transition-colors font-medium block">contact@ivesdeu.com</a>
               </div>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-4 h-4 text-cta mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              <div>
+            <li class="flex items-center gap-3.5">
+              <svg class="w-5 h-5 shrink-0" style="color: var(--cta);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <div class="min-w-0">
                 <div class="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Phone</div>
-                <a href="tel:+12246025112" class="text-primary hover:text-cta transition-colors font-medium">+1 (224) 602-5112</a>
+                <a href="tel:+12246025112" class="text-primary hover:text-cta transition-colors font-medium block">+1 (224) 602-5112</a>
               </div>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-4 h-4 text-cta mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              <div>
+            <li class="flex items-center gap-3.5">
+              <svg class="w-5 h-5 shrink-0" style="color: var(--cta);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div class="min-w-0">
                 <div class="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Location</div>
-                <span class="text-primary font-medium">Milwaukee, WI 53211</span>
+                <span class="text-primary font-medium block">Milwaukee, WI 53211</span>
               </div>
             </li>
-            <li class="flex items-start gap-3">
-              <svg class="w-4 h-4 text-cta mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              <div>
+            <li class="flex items-center gap-3.5">
+              <svg class="w-5 h-5 shrink-0" style="color: var(--cta);" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <div class="min-w-0">
                 <div class="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Hours</div>
-                <span class="text-primary font-medium">Mon – Fri, 9am – 6pm CST</span>
+                <span class="text-primary font-medium block">Mon – Fri, 9am – 6pm CST</span>
               </div>
             </li>
           </ul>
         </div>
 
-        <div class="relative rounded-2xl overflow-hidden p-8 flex flex-col gap-4" style="background: var(--cta);">
-          <span class="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[8rem] uppercase leading-none text-white/10" aria-hidden="true">CALL</span>
-          <p class="relative z-10 text-xs font-semibold uppercase tracking-widest text-white/70">Prefer to talk?</p>
-          <h3 class="relative z-10 font-headline text-3xl text-white">Book a strategy call</h3>
-          <p class="relative z-10 text-sm text-white/80">
+        <div class="relative isolate rounded-2xl overflow-hidden p-8 flex flex-col gap-4 font-body" style="background: var(--cta);">
+          <span
+            class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,18vw,8rem)] uppercase leading-none"
+            style="color: rgba(255, 255, 255, 0.07);"
+            aria-hidden="true"
+          >CALL</span>
+          <p class="relative z-10 text-xs font-semibold uppercase tracking-widest" style="color: rgba(255, 255, 255, 0.88);">Prefer to talk?</p>
+          <h3 class="relative z-10 font-headline text-3xl uppercase leading-tight" style="color: #ffffff;">Book a strategy call</h3>
+          <p class="relative z-10 text-sm leading-relaxed max-w-sm" style="color: rgba(255, 255, 255, 0.92);">
             30 minutes. No pitch. Just an honest look at where your business is and what growth could look like.
           </p>
-          <a href="#contact-form" class="relative z-10 mt-2 inline-flex items-center gap-2 self-start px-6 py-3 rounded-full bg-white text-cta font-semibold text-sm hover:bg-white/90 transition-colors">
+          <a href="#contact-form" class="relative z-10 mt-2 inline-flex items-center gap-2 self-start px-6 py-3 rounded-full bg-white font-semibold text-sm hover:bg-white/90 transition-colors" style="color: var(--cta);">
             Schedule Now
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
         </div>
 
         <div class="bg-white border border-border rounded-2xl p-8">
           <h3 class="font-semibold text-primary mb-5">What to expect</h3>
           <ol class="space-y-4">
-            <li class="flex gap-4">
-              <span class="shrink-0 w-6 h-6 rounded-full bg-cta/10 text-cta text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+            <li class="flex gap-4 items-start font-body">
+              <span class="shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center mt-0.5" style="background: rgba(255, 77, 46, 0.12); color: var(--cta);">1</span>
               <div>
                 <p class="text-sm font-semibold text-primary">We review your submission</p>
                 <p class="text-sm text-muted-foreground">Within one business day we read every message in full.</p>
               </div>
             </li>
-            <li class="flex gap-4">
-              <span class="shrink-0 w-6 h-6 rounded-full bg-cta/10 text-cta text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+            <li class="flex gap-4 items-start font-body">
+              <span class="shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center mt-0.5" style="background: rgba(255, 77, 46, 0.12); color: var(--cta);">2</span>
               <div>
                 <p class="text-sm font-semibold text-primary">We respond with a plan</p>
                 <p class="text-sm text-muted-foreground">You get a clear sense of scope, timeline, and fit — not a sales deck.</p>
               </div>
             </li>
-            <li class="flex gap-4">
-              <span class="shrink-0 w-6 h-6 rounded-full bg-cta/10 text-cta text-xs font-bold flex items-center justify-center mt-0.5">3</span>
+            <li class="flex gap-4 items-start font-body">
+              <span class="shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center mt-0.5" style="background: rgba(255, 77, 46, 0.12); color: var(--cta);">3</span>
               <div>
                 <p class="text-sm font-semibold text-primary">We get to work</p>
                 <p class="text-sm text-muted-foreground">If there's alignment, we move fast. No long onboarding, no bureaucracy.</p>

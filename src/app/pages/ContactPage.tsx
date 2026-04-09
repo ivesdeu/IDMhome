@@ -72,7 +72,7 @@ export function ContactPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionLabel>Contact</SectionLabel>
-            <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-primary mb-4 max-w-2xl">
+            <h1 className="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 max-w-2xl leading-[1.08] tracking-tight uppercase">
               Let's Build Something.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl">
@@ -110,8 +110,9 @@ export function ContactPage() {
             ) : (
               <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <h2 className="font-headline text-2xl text-primary mb-1">Start the conversation</h2>
-                  <p className="text-sm text-muted-foreground">No fluff. No obligation. Just a real conversation.</p>
+                  <h2 className="font-body text-xl font-bold uppercase tracking-wide text-primary">
+                    Start the conversation
+                  </h2>
                 </div>
 
                 {/* Name + Email */}
@@ -259,37 +260,40 @@ export function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h3 className="font-semibold text-primary mb-6">Contact Details</h3>
-              <ul className="space-y-5 text-sm">
-                <li className="flex items-start gap-3">
-                  <Mail className="w-4 h-4 text-cta mt-0.5 shrink-0" />
-                  <div>
+              <ul className="space-y-5 text-sm font-body">
+                <li className="flex items-center gap-3.5">
+                  <Mail className="w-5 h-5 text-cta shrink-0" strokeWidth={2} />
+                  <div className="min-w-0">
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Email</div>
-                    <a href="mailto:contact@ivesdeu.com" className="text-primary hover:text-cta transition-colors font-medium">
+                    <a
+                      href="mailto:contact@ivesdeu.com"
+                      className="text-primary hover:text-cta transition-colors font-medium block"
+                    >
                       contact@ivesdeu.com
                     </a>
                   </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Phone className="w-4 h-4 text-cta mt-0.5 shrink-0" />
-                  <div>
+                <li className="flex items-center gap-3.5">
+                  <Phone className="w-5 h-5 text-cta shrink-0" strokeWidth={2} />
+                  <div className="min-w-0">
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Phone</div>
-                    <a href="tel:+12246025112" className="text-primary hover:text-cta transition-colors font-medium">
+                    <a href="tel:+12246025112" className="text-primary hover:text-cta transition-colors font-medium block">
                       +1 (224) 602-5112
                     </a>
                   </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-cta mt-0.5 shrink-0" />
-                  <div>
+                <li className="flex items-center gap-3.5">
+                  <MapPin className="w-5 h-5 text-cta shrink-0" strokeWidth={2} />
+                  <div className="min-w-0">
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Location</div>
-                    <span className="text-primary font-medium">Milwaukee, WI 53211</span>
+                    <span className="text-primary font-medium block">Milwaukee, WI 53211</span>
                   </div>
                 </li>
-                <li className="flex items-start gap-3">
-                  <Clock className="w-4 h-4 text-cta mt-0.5 shrink-0" />
-                  <div>
+                <li className="flex items-center gap-3.5">
+                  <Clock className="w-5 h-5 text-cta shrink-0" strokeWidth={2} />
+                  <div className="min-w-0">
                     <div className="text-xs uppercase tracking-wide text-muted-foreground mb-0.5">Hours</div>
-                    <span className="text-primary font-medium">Mon – Fri, 9am – 6pm CST</span>
+                    <span className="text-primary font-medium block">Mon – Fri, 9am – 6pm CST</span>
                   </div>
                 </li>
               </ul>
@@ -297,29 +301,43 @@ export function ContactPage() {
 
             {/* Book a call CTA */}
             <motion.div
-              className="relative rounded-2xl overflow-hidden p-8 flex flex-col gap-4"
+              className="relative isolate rounded-2xl overflow-hidden p-8 flex flex-col gap-4 font-body"
               style={{ background: 'var(--cta)' }}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <span
-                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[8rem] uppercase leading-none"
-                style={{ color: 'rgba(255,255,255,0.07)' }}
+                className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,18vw,8rem)] uppercase leading-none"
+                style={{ color: 'rgba(255, 255, 255, 0.07)' }}
                 aria-hidden
               >
                 CALL
               </span>
-              <p className="relative z-10 text-xs font-semibold uppercase tracking-widest text-white/70">Prefer to talk?</p>
-              <h3 className="relative z-10 font-headline text-3xl text-white">Book a strategy call</h3>
-              <p className="relative z-10 text-sm text-white/80">
+              <p
+                className="relative z-10 text-xs font-semibold uppercase tracking-widest"
+                style={{ color: 'rgba(255, 255, 255, 0.88)' }}
+              >
+                Prefer to talk?
+              </p>
+              <h3
+                className="relative z-10 font-headline text-3xl uppercase leading-tight"
+                style={{ color: '#ffffff' }}
+              >
+                Book a strategy call
+              </h3>
+              <p
+                className="relative z-10 text-sm leading-relaxed max-w-sm"
+                style={{ color: 'rgba(255, 255, 255, 0.92)' }}
+              >
                 30 minutes. No pitch. Just an honest look at where your business is and what growth could look like.
               </p>
               <a
                 href="#contact-form"
-                className="relative z-10 mt-2 inline-flex items-center gap-2 self-start px-6 py-3 rounded-full bg-white text-cta font-semibold text-sm hover:bg-white/90 transition-colors"
+                className="relative z-10 mt-2 inline-flex items-center gap-2 self-start px-6 py-3 rounded-full bg-white font-semibold text-sm hover:bg-white/90 transition-colors"
+                style={{ color: 'var(--cta)' }}
               >
-                Schedule Now <ArrowUpRight className="w-4 h-4" />
+                Schedule Now <ArrowUpRight className="w-4 h-4 shrink-0" strokeWidth={2} />
               </a>
             </motion.div>
 
@@ -337,8 +355,11 @@ export function ContactPage() {
                   ['We respond with a plan', 'You get a clear sense of scope, timeline, and fit — not a sales deck.'],
                   ['We get to work', "If there's alignment, we move fast. No long onboarding, no bureaucracy."],
                 ].map(([title, body], i) => (
-                  <li key={i} className="flex gap-4">
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-cta/10 text-cta text-xs font-bold flex items-center justify-center mt-0.5">
+                  <li key={i} className="flex gap-4 items-start font-body">
+                    <span
+                      className="shrink-0 w-7 h-7 rounded-full text-xs font-bold flex items-center justify-center mt-0.5"
+                      style={{ background: 'rgba(255, 77, 46, 0.12)', color: 'var(--cta)' }}
+                    >
                       {i + 1}
                     </span>
                     <div>

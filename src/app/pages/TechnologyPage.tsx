@@ -95,7 +95,7 @@ export function TechnologyPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionLabel>Technology</SectionLabel>
-            <h1 className="font-headline text-5xl md:text-6xl lg:text-7xl text-primary mb-6 max-w-3xl">
+            <h1 className="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 max-w-3xl leading-[1.08] tracking-tight">
               Tools Built For Business.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
@@ -103,9 +103,9 @@ export function TechnologyPage() {
             </p>
             <div className="flex gap-4 flex-wrap">
               <a href="#products">
-                <Button>Explore Products</Button>
+                <Button className="text-sm font-body font-medium">Explore Products</Button>
               </a>
-              <Button to="/contact" variant="outlined">
+              <Button to="/contact" variant="outlined" className="text-sm font-body font-medium">
                 Request Custom Build
               </Button>
             </div>
@@ -119,7 +119,9 @@ export function TechnologyPage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <SectionLabel>Our Products</SectionLabel>
-              <h2 className="text-5xl font-semibold text-primary">Software We've Built In-House.</h2>
+              <h2 className="text-5xl font-semibold text-primary leading-tight tracking-tight max-w-2xl lg:max-w-3xl">
+                Software We've Built In-House.
+              </h2>
             </div>
             <p className="text-muted-foreground max-w-sm">
               Two platforms developed by the IDM team — available to clients, early users, and businesses that want proven tools without the build cost.
@@ -213,17 +215,23 @@ export function TechnologyPage() {
               return (
                 <motion.div
                   key={service.title}
-                  className="bg-white border border-border rounded-2xl p-6 hover:shadow-lg transition-shadow relative"
+                  className="bg-white border border-border rounded-2xl p-6 hover:shadow-lg transition-shadow"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.08 }}
                   whileHover={{ y: -5 }}
                 >
-                  <span className="absolute top-4 right-5 font-headline text-5xl text-cta/15 leading-none pointer-events-none select-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                  <Icon className="w-8 h-8 text-cta mb-4" />
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <Icon className="w-8 h-8 text-cta shrink-0" />
+                    <span
+                      className="font-headline text-5xl leading-none tabular-nums shrink-0 pointer-events-none select-none"
+                      style={{ color: 'var(--cta)', opacity: 0.15 }}
+                      aria-hidden
+                    >
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                  </div>
                   <h4 className="font-semibold text-primary mb-2">{service.title}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
                 </motion.div>
@@ -237,7 +245,7 @@ export function TechnologyPage() {
       <section id="custom" className="w-full py-16">
         <div className="max-w-[1200px] mx-auto px-6">
           <motion.div
-            className="relative w-full rounded-2xl overflow-hidden py-14 px-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+            className="relative w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl py-12 px-8 md:py-16 md:px-12 lg:px-20 flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-10"
             style={{ background: 'var(--primary)' }}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -245,23 +253,23 @@ export function TechnologyPage() {
             transition={{ duration: 0.5 }}
           >
             <span
-              className="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,12vw,8rem)] uppercase leading-none"
-              style={{ color: 'rgba(255,255,255,0.05)' }}
+              className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none font-body font-bold text-[clamp(3.5rem,11vw,7.5rem)] uppercase leading-none tracking-tight"
+              style={{ color: 'rgba(255, 255, 255, 0.06)' }}
               aria-hidden
             >
               BUILD
             </span>
-            <div className="relative z-10">
-              <h2 className="font-headline text-4xl md:text-5xl text-white mb-4">
+            <div className="relative z-10 max-w-xl">
+              <h2 className="font-body text-3xl sm:text-4xl md:text-[2.25rem] lg:text-5xl font-bold uppercase tracking-tight text-white leading-tight mb-3 md:mb-4">
                 Need Something Built for You?
               </h2>
-              <p className="text-white/70 max-w-md">
+              <p className="font-body text-sm md:text-base text-white leading-relaxed max-w-md">
                 Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
               </p>
             </div>
             <Link
               to="/contact"
-              className="relative z-10 shrink-0 px-8 py-3.5 rounded-full bg-cta text-white font-semibold hover:bg-cta-hover transition-colors"
+              className="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-9 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
             >
               Start a Custom Project
             </Link>
@@ -282,39 +290,71 @@ export function TechnologyPage() {
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
-                className={`bg-white rounded-2xl p-6 flex flex-col relative ${
-                  plan.featured ? 'border-2 border-primary' : 'border border-border'
-                }`}
+                className={
+                  plan.featured
+                    ? 'flex flex-col rounded-2xl overflow-hidden bg-white border-2 border-primary shadow-sm'
+                    : 'bg-white rounded-2xl p-6 flex flex-col border border-border shadow-sm flex-1 min-h-0'
+                }
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                {plan.featured && (
-                  <div className="absolute -top-px left-0 right-0 bg-primary text-white text-[10px] font-bold uppercase tracking-wider text-center py-1.5 rounded-t-2xl">
-                    Most Popular
-                  </div>
+                {plan.featured ? (
+                  <>
+                    <div className="bg-primary text-white text-[10px] font-bold uppercase tracking-wider text-center py-2 shrink-0 font-body">
+                      Most Popular
+                    </div>
+                    <div className="p-6 flex flex-col flex-1 min-h-0">
+                      <h3 className="font-semibold text-primary mb-1 font-body">{plan.name}</h3>
+                      <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0 mb-4">
+                        <span className="font-headline text-4xl text-primary leading-none">{plan.price}</span>
+                        {plan.priceNote && (
+                          <span className="text-sm text-muted-foreground font-body">{plan.priceNote}</span>
+                        )}
+                      </div>
+                      <p className="text-sm text-muted-foreground border-t border-border pt-4 mb-5 font-body">
+                        {plan.description}
+                      </p>
+                      <ul className="space-y-3 mb-8 flex-1 font-body">
+                        {plan.features.map((feature, i) => (
+                          <li key={i} className="flex gap-2.5 text-sm text-primary items-start">
+                            <Check className="w-4 h-4 text-cta shrink-0 mt-px" strokeWidth={2} />
+                            <span className="leading-snug">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <Button to="/contact" variant="filled" className="mt-auto w-full text-sm font-semibold font-body">
+                        {plan.cta}
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <h3 className="font-semibold text-primary mb-1 font-body">{plan.name}</h3>
+                    <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0 mb-4">
+                      <span className="font-headline text-4xl text-primary leading-none">{plan.price}</span>
+                      {plan.priceNote && (
+                        <span className="text-sm text-muted-foreground font-body">{plan.priceNote}</span>
+                      )}
+                    </div>
+                    <p className="text-sm text-muted-foreground border-t border-border pt-4 mb-5 font-body">
+                      {plan.description}
+                    </p>
+                    <ul className="space-y-3 mb-8 flex-1 font-body">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex gap-2.5 text-sm text-primary items-start">
+                          <Check className="w-4 h-4 text-cta shrink-0 mt-px" strokeWidth={2} />
+                          <span className="leading-snug">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button to="/contact" variant="outlined" className="mt-auto w-full text-sm font-semibold font-body">
+                      {plan.cta}
+                    </Button>
+                  </>
                 )}
-                <div className={plan.featured ? 'pt-4' : ''}>
-                  <h3 className="font-semibold text-primary mb-1">{plan.name}</h3>
-                  <div className="flex items-baseline gap-1 mb-4">
-                    <span className="font-headline text-4xl text-primary">{plan.price}</span>
-                    {plan.priceNote && <span className="text-sm text-muted-foreground">{plan.priceNote}</span>}
-                  </div>
-                  <p className="text-sm text-muted-foreground border-t border-border pt-4 mb-5">{plan.description}</p>
-                  <ul className="space-y-3 mb-8 flex-1">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-primary">
-                        <Check className="w-4 h-4 text-cta flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button to="/contact" variant={plan.featured ? 'filled' : 'outlined'} className="w-full">
-                    {plan.cta}
-                  </Button>
-                </div>
               </motion.div>
             ))}
           </div>
