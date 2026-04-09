@@ -1,6 +1,11 @@
+/* Match Vite pipeline: fonts + Tailwind + design tokens (@theme → bg-cta, text-primary, etc.) */
+@import '../../../../src/styles/fonts.css';
 @import 'tailwindcss' source(none);
-@source '../../src/**/*.{js,ts,jsx,tsx}';
-@source '../../*.php';
+@import '../../../../src/styles/theme.css';
+
+/* Paths are relative to this file: wp-theme/ibmcustom/assets/css/tailwind.css */
+@source '../../../../src/**/*.{js,ts,jsx,tsx}';
+@source '../../**/*.php';
 @source '../../assets/js/**/*.js';
 
 @import 'tw-animate-css';

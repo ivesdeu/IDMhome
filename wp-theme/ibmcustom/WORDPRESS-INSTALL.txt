@@ -23,3 +23,23 @@ WP Admin → Appearance → Themes → Add New → Upload Theme.
 
 Verify anytime:
   npm run verify-theme-zip
+
+Styles must match the React app (transfer / deploy)
+====================================================
+
+The theme loads compiled utilities from:
+  ibmcustom/assets/css/tailwind-built.css
+
+That file is built from class names found in:
+  - repo src/ (React)
+  - all *.php in the theme
+  - theme assets/js/
+
+Always rebuild before creating the zip:
+  npm run build:wp-css
+  npm run zip-theme
+
+(zip-theme runs build:wp-css automatically.)
+
+Use the SAME Tailwind version as the app: @tailwindcss/cli is pinned to match
+tailwindcss / @tailwindcss/vite so WordPress CSS does not drift from local Vite.

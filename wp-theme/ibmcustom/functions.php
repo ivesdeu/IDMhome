@@ -71,6 +71,8 @@ function ibmhome_register_page_templates_routes() {
   add_rewrite_rule( '^whirly-wash/?$', 'index.php?ibmhome_template=whirly-wash', 'top' );
   add_rewrite_rule( '^ama-uwm/?$', 'index.php?ibmhome_template=ama-uwm', 'top' );
   add_rewrite_rule( '^about/?$', 'index.php?ibmhome_template=about', 'top' );
+  add_rewrite_rule( '^technology/?$', 'index.php?ibmhome_template=technology', 'top' );
+  add_rewrite_rule( '^contact/?$', 'index.php?ibmhome_template=contact', 'top' );
   add_rewrite_rule( '^team/?$', 'index.php?ibmhome_template=team', 'top' );
   add_rewrite_rule( '^team/(mark|otto)/?$', 'index.php?ibmhome_template=team&founder=$matches[1]', 'top' );
 }
@@ -89,7 +91,7 @@ add_filter( 'query_vars', 'ibmhome_template_query_vars' );
  */
 function ibmhome_maybe_flush_rewrites_for_team() {
   // Bump this value whenever we change rewrite routing so WP regenerates them.
-  $current = 'team_routes_v2';
+  $current = 'all_routes_v3';
   $stored = get_option( 'ibmhome_rewrite_flush_version', '' );
   if ( $stored === $current ) {
     return;
@@ -112,6 +114,8 @@ function ibmhome_template_include( $template ) {
     'whirly-wash'  => 'page-whirly-wash.php',
     'ama-uwm'      => 'page-ama-uwm.php',
     'about'        => 'page-about.php',
+    'technology'   => 'page-technology.php',
+    'contact'      => 'page-contact.php',
     'team'         => 'page-team.php',
   );
 
