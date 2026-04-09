@@ -26,16 +26,13 @@ const mockLogos = [
 const clients: { category: string; years: number; service: string; logoImage?: string; logoAlt?: string }[] = [
   { category: "Home Improvement", years: 1, service: "Website Construction & SEO", logoImage: "/whirly-wash-logo.png", logoAlt: "Whirly Wash" },
   { category: "Professional Development Services", years: 2, service: "Website Construction & SEO", logoImage: "/amauwm-logo.png", logoAlt: "AMAUWM" },
-  { category: "Industrial Cleaning Services", years: 1, service: "Full Growth Partner", logoImage: "/badger-window-cleaners-logo.png", logoAlt: "Badger Window Cleaners West" },
+  { category: "Home Services", years: 1, service: "Full Growth Partner", logoImage: "/badger-window-cleaners-logo.png", logoAlt: "Badger Window Cleaners West" },
 ];
 
 function Card({ client, logo }: { client: (typeof clients)[0]; logo: React.ReactNode }) {
   return (
     <div className="bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 h-full min-h-[260px]">
       <h3 className="font-bold text-primary text-lg mb-1">{client.category}</h3>
-      <p className="text-sm text-[#666666] mb-4">
-        Working for {client.years} {client.years === 1 ? "year" : "years"}
-      </p>
       <span className="inline-block w-fit px-3 py-1.5 rounded-full bg-[#f0f0f0] text-sm text-primary/90 font-medium mb-6">
         {client.service}
       </span>
@@ -57,13 +54,12 @@ export function Collaborations() {
     <section className="w-full bg-[#F5F5F5] py-24">
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="mb-10">
-          <p className="text-sm text-primary/80 mb-2">• Collaborations</p>
-          <h2 className="text-4xl md:text-5xl font-bold text-primary">Trusted across industries.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
         </div>
 
         <Carousel
           opts={{ loop: true, align: "start", dragFree: true }}
-          plugins={[AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          plugins={[AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: false })]}
         >
           <CarouselContent className="-ml-4 md:-ml-6">
             {clients.map((client, index) => (

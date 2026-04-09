@@ -1,6 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { motion } from 'motion/react';
+
+const navLinkClass = 'text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]';
+const navLinkActive = 'text-cta';
 
 export function Navbar() {
   return (
@@ -21,16 +24,26 @@ export function Navbar() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          <Link to="/#about" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+          <Link to="/#about" className={navLinkClass}>
             About
           </Link>
-          <Link to="/case-studies" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+          <Link
+            to="/#core-capabilities"
+            className={navLinkClass}
+            onClick={() => document.getElementById('core-capabilities')?.scrollIntoView({ behavior: 'smooth' })}
+          >
+            Services
+          </Link>
+          <NavLink
+            to="/technology"
+            className={({ isActive }) => `${navLinkClass} ${isActive ? navLinkActive : ''}`}
+          >
+            Technology
+          </NavLink>
+          <Link to="/case-studies" className={navLinkClass}>
             Case Studies
           </Link>
-          <Link to="/#core-capabilities" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]" onClick={() => document.getElementById('core-capabilities')?.scrollIntoView({ behavior: 'smooth' })}>
-            Capabilities
-          </Link>
-          <Link to="/#contact" className="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em]">
+          <Link to="/#contact" className={navLinkClass}>
             Contact
           </Link>
         </div>

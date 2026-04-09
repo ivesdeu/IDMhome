@@ -201,43 +201,43 @@ get_header();
       <div class="grid grid-cols-1 md:grid-cols-3 gap-0.5" style="background: rgba(0,0,0,0.08);">
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">01</span>
-          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Paid Media Strategy &amp; Management</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">High-converting ad systems across Meta, Google, and emerging platforms.</p>
+          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Website Design &amp; Development</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">Custom-built websites and landing pages engineered to convert visitors into customers.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
 
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">02</span>
-          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Search Engine Optimization</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">Long-term visibility built on technical precision and content authority.</p>
+          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Paid Media Management</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">High-performing ad systems across Google, Meta, and beyond &mdash; built to drive measurable return.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
 
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">03</span>
-          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Conversion Rate Optimization</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">Landing pages and funnels engineered for measurable lift.</p>
+          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Search Engine Optimization</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">Long-term visibility built on technical precision, content authority, and local dominance.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
 
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">04</span>
-          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Brand Positioning &amp; Messaging</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">Clear differentiation that turns attention into trust.</p>
+          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Branding &amp; Messaging</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">Positioning, identity, and copy that differentiate your business and build lasting trust.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
 
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">05</span>
-          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Analytics &amp; Attribution</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">Tracking, reporting, and insight systems that guide decisions.</p>
+          <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Business Intelligence &amp; Dashboards</h3>
+          <p class="text-muted-foreground text-sm leading-relaxed">Custom reporting tools and analytics dashboards that turn your data into decisions.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
 
         <div class="group bg-card p-8 relative transition-colors duration-300 hover:bg-[#fef8f6]">
           <span class="font-headline text-7xl md:text-8xl text-cta/25 absolute top-6 right-6 leading-none">06</span>
           <h3 class="text-xl font-semibold text-primary mb-2 relative z-10">Growth Consulting</h3>
-          <p class="text-muted-foreground text-sm leading-relaxed">Executive-level strategy for brands ready to scale.</p>
+          <p class="text-muted-foreground text-sm leading-relaxed">Strategic guidance for owners ready to scale &mdash; from funnel audits to market expansion.</p>
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
       </div>

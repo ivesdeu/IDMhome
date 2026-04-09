@@ -6,6 +6,7 @@ import { PageTransition } from './components/PageTransition';
 import { HomePage } from './pages/HomePage';
 import { CaseStudiesListPage } from './pages/CaseStudiesListPage';
 import { CaseStudyFullPage } from './pages/CaseStudyFullPage';
+import { TechnologyPage } from './pages/TechnologyPage';
 
 function AppRoutes() {
   const location = useLocation();
@@ -33,6 +34,14 @@ function AppRoutes() {
           element={
             <PageTransition>
               <CaseStudyFullPage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/technology"
+          element={
+            <PageTransition>
+              <TechnologyPage />
             </PageTransition>
           }
         />

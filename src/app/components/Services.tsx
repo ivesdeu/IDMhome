@@ -3,12 +3,12 @@ import { SectionLabel } from './SectionLabel';
 import { motion } from 'motion/react';
 
 const services = [
-  { number: '01', title: 'Paid Media Strategy & Management', description: 'High-converting ad systems across Meta, Google, and emerging platforms.' },
-  { number: '02', title: 'Search Engine Optimization', description: 'Long-term visibility built on technical precision and content authority.' },
-  { number: '03', title: 'Conversion Rate Optimization', description: 'Landing pages and funnels engineered for measurable lift.' },
-  { number: '04', title: 'Brand Positioning & Messaging', description: 'Clear differentiation that turns attention into trust.' },
-  { number: '05', title: 'Analytics & Attribution', description: 'Tracking, reporting, and insight systems that guide decisions.' },
-  { number: '06', title: 'Growth Consulting', description: 'Executive-level strategy for brands ready to scale.' },
+  { number: '01', title: 'Website Design & Development', description: 'Custom-built websites and landing pages engineered to convert visitors into customers.' },
+  { number: '02', title: 'Paid Media Management', description: 'High-performing ad systems across Google, Meta, and beyond — built to drive measurable return.' },
+  { number: '03', title: 'Search Engine Optimization', description: 'Long-term visibility built on technical precision, content authority, and local dominance.' },
+  { number: '04', title: 'Branding & Messaging', description: 'Positioning, identity, and copy that differentiate your business and build lasting trust.' },
+  { number: '05', title: 'Business Intelligence & Dashboards', description: 'Custom reporting tools and analytics dashboards that turn your data into decisions.' },
+  { number: '06', title: 'Growth Consulting', description: 'Strategic guidance for owners ready to scale — from funnel audits to market expansion.' },
 ];
 
 export function Services() {
