@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Instagram, Linkedin } from 'lucide-react';
+import { Linkedin } from 'lucide-react';
 
 export function Footer() {
   return (
@@ -23,10 +23,22 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-primary mb-4">Follow Us</h4>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                <Instagram className="w-5 h-5" />
+              <a
+                href="https://www.linkedin.com/in/markdeutschmann/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mark Deutschmann on LinkedIn"
+                className="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
+              <a
+                href="https://www.linkedin.com/in/william-otto-ives/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="William Otto Ives on LinkedIn"
+                className="w-10 h-10 border border-primary rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
