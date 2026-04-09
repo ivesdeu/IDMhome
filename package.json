@@ -10,7 +10,8 @@
     "wp:stop": "wp-env stop",
     "wp:destroy": "wp-env destroy",
     "wp:logs": "wp-env logs",
-    "zip-theme": "cd wp-theme && zip -r ../ibmcustom-wp-theme.zip ibmcustom -x '**/.DS_Store' -x '**/__MACOSX/**'"
+    "zip-theme": "cd wp-theme && zip -r ../ibmcustom-wp-theme.zip ibmcustom -x '**/.DS_Store' -x '**/__MACOSX/**' && cd .. && node scripts/verify-wp-theme-package.mjs",
+    "verify-theme-zip": "node scripts/verify-wp-theme-package.mjs"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

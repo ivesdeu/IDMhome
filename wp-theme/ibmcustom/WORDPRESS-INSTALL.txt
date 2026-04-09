@@ -1,0 +1,25 @@
+WordPress theme upload (fix "missing style.css")
+===============================================
+
+WordPress requires style.css inside the THEME FOLDER at the root of the ZIP.
+
+CORRECT package layout (what you must upload):
+  ibmcustom/
+    style.css          ← required (Theme Name header is in this file)
+    functions.php
+    index.php
+    ... (other theme files)
+
+WRONG (common mistakes):
+  - Zipping the whole "wp-theme" folder → WordPress looks for wp-theme/style.css (missing).
+  - Zipping only the files inside ibmcustom without the "ibmcustom" folder → broken layout on some hosts.
+  - Using an old zip that was created before style.css existed.
+
+Recommended: from the repo root run:
+  npm run zip-theme
+
+That creates: ibmcustom-wp-theme.zip in the project root. Upload THAT file in
+WP Admin → Appearance → Themes → Add New → Upload Theme.
+
+Verify anytime:
+  npm run verify-theme-zip

@@ -18,34 +18,38 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center shrink-0" aria-label="Ives Deutschmann Marketing – Home">
+      <div className="max-w-[1200px] mx-auto px-6 py-4 grid grid-cols-[auto_1fr_auto] items-center gap-4">
+        <Link
+          to="/"
+          className="col-start-1 row-start-1 flex items-center shrink-0"
+          aria-label="Ives Deutschmann Marketing – Home"
+        >
           <img src="/idm-logo.png?v=2" alt="Ives Deutschmann Marketing" className="h-10 w-auto" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          <Link to="/#about" className={navLinkClass}>
+        <div className="hidden md:flex col-start-2 row-start-1 items-center justify-center gap-6 lg:gap-8 min-w-0">
+          <Link to="/#about" className={`${navLinkClass} whitespace-nowrap`}>
             About
           </Link>
           <Link
             to="/#core-capabilities"
-            className={navLinkClass}
+            className={`${navLinkClass} whitespace-nowrap`}
             onClick={() => document.getElementById('core-capabilities')?.scrollIntoView({ behavior: 'smooth' })}
           >
             Services
           </Link>
           <NavLink
             to="/technology"
-            className={({ isActive }) => `${navLinkClass} ${isActive ? navLinkActive : ''}`}
+            className={({ isActive }) => `${navLinkClass} whitespace-nowrap ${isActive ? navLinkActive : ''}`}
           >
             Technology
           </NavLink>
-          <Link to="/case-studies" className={navLinkClass}>
+          <Link to="/case-studies" className={`${navLinkClass} whitespace-nowrap`}>
             Case Studies
           </Link>
           <NavLink
             to="/contact"
-            className={({ isActive }) => `${navLinkClass} ${isActive ? navLinkActive : ''}`}
+            className={({ isActive }) => `${navLinkClass} whitespace-nowrap ${isActive ? navLinkActive : ''}`}
           >
             Contact
           </NavLink>
@@ -53,7 +57,7 @@ export function Navbar() {
 
         <NavLink
           to="/contact"
-          className="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center"
+          className="col-start-3 row-start-1 justify-self-end shrink-0 px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center"
         >
           Book a Call
         </NavLink>
