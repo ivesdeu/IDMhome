@@ -1,5 +1,7 @@
 import React from "react";
+import { motion } from "motion/react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { useInViewParallaxY } from "../hooks/useParallaxScroll";
 import {
   Carousel,
   CarouselContent,
@@ -53,6 +55,8 @@ function Card({ client, logo }: { client: (typeof clients)[0]; logo: React.React
 const LOOP_COPIES = 4;
 
 export function Collaborations() {
+  const { ref: titleRef, y: titleY, reduced } = useInViewParallaxY(0.06);
+
   const slides = Array.from({ length: LOOP_COPIES }, (_, copy) =>
     clients.map((client, index) => ({
       client,
@@ -65,9 +69,9 @@ export function Collaborations() {
   return (
     <section className="w-full bg-[#F5F5F5] py-24 overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6">
-        <div className="mb-10">
+        <motion.div ref={titleRef} className="mb-10" style={reduced ? undefined : { y: titleY }}>
           <h2 className="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
-        </div>
+        </motion.div>
       </div>
 
       <Carousel

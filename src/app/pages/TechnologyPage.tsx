@@ -6,6 +6,7 @@ import { SectionLabel } from '../components/SectionLabel';
 import { Button } from '../components/Button';
 import { Check, BarChart3, Wallet, LayoutDashboard, LineChart, Users, PieChart } from 'lucide-react';
 import { motion } from 'motion/react';
+import { useBandWatermarkParallax } from '../hooks/useParallaxScroll';
 
 const products = [
   {
@@ -72,6 +73,48 @@ const pricingPlans = [
     featured: false,
   },
 ];
+
+function TechnologyCustomBuildCta() {
+  const { bandRef, markY, reduced } = useBandWatermarkParallax();
+
+  return (
+    <section id="custom" className="w-full py-16 font-body">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <motion.div
+          ref={bandRef}
+          className="relative w-full rounded-2xl overflow-hidden py-14 px-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+          style={{ background: 'var(--cta)' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.span
+            className="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,12vw,8rem)] uppercase leading-none"
+            style={{ color: 'rgba(255, 255, 255, 0.08)', ...(reduced ? {} : { y: markY }) }}
+            aria-hidden
+          >
+            BUILD
+          </motion.span>
+          <div className="relative z-10 max-w-xl md:max-w-[620px]">
+            <h2 className="font-headline text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.02] mb-3">
+              Need Something Built for You?
+            </h2>
+            <p className="text-base md:text-lg leading-relaxed text-white/90 max-w-[520px]">
+              Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
+            </p>
+          </div>
+          <Link
+            to="/contact"
+            className="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-white text-cta px-8 py-3.5 text-sm font-semibold hover:bg-white/95 transition-colors"
+          >
+            Start a Custom Project
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export function TechnologyPage() {
   useEffect(() => {
@@ -241,41 +284,7 @@ export function TechnologyPage() {
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section id="custom" className="w-full py-16">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <motion.div
-            className="relative isolate w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl px-8 py-10 sm:px-10 md:px-14 lg:px-16 min-h-[180px] md:min-h-[220px] flex flex-col md:grid md:grid-cols-[1fr_auto] md:items-center gap-6 md:gap-8"
-            style={{ background: 'var(--primary)' }}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span
-              className="absolute right-[14%] top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none font-body font-bold text-[clamp(3.6rem,10vw,7.2rem)] uppercase leading-none tracking-tight"
-              style={{ color: 'rgba(255, 255, 255, 0.05)' }}
-              aria-hidden
-            >
-              BUILD
-            </span>
-            <div className="relative z-10 max-w-[620px]">
-              <h2 className="font-body text-[2.1rem] sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-[1.02] mb-3">
-                Need Something Built for You?
-              </h2>
-              <p className="font-body text-[0.98rem] md:text-base leading-relaxed max-w-[520px]" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-                Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
-              </p>
-            </div>
-            <Link
-              to="/contact"
-              className="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-10 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
-            >
-              Start a Custom Project
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <TechnologyCustomBuildCta />
 
       {/* Pricing */}
       <section className="w-full py-24">

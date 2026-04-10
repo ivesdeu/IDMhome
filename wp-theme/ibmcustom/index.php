@@ -11,9 +11,9 @@ get_header();
 <main class="min-h-screen bg-gradient-page">
   <?php /* Hero section (from Hero.tsx) */ ?>
   <section class="relative min-h-screen overflow-hidden hero-grid-overlay flex flex-col justify-center">
-    <div class="hero-coral-glow absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+    <div class="hero-coral-glow absolute inset-0 pointer-events-none" aria-hidden="true" data-parallax="0.16"></div>
 
-    <div class="max-w-[900px] mx-auto w-full px-8 md:px-12 pt-[120px] pb-[80px] relative text-center">
+    <div class="max-w-[900px] mx-auto w-full px-8 md:px-12 pt-[120px] pb-[80px] relative text-center" data-parallax="-0.06">
       <p class="eyebrow flex items-center justify-center gap-3 text-cta mb-6 font-body">
         <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
         <span class="text-[0.72rem] uppercase tracking-[0.18em]">Performance Marketing</span>
@@ -110,7 +110,7 @@ get_header();
         </span>
       </div>
 
-      <h2 class="font-headline text-4xl md:text-5xl text-primary mb-12 max-w-4xl">
+      <h2 class="font-headline text-4xl md:text-5xl text-primary mb-12 max-w-4xl" data-parallax="0.05">
         Strategy first. Execution second. Results always.
       </h2>
 
@@ -146,7 +146,7 @@ get_header();
   ?>
   <section class="w-full bg-[#F5F5F5] py-24 overflow-hidden">
     <div class="max-w-[1200px] mx-auto px-6">
-      <div class="mb-10">
+      <div class="mb-10" data-parallax="0.06">
         <h2 class="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
       </div>
     </div>
@@ -270,7 +270,7 @@ get_header();
 
       <div class="grid md:grid-cols-2 gap-8">
         <a href="<?php echo esc_url( home_url( '/whirly-wash' ) ); ?>">
-          <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]">
+          <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]" data-parallax="0.07">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/revenue-growth-6months.png"
               alt="Revenue Growth in 6 Months"
@@ -289,7 +289,7 @@ get_header();
         </a>
 
         <a href="<?php echo esc_url( home_url( '/ama-uwm' ) ); ?>">
-          <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]">
+          <div class="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]" data-parallax="0.07">
             <img
               src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/ama-uwm-case-study.png"
               alt="Growth Marketing &amp; Partnerships"
@@ -519,7 +519,7 @@ get_header();
             <p class="text-sm text-muted-foreground">A reliable online presence.</p>
           </div>
 
-          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
+          <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
 
         <div class="bg-white border-2 border-primary rounded-2xl p-6 hover:shadow-lg transition-shadow flex flex-col min-h-0">
@@ -565,7 +565,7 @@ get_header();
             <p class="text-sm text-muted-foreground">A professional digital presence and measurable system.</p>
           </div>
 
-          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
+          <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
 
         <div class="bg-white border-2 border-primary rounded-2xl p-6 hover:shadow-lg transition-shadow flex flex-col min-h-0">
@@ -619,7 +619,7 @@ get_header();
             <p class="text-sm text-muted-foreground">Consistent, measurable growth from traffic</p>
           </div>
 
-          <a href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
+          <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover w-full mt-auto">Request Proposal</a>
         </div>
       </div>
     </div>
@@ -646,8 +646,7 @@ get_header();
           <h3 class="text-2xl font-semibold text-primary mb-4">Didn't get the answer?</h3>
           <p class="text-[#666666] mb-6">Talk with a human expert on our team</p>
           <a
-            href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>"
-            onclick="window.location.href='mailto:contact@ivesdeu.com'; return false;"
+            href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
             class="px-6 py-3 rounded-full transition-all duration-200 inline-block cursor-pointer bg-cta text-white hover:bg-cta-hover"
           >Contact Us</a>
         </div>
@@ -755,14 +754,15 @@ get_header();
           class="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,12vw,8rem)] uppercase leading-none"
           style="color: rgba(255,255,255,0.08);"
           aria-hidden="true"
+          data-parallax="0.12"
         >
           GROW
         </span>
-        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white relative z-10 max-w-xl">
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight relative z-10 max-w-xl leading-[1.02]">
           Get your free website assessment
         </h2>
         <a
-          href="<?php echo esc_url( 'mailto:contact@ivesdeu.com' ); ?>"
+          href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
           class="relative z-10 shrink-0 px-8 py-3.5 rounded-full bg-white text-cta font-semibold hover:bg-white/95 transition-colors"
         >
           Schedule Your Strategy Call

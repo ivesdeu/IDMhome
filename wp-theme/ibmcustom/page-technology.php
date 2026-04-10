@@ -140,28 +140,29 @@ $cta = home_url( '/contact' );
     </div>
   </section>
 
-  <section id="custom" class="w-full py-16">
+  <section id="custom" class="w-full py-16 font-body">
     <div class="max-w-[1200px] mx-auto px-6">
       <div
-        class="relative isolate w-full overflow-hidden rounded-[1.125rem] md:rounded-2xl px-8 py-10 sm:px-10 md:px-14 lg:px-16 min-h-[180px] md:min-h-[220px] flex flex-col md:grid md:grid-cols-[1fr_auto] md:items-center gap-6 md:gap-8"
-        style="background: var(--primary);"
+        class="relative w-full rounded-2xl overflow-hidden py-14 px-8 md:px-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8"
+        style="background: var(--cta);"
       >
         <span
-          class="absolute right-[14%] top-1/2 -translate-y-1/2 z-0 pointer-events-none select-none font-body font-bold text-[clamp(3.6rem,10vw,7.2rem)] uppercase leading-none tracking-tight"
-          style="color: rgba(255, 255, 255, 0.05);"
+          class="absolute inset-0 flex items-center justify-center pointer-events-none select-none font-headline text-[clamp(4rem,12vw,8rem)] uppercase leading-none"
+          style="color: rgba(255, 255, 255, 0.08);"
           aria-hidden="true"
+          data-parallax="0.12"
         >BUILD</span>
-        <div class="relative z-10 max-w-[620px]">
-          <h2 class="font-body text-[2.1rem] sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-white leading-[1.02] mb-3">
+        <div class="relative z-10 max-w-xl md:max-w-[620px]">
+          <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-white uppercase tracking-tight leading-[1.02] mb-3">
             Need Something Built for You?
           </h2>
-          <p class="font-body text-[0.98rem] md:text-base leading-relaxed max-w-[520px]" style="color: rgba(255, 255, 255, 0.9);">
+          <p class="text-base md:text-lg leading-relaxed text-white/90 max-w-[520px]">
             Every custom dashboard starts with a conversation. Tell us what you're tracking — we'll scope the build, set a timeline, and get it done.
           </p>
         </div>
         <a
           href="<?php echo esc_url( $cta ); ?>"
-          class="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-cta px-10 py-3.5 text-sm font-semibold text-white font-body hover:bg-cta-hover transition-colors md:self-center"
+          class="relative z-10 shrink-0 inline-flex items-center justify-center rounded-full bg-white text-cta px-8 py-3.5 text-sm font-semibold hover:bg-white/95 transition-colors"
         >Start a Custom Project</a>
       </div>
     </div>

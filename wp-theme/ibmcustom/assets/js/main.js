@@ -183,5 +183,47 @@
 
     render();
   }
+
+  // Light scroll parallax ([data-parallax] = strength multiplier; respects prefers-reduced-motion)
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length) {
+    const reduced =
+      window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduced) {
+      const maxPx = 28;
+      let ticking = false;
+
+      const updateParallax = () => {
+        ticking = false;
+        const vh = window.innerHeight || 1;
+        const vCenter = vh * 0.5;
+
+        parallaxEls.forEach((el) => {
+          if (!(el instanceof HTMLElement)) return;
+          const raw = el.getAttribute('data-parallax') || '0.1';
+          const strength = parseFloat(raw, 10);
+          if (!Number.isFinite(strength)) return;
+
+          const rect = el.getBoundingClientRect();
+          const elCenter = rect.top + rect.height / 2;
+          const progress = (vCenter - elCenter) / vh;
+          const clamped = Math.max(-1, Math.min(1, progress));
+          const y = clamped * strength * maxPx;
+          el.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0)`;
+        });
+      };
+
+      const onScrollOrResize = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateParallax);
+        }
+      };
+
+      window.addEventListener('scroll', onScrollOrResize, { passive: true });
+      window.addEventListener('resize', onScrollOrResize, { passive: true });
+      updateParallax();
+    }
+  }
 })();
 

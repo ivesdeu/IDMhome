@@ -5,6 +5,44 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { caseStudies } from '../data/caseStudies';
+import { useInViewParallaxY } from '../hooks/useParallaxScroll';
+
+function WorkCardLink({ work, index }: { work: (typeof caseStudies)[number]; index: number }) {
+  const { ref, y, reduced } = useInViewParallaxY(0.07);
+
+  return (
+    <Link to={`/case-studies/${work.slug}`}>
+      <motion.div
+        ref={ref}
+        className="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.2 }}
+        style={reduced ? undefined : { y }}
+        whileHover={{ scale: 1.02 }}
+      >
+        <ImageWithFallback
+          src={work.image}
+          alt={work.title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
+          <div className="flex gap-2 mb-4">
+            {work.tags.map((tag, i) => (
+              <span key={i} className="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="text-6xl font-bold text-white mb-2">{work.metric}</div>
+          <h3 className="text-2xl font-semibold text-white mb-1">{work.title}</h3>
+          <p className="text-lg text-white/80">{work.subtitle}</p>
+        </div>
+      </motion.div>
+    </Link>
+  );
+}
 
 export function Works() {
   return (
@@ -25,34 +63,7 @@ export function Works() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {caseStudies.map((work, index) => (
-            <Link key={work.slug} to={`/case-studies/${work.slug}`}>
-              <motion.div
-                className="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px]"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ scale: 1.02 }}
-              >
-                <ImageWithFallback
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-8 flex flex-col justify-end">
-                  <div className="flex gap-2 mb-4">
-                    {work.tags.map((tag, i) => (
-                      <span key={i} className="text-xs px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="text-6xl font-bold text-white mb-2">{work.metric}</div>
-                  <h3 className="text-2xl font-semibold text-white mb-1">{work.title}</h3>
-                  <p className="text-lg text-white/80">{work.subtitle}</p>
-                </div>
-              </motion.div>
-            </Link>
+            <WorkCardLink key={work.slug} work={work} index={index} />
           ))}
         </div>
       </div>

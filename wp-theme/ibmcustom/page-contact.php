@@ -15,8 +15,8 @@ get_header();
         <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
         <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Contact</span>
       </div>
-      <h1 class="text-5xl font-semibold text-primary mb-4 max-w-2xl uppercase tracking-tight">
-        Let's Build Something.
+      <h1 class="text-5xl font-semibold text-primary mb-4 max-w-2xl tracking-tight">
+        Let's build something.
       </h1>
       <p class="text-lg text-[#666666] max-w-xl">
         Tell us about your business and what you're looking to achieve. We'll come back with a clear plan and a straight answer on whether we're the right fit.

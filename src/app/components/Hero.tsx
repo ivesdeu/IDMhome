@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router';
 import { motion } from 'motion/react';
+import { useHeroSectionParallax } from '../hooks/useParallaxScroll';
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -35,9 +36,18 @@ function GlitchChars() {
 }
 
 export function Hero() {
+  const { sectionRef, glowY, reduced } = useHeroSectionParallax();
+
   return (
-    <section className="relative min-h-screen overflow-hidden hero-grid-overlay flex flex-col justify-center">
-      <div className="hero-coral-glow absolute inset-0 pointer-events-none" aria-hidden />
+    <section
+      ref={sectionRef}
+      className="relative min-h-screen overflow-hidden hero-grid-overlay flex flex-col justify-center"
+    >
+      <motion.div
+        className="hero-coral-glow absolute inset-0 pointer-events-none"
+        aria-hidden
+        style={reduced ? undefined : { y: glowY }}
+      />
 
       <div className="max-w-[900px] mx-auto w-full px-8 md:px-12 pt-[120px] pb-[80px] relative text-center">
         <motion.p
