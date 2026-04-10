@@ -95,10 +95,10 @@ export function TechnologyPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionLabel>Technology</SectionLabel>
-            <h1 className="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 max-w-3xl leading-[1.08] tracking-tight">
+            <h1 className="text-5xl font-semibold text-primary mb-4 max-w-3xl">
               Tools Built For Business.
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl mb-8">
+            <p className="text-lg text-[#666666] max-w-xl mb-8">
               We don't just run marketing — we build the infrastructure behind it. From personal finance platforms to custom BI dashboards, IDM develops software that turns data into decisions.
             </p>
             <div className="flex gap-4 flex-wrap">
@@ -123,7 +123,7 @@ export function TechnologyPage() {
                 Software We've Built In-House.
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-sm">
+            <p className="text-lg text-[#666666] max-w-sm">
               Two platforms developed by the IDM team — available to clients, early users, and businesses that want proven tools without the build cost.
             </p>
           </div>
@@ -282,7 +282,7 @@ export function TechnologyPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <SectionLabel>Pricing</SectionLabel>
           <h2 className="text-5xl font-semibold text-primary mb-4">Simple. Transparent.</h2>
-          <p className="text-muted-foreground mb-12 max-w-lg">
+          <p className="text-lg text-[#666666] mb-12 max-w-lg">
             Pick a pre-built product or scope a custom engagement. No retainer lock-ins unless you want ongoing support.
           </p>
 

@@ -72,10 +72,10 @@ export function ContactPage() {
             transition={{ duration: 0.5 }}
           >
             <SectionLabel>Contact</SectionLabel>
-            <h1 className="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 max-w-2xl leading-[1.08] tracking-tight uppercase">
+            <h1 className="text-5xl font-semibold text-primary mb-4 max-w-2xl uppercase tracking-tight">
               Let's Build Something.
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl">
+            <p className="text-lg text-[#666666] max-w-xl">
               Tell us about your business and what you're looking to achieve. We'll come back with a clear plan and a straight answer on whether we're the right fit.
             </p>
           </motion.div>

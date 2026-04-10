@@ -5,9 +5,7 @@
  * @package ibmhome
  */
 
-$ibm_is_front = is_front_page();
-$ibm_about_href = $ibm_is_front ? '#about' : home_url( '/#about' );
-$ibm_services_href = $ibm_is_front ? '#core-capabilities' : home_url( '/#core-capabilities' );
+$ibm_home = trailingslashit( home_url( '/' ) );
 ?>
 
 <footer class="w-full bg-white/80 backdrop-blur-sm border-t border-border py-16">
@@ -59,8 +57,8 @@ $ibm_services_href = $ibm_is_front ? '#core-capabilities' : home_url( '/#core-ca
       <div>
         <h4 class="font-semibold text-primary mb-4">Quick Links</h4>
         <ul class="space-y-2 text-sm">
-          <li><a href="<?php echo esc_url( $ibm_about_href ); ?>" class="text-[#666666] hover:text-primary transition-colors">About</a></li>
-          <li><a href="<?php echo esc_url( $ibm_services_href ); ?>" class="text-[#666666] hover:text-primary transition-colors">Services</a></li>
+          <li><a href="<?php echo esc_url( $ibm_home ); ?>#about" class="text-[#666666] hover:text-primary transition-colors">About</a></li>
+          <li><a href="<?php echo esc_url( $ibm_home ); ?>#core-capabilities" class="text-[#666666] hover:text-primary transition-colors">Services</a></li>
           <li><a href="<?php echo esc_url( home_url( '/technology' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Technology</a></li>
           <li><a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Case Studies</a></li>
           <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Contact</a></li>

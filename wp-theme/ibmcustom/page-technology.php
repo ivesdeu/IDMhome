@@ -18,10 +18,10 @@ $cta = home_url( '/contact' );
         <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
         <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Technology</span>
       </div>
-      <h1 class="font-body text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 max-w-3xl leading-[1.08] tracking-tight">
+      <h1 class="text-5xl font-semibold text-primary mb-4 max-w-3xl">
         Tools Built For Business.
       </h1>
-      <p class="text-lg text-muted-foreground max-w-xl mb-8">
+      <p class="text-lg text-[#666666] max-w-xl mb-8">
         We don't just run marketing — we build the infrastructure behind it. From personal finance platforms to custom BI dashboards, IDM develops software that turns data into decisions.
       </p>
       <div class="flex gap-4 flex-wrap">
@@ -41,7 +41,7 @@ $cta = home_url( '/contact' );
           </div>
           <h2 class="text-5xl font-semibold text-primary leading-tight tracking-tight max-w-2xl lg:max-w-3xl">Software We've Built In-House.</h2>
         </div>
-        <p class="text-muted-foreground max-w-sm">
+        <p class="text-lg text-[#666666] max-w-sm">
           Two platforms developed by the IDM team — available to clients, early users, and businesses that want proven tools without the build cost.
         </p>
       </div>
@@ -205,7 +205,7 @@ $cta = home_url( '/contact' );
         <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Pricing</span>
       </div>
       <h2 class="text-5xl font-semibold text-primary mb-4">Simple. Transparent.</h2>
-      <p class="text-muted-foreground mb-12 max-w-lg">
+      <p class="text-lg text-[#666666] mb-12 max-w-lg">
         Pick a pre-built product or scope a custom engagement. No retainer lock-ins unless you want ongoing support.
       </p>
       <div class="grid md:grid-cols-3 gap-8">

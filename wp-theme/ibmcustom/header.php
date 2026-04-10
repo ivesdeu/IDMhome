@@ -14,8 +14,12 @@
 </head>
 <body <?php body_class(); ?>>
 <?php
-$about_href = is_front_page() ? '#about' : home_url( '/#about' );
-$services_href = is_front_page() ? '#core-capabilities' : home_url( '/#core-capabilities' );
+/*
+ * Always use absolute home URLs for section anchors. Custom rewrite routes (e.g. /case-studies/)
+ * still run through index.php, so is_front_page() can be true while the marketing sections are
+ * not on screen — bare #about would scroll the wrong page and feel like a dead link.
+ */
+$ibm_home = trailingslashit( home_url( '/' ) );
 ?>
 
 <nav
@@ -33,10 +37,10 @@ $services_href = is_front_page() ? '#core-capabilities' : home_url( '/#core-capa
 
     <?php /* In-flow center column avoids paint-order overlap with the CTA (absolute center sat under “Book a Call” and blocked clicks). */ ?>
     <div class="hidden md:flex col-start-2 row-start-1 items-center justify-center gap-6 lg:gap-8 min-w-0">
-      <a href="<?php echo esc_url( $about_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
+      <a href="<?php echo esc_url( $ibm_home ); ?>#about" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
         About
       </a>
-      <a href="<?php echo esc_url( $services_href ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
+      <a href="<?php echo esc_url( $ibm_home ); ?>#core-capabilities" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
         Services
       </a>
       <a href="<?php echo esc_url( home_url( '/technology' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
