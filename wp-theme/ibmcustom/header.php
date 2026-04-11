@@ -27,16 +27,32 @@ $ibm_home = trailingslashit( home_url( '/' ) );
   data-site-nav
   style="background: rgba(250, 250, 249, 0.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
 >
-  <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center gap-4">
-    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center shrink-0" aria-label="Ives Deutschmann Marketing – Home">
-      <img
-        src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=2"
-        alt="Ives Deutschmann Marketing"
-        class="h-10 w-auto"
-      />
-    </a>
+  <div class="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
+      <button
+        type="button"
+        class="ibm-mobile-menu-btn md:hidden shrink-0"
+        data-mobile-menu-toggle
+        aria-controls="ibm-mobile-menu"
+        aria-expanded="false"
+        aria-label="<?php echo esc_attr__( 'Open menu', 'ibmhome' ); ?>"
+        data-label-open="<?php echo esc_attr__( 'Open menu', 'ibmhome' ); ?>"
+        data-label-close="<?php echo esc_attr__( 'Close menu', 'ibmhome' ); ?>"
+      >
+        <span class="ibm-mm-line" aria-hidden="true"></span>
+        <span class="ibm-mm-line" aria-hidden="true"></span>
+        <span class="ibm-mm-line" aria-hidden="true"></span>
+      </button>
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center min-w-0" aria-label="Ives Deutschmann Marketing – Home">
+        <img
+          src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=2"
+          alt="Ives Deutschmann Marketing"
+          class="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
+        />
+      </a>
+    </div>
 
-    <div class="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0">
+    <div class="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4">
       <a href="<?php echo esc_url( $ibm_home ); ?>#about" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
         About
       </a>
@@ -54,28 +70,12 @@ $ibm_home = trailingslashit( home_url( '/' ) );
       </a>
     </div>
 
-    <div class="flex items-center gap-2 shrink-0 ml-auto">
-      <button
-        type="button"
-        class="ibm-mobile-menu-btn md:hidden"
-        data-mobile-menu-toggle
-        aria-controls="ibm-mobile-menu"
-        aria-expanded="false"
-        aria-label="<?php echo esc_attr__( 'Open menu', 'ibmhome' ); ?>"
-        data-label-open="<?php echo esc_attr__( 'Open menu', 'ibmhome' ); ?>"
-        data-label-close="<?php echo esc_attr__( 'Close menu', 'ibmhome' ); ?>"
-      >
-        <span class="ibm-mm-line" aria-hidden="true"></span>
-        <span class="ibm-mm-line" aria-hidden="true"></span>
-        <span class="ibm-mm-line" aria-hidden="true"></span>
-      </button>
-      <a
-        href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
-        class="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center shrink-0"
-      >
-        Book a Call
-      </a>
-    </div>
+    <a
+      href="<?php echo esc_url( home_url( '/contact' ) ); ?>"
+      class="shrink-0 px-4 sm:px-5 py-2.5 rounded-full text-white text-[0.72rem] sm:text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center whitespace-nowrap"
+    >
+      Book a Call
+    </a>
   </div>
 
   <div

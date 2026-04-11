@@ -48,17 +48,35 @@ export function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center gap-4">
-        <Link
-          to="/"
-          className="flex items-center shrink-0"
-          aria-label="Ives Deutschmann Marketing – Home"
-          onClick={closeMobile}
-        >
-          <img src="/idm-logo.png?v=2" alt="Ives Deutschmann Marketing" className="h-10 w-auto" />
-        </Link>
+      <div className="max-w-[1200px] mx-auto px-6 py-4 flex items-center justify-between gap-4">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
+          <button
+            type="button"
+            className="ibm-mobile-menu-btn md:hidden shrink-0"
+            aria-controls="ibm-mobile-menu"
+            aria-expanded={mobileOpen}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            onClick={() => setMobileOpen((o) => !o)}
+          >
+            <span className="ibm-mm-line" aria-hidden />
+            <span className="ibm-mm-line" aria-hidden />
+            <span className="ibm-mm-line" aria-hidden />
+          </button>
+          <Link
+            to="/"
+            className="flex items-center min-w-0"
+            aria-label="Ives Deutschmann Marketing – Home"
+            onClick={closeMobile}
+          >
+            <img
+              src="/idm-logo.png?v=2"
+              alt="Ives Deutschmann Marketing"
+              className="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
+            />
+          </Link>
+        </div>
 
-        <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0">
+        <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4">
           <Link to="/#about" className={`${navLinkClass} whitespace-nowrap`}>
             About
           </Link>
@@ -86,26 +104,12 @@ export function Navbar() {
           </NavLink>
         </div>
 
-        <div className="flex items-center gap-2 shrink-0 ml-auto">
-          <button
-            type="button"
-            className="ibm-mobile-menu-btn md:hidden"
-            aria-controls="ibm-mobile-menu"
-            aria-expanded={mobileOpen}
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            onClick={() => setMobileOpen((o) => !o)}
-          >
-            <span className="ibm-mm-line" aria-hidden />
-            <span className="ibm-mm-line" aria-hidden />
-            <span className="ibm-mm-line" aria-hidden />
-          </button>
-          <NavLink
-            to="/contact"
-            className="px-5 py-2.5 rounded-full text-white text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center shrink-0"
-          >
-            Book a Call
-          </NavLink>
-        </div>
+        <NavLink
+          to="/contact"
+          className="shrink-0 px-4 sm:px-5 py-2.5 rounded-full text-white text-[0.72rem] sm:text-[0.78rem] font-medium uppercase tracking-[0.12em] bg-cta hover:bg-cta-hover transition-colors font-body flex items-center justify-center whitespace-nowrap"
+        >
+          Book a Call
+        </NavLink>
       </div>
 
       <div
