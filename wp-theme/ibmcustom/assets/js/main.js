@@ -184,9 +184,26 @@
     render();
   }
 
-  // Mobile nav (hamburger)
+  // Mobile nav: overflow detection (show hamburger when inline links don’t fit) + hamburger toggle
+  const siteNav = document.querySelector('[data-site-nav]');
+  const desktopNav = siteNav?.querySelector('[data-desktop-nav]');
   const menuBtn = document.querySelector('[data-mobile-menu-toggle]');
   const mobileMenu = document.getElementById('ibm-mobile-menu');
+
+  const updateNavOverflow = () => {
+    if (!(siteNav instanceof HTMLElement) || !(desktopNav instanceof HTMLElement)) return;
+    const mqWide = window.matchMedia('(min-width: 768px)');
+    if (!mqWide.matches) {
+      siteNav.removeAttribute('data-nav-overflow');
+      return;
+    }
+    siteNav.removeAttribute('data-nav-overflow');
+    void desktopNav.offsetWidth;
+    if (desktopNav.scrollWidth > desktopNav.clientWidth + 2) {
+      siteNav.setAttribute('data-nav-overflow', '');
+    }
+  };
+
   if (menuBtn instanceof HTMLButtonElement && mobileMenu instanceof HTMLElement) {
     const openLabel = menuBtn.dataset.labelOpen || 'Open menu';
     const closeLabel = menuBtn.dataset.labelClose || 'Close menu';
@@ -207,6 +224,19 @@
       document.body.classList.add('ibm-mobile-nav-open');
     };
 
+    const syncNavLayout = () => {
+      updateNavOverflow();
+      const wide = window.matchMedia('(min-width: 768px)').matches;
+      const overflow = siteNav instanceof HTMLElement && siteNav.hasAttribute('data-nav-overflow');
+      if (wide && !overflow && !mobileMenu.classList.contains('hidden')) closeMenu();
+    };
+
+    updateNavOverflow();
+    if (siteNav instanceof HTMLElement && 'ResizeObserver' in window) {
+      new ResizeObserver(() => requestAnimationFrame(syncNavLayout)).observe(siteNav);
+    }
+    window.addEventListener('resize', () => requestAnimationFrame(syncNavLayout));
+
     menuBtn.addEventListener('click', () => {
       if (mobileMenu.classList.contains('hidden')) openMenu();
       else closeMenu();
@@ -219,11 +249,12 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) closeMenu();
     });
-
-    const closeIfDesktop = () => {
-      if (window.matchMedia('(min-width: 768px)').matches) closeMenu();
-    };
-    window.addEventListener('resize', closeIfDesktop);
+  } else {
+    updateNavOverflow();
+    if (siteNav instanceof HTMLElement && 'ResizeObserver' in window && desktopNav instanceof HTMLElement) {
+      new ResizeObserver(() => requestAnimationFrame(updateNavOverflow)).observe(siteNav);
+    }
+    window.addEventListener('resize', () => requestAnimationFrame(updateNavOverflow));
   }
 
   // Light scroll parallax ([data-parallax] = strength multiplier; respects prefers-reduced-motion)

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router';
 import { motion } from 'motion/react';
 
@@ -10,8 +10,41 @@ const mobileLinkClass =
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const desktop = nav?.querySelector('[data-desktop-nav]');
+    if (!(nav instanceof HTMLElement) || !(desktop instanceof HTMLElement)) return;
+
+    const mqWide = window.matchMedia('(min-width: 768px)');
+
+    const run = () => {
+      if (!mqWide.matches) {
+        nav.removeAttribute('data-nav-overflow');
+        return;
+      }
+      nav.removeAttribute('data-nav-overflow');
+      void desktop.offsetWidth;
+      const needsOverflow = desktop.scrollWidth > desktop.clientWidth + 2;
+      if (needsOverflow) {
+        nav.setAttribute('data-nav-overflow', '');
+      } else {
+        setMobileOpen(false);
+      }
+    };
+
+    const ro = new ResizeObserver(() => requestAnimationFrame(run));
+    ro.observe(nav);
+    mqWide.addEventListener('change', run);
+    run();
+    return () => {
+      ro.disconnect();
+      mqWide.removeEventListener('change', run);
+    };
+  }, []);
 
   useEffect(() => {
     const onEsc = (e: KeyboardEvent) => {
@@ -27,17 +60,10 @@ export function Navbar() {
     return () => document.body.classList.remove('ibm-mobile-nav-open');
   }, [mobileOpen]);
 
-  useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
-    const onChange = () => {
-      if (mq.matches) setMobileOpen(false);
-    };
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  }, []);
-
   return (
     <motion.nav
+      ref={navRef}
+      data-site-nav
       className="fixed top-0 left-0 right-0 z-50 border-b border-border"
       style={{
         background: 'rgba(250, 250, 249, 0.88)',
@@ -52,7 +78,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
           <button
             type="button"
-            className="ibm-mobile-menu-btn md:hidden shrink-0"
+            className="ibm-mobile-menu-btn shrink-0"
             aria-controls="ibm-mobile-menu"
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
@@ -76,7 +102,10 @@ export function Navbar() {
           </Link>
         </div>
 
-        <div className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4">
+        <div
+          data-desktop-nav
+          className="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4"
+        >
           <Link to="/#about" className={`${navLinkClass} whitespace-nowrap`}>
             About
           </Link>
@@ -114,7 +143,7 @@ export function Navbar() {
 
       <div
         id="ibm-mobile-menu"
-        className={`md:hidden border-t border-border ${mobileOpen ? '' : 'hidden'}`}
+        className={`border-t border-border ${mobileOpen ? '' : 'hidden'}`}
         style={{
           background: 'rgba(250, 250, 249, 0.98)',
           backdropFilter: 'blur(12px)',

@@ -31,7 +31,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
     <div class="flex items-center gap-2 sm:gap-3 min-w-0 shrink-0">
       <button
         type="button"
-        class="ibm-mobile-menu-btn md:hidden shrink-0"
+        class="ibm-mobile-menu-btn shrink-0"
         data-mobile-menu-toggle
         aria-controls="ibm-mobile-menu"
         aria-expanded="false"
@@ -52,7 +52,10 @@ $ibm_home = trailingslashit( home_url( '/' ) );
       </a>
     </div>
 
-    <div class="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4">
+    <div
+      data-desktop-nav
+      class="hidden md:flex flex-1 items-center justify-center gap-6 lg:gap-8 min-w-0 px-4"
+    >
       <a href="<?php echo esc_url( $ibm_home ); ?>#about" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
         About
       </a>
@@ -80,7 +83,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
 
   <div
     id="ibm-mobile-menu"
-    class="hidden md:hidden border-t border-border"
+    class="hidden border-t border-border"
     style="background: rgba(250, 250, 249, 0.98); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);"
     aria-hidden="true"
   >
