@@ -663,7 +663,7 @@ get_header();
               </svg>
             </button>
             <div class="px-6 pb-6" data-faq-panel>
-              <p class="text-[#666666]">Given you provide or already have the needed amount of media, we can get it live within 3 weeks.</p>
+              <p class="text-[#666666]">Given you provide or already have the needed amount of media, we can get it live within 1 week.</p>
             </div>
           </div>
 

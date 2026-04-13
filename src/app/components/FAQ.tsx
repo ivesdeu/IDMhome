@@ -10,7 +10,7 @@ export function FAQ() {
   const faqs = [
     {
       question: 'How long does a website build take?',
-      answer: 'Given you provide or already have the needed amount of media, we can get it live within 3 weeks.',
+      answer: 'Given you provide or already have the needed amount of media, we can get it live within 1 week.',
       answeredBy: 'Web Team'
     },
     {
