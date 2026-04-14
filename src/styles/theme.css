@@ -293,3 +293,28 @@ body.ibm-mobile-nav-open {
 .ibm-mobile-menu-btn[aria-expanded='true'] .ibm-mm-line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
+
+/* Scroll reveal (used by wp-theme/main.js observer and shared styles) */
+.ibm-reveal {
+  --ibm-reveal-delay: 0ms;
+  opacity: 0.01;
+  transform: translate3d(0, 20px, 0);
+  transition:
+    opacity 520ms cubic-bezier(0.22, 1, 0.36, 1) var(--ibm-reveal-delay),
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1) var(--ibm-reveal-delay);
+  will-change: opacity, transform;
+}
+
+.ibm-reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ibm-reveal,
+  .ibm-reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

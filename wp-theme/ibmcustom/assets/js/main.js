@@ -257,6 +257,55 @@
     window.addEventListener('resize', () => requestAnimationFrame(updateNavOverflow));
   }
 
+  // Scroll reveal animations (light, one-time, reduced-motion aware)
+  const reducedMotion =
+    window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reducedMotion) {
+    const revealTargets = [
+      ...document.querySelectorAll('[data-reveal]'),
+      ...document.querySelectorAll(
+        'main section h2, main section h3, main section .group.bg-card, main section [data-faq-item]'
+      ),
+      ...document.querySelectorAll(
+        'main section .group.relative.rounded-2xl.overflow-hidden.cursor-pointer'
+      ),
+    ];
+
+    const seen = new Set();
+    const revealEls = revealTargets.filter((el) => {
+      if (!(el instanceof HTMLElement)) return false;
+      if (seen.has(el)) return false;
+      seen.add(el);
+      return true;
+    });
+
+    if (revealEls.length && 'IntersectionObserver' in window) {
+      revealEls.forEach((el, idx) => {
+        el.classList.add('ibm-reveal');
+        if (!el.hasAttribute('data-reveal-delay')) {
+          el.style.setProperty('--ibm-reveal-delay', `${(idx % 6) * 45}ms`);
+        } else {
+          el.style.setProperty('--ibm-reveal-delay', `${el.getAttribute('data-reveal-delay')}ms`);
+        }
+      });
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            if (!(el instanceof HTMLElement)) return;
+            el.classList.add('ibm-reveal-visible');
+            revealObserver.unobserve(el);
+          });
+        },
+        { threshold: 0.15, rootMargin: '0px 0px -8% 0px' }
+      );
+
+      revealEls.forEach((el) => revealObserver.observe(el));
+    }
+  }
+
   // Light scroll parallax ([data-parallax] = strength multiplier; respects prefers-reduced-motion)
   const parallaxEls = document.querySelectorAll('[data-parallax]');
   if (parallaxEls.length) {
