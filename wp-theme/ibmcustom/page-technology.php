@@ -9,6 +9,10 @@ get_header();
 
 $u   = get_template_directory_uri() . '/assets/images';
 $cta = home_url( '/contact' );
+
+$runway_image = 'runway-product-preview.png';
+$runway_path  = get_theme_file_path( 'assets/images/' . $runway_image );
+$runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : time();
 ?>
 
 <main class="min-h-screen bg-gradient-page font-body">
@@ -49,7 +53,7 @@ $cta = home_url( '/contact' );
       <div class="grid md:grid-cols-2 gap-8">
         <article class="bg-white border border-border rounded-2xl overflow-hidden">
           <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
-            <img src="<?php echo esc_url( $u . '/runway-dashboard.png' ); ?>" alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown" class="h-full w-full object-cover object-left-top" loading="lazy" width="1024" height="545" />
+            <img src="<?php echo esc_url( $u . '/' . $runway_image . '?ver=' . $runway_ver ); ?>" alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown" class="h-full w-full object-cover object-left-top" loading="lazy" width="1024" height="545" />
           </div>
           <div class="p-8">
             <div class="flex flex-wrap gap-2 mb-5">

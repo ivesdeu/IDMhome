@@ -190,7 +190,7 @@ export function TechnologyPage() {
                 >
                   {product.mockup === 'runway' ? (
                     <img
-                      src="/runway-dashboard.png"
+                      src="/runway-product-preview.png"
                       alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown"
                       className="h-full w-full object-cover object-left-top"
                     />
