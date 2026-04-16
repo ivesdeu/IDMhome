@@ -167,7 +167,7 @@ export function TechnologyPage() {
               </h2>
             </div>
             <p className="text-lg text-[#666666] max-w-sm">
-              Two platforms developed by the IDM team — available to clients, early users, and businesses that want proven tools without the build cost.
+              Two in-house platforms available to clients and early users.
             </p>
           </div>
 
@@ -191,7 +191,7 @@ export function TechnologyPage() {
                   {product.mockup === 'runway' ? (
                     <img
                       src="/runway-dashboard.png"
-                      alt="Runway business dashboard: revenue, MRR, expenses, charts, and CRM tasks"
+                      alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown"
                       className="h-full w-full object-cover object-left-top"
                     />
                   ) : (

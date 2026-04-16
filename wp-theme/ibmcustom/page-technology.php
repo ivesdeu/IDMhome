@@ -42,14 +42,14 @@ $cta = home_url( '/contact' );
           <h2 class="text-5xl font-semibold text-primary leading-tight tracking-tight max-w-2xl lg:max-w-3xl">Software We've Built In-House.</h2>
         </div>
         <p class="text-lg text-[#666666] max-w-sm">
-          Two platforms developed by the IDM team — available to clients, early users, and businesses that want proven tools without the build cost.
+          Two in-house platforms available to clients and early users.
         </p>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
         <article class="bg-white border border-border rounded-2xl overflow-hidden">
           <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
-            <img src="<?php echo esc_url( $u . '/runway-dashboard.png' ); ?>" alt="Runway business dashboard: revenue, MRR, expenses, charts, and CRM tasks" class="h-full w-full object-cover object-left-top" loading="lazy" width="800" height="400" />
+            <img src="<?php echo esc_url( $u . '/runway-dashboard.png' ); ?>" alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown" class="h-full w-full object-cover object-left-top" loading="lazy" width="1024" height="545" />
           </div>
           <div class="p-8">
             <div class="flex flex-wrap gap-2 mb-5">
