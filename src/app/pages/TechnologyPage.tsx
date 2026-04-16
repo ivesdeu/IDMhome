@@ -167,7 +167,7 @@ export function TechnologyPage() {
               </h2>
             </div>
             <p className="text-lg text-[#666666] max-w-sm">
-              Two in-house platforms available to clients and early users.
+              Our in-house platforms available to clients and early users.
             </p>
           </div>
 

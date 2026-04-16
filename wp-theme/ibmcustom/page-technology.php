@@ -46,7 +46,7 @@ $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : 
           <h2 class="text-5xl font-semibold text-primary leading-tight tracking-tight max-w-2xl lg:max-w-3xl">Software We've Built In-House.</h2>
         </div>
         <p class="text-lg text-[#666666] max-w-sm">
-          Two in-house platforms available to clients and early users.
+          Our in-house platforms available to clients and early users.
         </p>
       </div>
 
