@@ -70,7 +70,7 @@ $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : 
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Custom</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Per Client</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">No-Code</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Setup</div></div>
             </div>
-            <a href="<?php echo esc_url( $cta ); ?>" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
+            <a href="<?php echo esc_url( 'https://runway.marketing' ); ?>" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
           </div>
         </article>
 

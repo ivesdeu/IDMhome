@@ -8,7 +8,20 @@ import { Check, BarChart3, Wallet, LayoutDashboard, LineChart, Users, PieChart }
 import { motion } from 'motion/react';
 import { useBandWatermarkParallax } from '../hooks/useParallaxScroll';
 
-const products = [
+const RUNWAY_SITE = 'https://runway.marketing';
+
+type TechnologyProduct = {
+  name: string;
+  tagline: string;
+  tags: Array<{ label: string; highlight?: boolean }>;
+  stats: Array<{ value: string; label: string }>;
+  cta: string;
+  mockup: 'runway' | 'moneymate';
+  /** When set, product CTA opens this URL (e.g. marketing site) instead of /contact */
+  ctaHref?: string;
+};
+
+const products: TechnologyProduct[] = [
   {
     name: 'Runway',
     tagline: 'A modular business intelligence dashboard built for small to mid-size businesses. Track revenue, ad spend, lead volume, and operational KPIs — all in one place, without enterprise pricing.',
@@ -19,6 +32,7 @@ const products = [
       { value: 'No-Code', label: 'Setup' },
     ],
     cta: 'Learn More',
+    ctaHref: RUNWAY_SITE,
     mockup: 'runway',
   },
   {
@@ -233,12 +247,23 @@ export function TechnologyPage() {
                     ))}
                   </div>
 
-                <Link
-                  to="/contact"
-                  className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
-                >
-                  {product.cta} <span>→</span>
-                </Link>
+                {product.ctaHref ? (
+                  <a
+                    href={product.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
+                  >
+                    {product.cta} <span>→</span>
+                  </a>
+                ) : (
+                  <Link
+                    to="/contact"
+                    className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
+                  >
+                    {product.cta} <span>→</span>
+                  </Link>
+                )}
                 </div>
               </motion.div>
             ))}
