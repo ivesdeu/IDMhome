@@ -13,6 +13,10 @@ $cta = home_url( '/contact' );
 $runway_image = 'runway-product-preview.png';
 $runway_path  = get_theme_file_path( 'assets/images/' . $runway_image );
 $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : time();
+
+$compass_image = 'compass-product-preview.png';
+$compass_path  = get_theme_file_path( 'assets/images/' . $compass_image );
+$compass_ver   = file_exists( $compass_path ) ? (int) filemtime( $compass_path ) : time();
 ?>
 
 <main class="min-h-screen bg-gradient-page font-body">
@@ -50,7 +54,7 @@ $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : 
         </p>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         <article class="bg-white border border-border rounded-2xl overflow-hidden">
           <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
             <img src="<?php echo esc_url( $u . '/' . $runway_image . '?ver=' . $runway_ver ); ?>" alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown" class="h-full w-full object-cover object-left-top" loading="lazy" width="1024" height="545" />
@@ -94,6 +98,29 @@ $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : 
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Beta</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Access Open</div></div>
             </div>
             <a href="<?php echo esc_url( $cta ); ?>" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Join Beta <span>→</span></a>
+          </div>
+        </article>
+
+        <article class="bg-white border border-border rounded-2xl overflow-hidden">
+          <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
+            <img src="<?php echo esc_url( $u . '/' . $compass_image . '?ver=' . $compass_ver ); ?>" alt="Compass business intelligence: performance dashboard with KPIs, revenue trend, and team overview" class="h-full w-full object-cover object-left-top" loading="lazy" width="1024" height="545" />
+          </div>
+          <div class="p-8">
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-cta text-cta bg-cta/5">Live</span>
+              <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Business Intelligence</span>
+              <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Integrations</span>
+            </div>
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">Compass</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed mb-6">
+              One dashboard. Live numbers. Built for SMBs who want revenue, spend, leads, and ops KPIs in one place—fast to set up, priced for teams, not enterprises.
+            </p>
+            <div class="flex gap-8 border-t border-border pt-5 mb-6">
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Gmail</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">In sync</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Stripe</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Revenue</div></div>
+              <div><div class="font-body text-xl font-bold tracking-tight text-primary">Calendar</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Schedule</div></div>
+            </div>
+            <a href="<?php echo esc_url( 'http://compass.ivesdeu.com' ); ?>" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
           </div>
         </article>
       </div>
@@ -189,7 +216,7 @@ $runway_ver   = file_exists( $runway_path ) ? (int) filemtime( $runway_path ) : 
       'note'        => '',
       'description' => 'A dashboard scoped and built around your exact data, workflow, and reporting needs.',
       'features'    => array( 'Unlimited data sources', 'Custom modules & views', 'Brand-matched design', '60-day support window', 'Optional monthly retainer' ),
-      'cta'         => 'Request a Scope',
+      'cta'         => 'Request a Quote',
       'featured'    => true,
     ),
     array(

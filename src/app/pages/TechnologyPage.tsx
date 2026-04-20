@@ -9,6 +9,7 @@ import { motion } from 'motion/react';
 import { useBandWatermarkParallax } from '../hooks/useParallaxScroll';
 
 const RUNWAY_SITE = 'https://runway.marketing';
+const COMPASS_SITE = 'http://compass.ivesdeu.com';
 
 type TechnologyProduct = {
   name: string;
@@ -16,9 +17,33 @@ type TechnologyProduct = {
   tags: Array<{ label: string; highlight?: boolean }>;
   stats: Array<{ value: string; label: string }>;
   cta: string;
-  mockup: 'runway' | 'moneymate';
+  mockup: 'runway' | 'moneymate' | 'compass';
   /** When set, product CTA opens this URL (e.g. marketing site) instead of /contact */
   ctaHref?: string;
+};
+
+const productMockup: Record<
+  TechnologyProduct['mockup'],
+  { src: string; alt: string; imgClass: string; shellClass: string }
+> = {
+  runway: {
+    src: '/runway-product-preview.png',
+    alt: 'Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown',
+    imgClass: 'h-full w-full object-cover object-left-top',
+    shellClass: 'bg-[#f5f5f4]',
+  },
+  moneymate: {
+    src: '/moneymate-dashboard.png',
+    alt: 'MoneyMate personal finance dashboard: net worth, portfolio, cash buffer, and recent activity',
+    imgClass: 'h-full w-full object-cover object-top',
+    shellClass: 'bg-[#e8e8e6]',
+  },
+  compass: {
+    src: '/compass-product-preview.png',
+    alt: 'Compass business intelligence: performance dashboard with KPIs, revenue trend, and team overview',
+    imgClass: 'h-full w-full object-cover object-left-top',
+    shellClass: 'bg-[#f5f5f4]',
+  },
 };
 
 const products: TechnologyProduct[] = [
@@ -47,6 +72,20 @@ const products: TechnologyProduct[] = [
     cta: 'Join Beta',
     mockup: 'moneymate',
   },
+  {
+    name: 'Compass',
+    tagline:
+      'One dashboard. Live numbers. Built for SMBs who want revenue, spend, leads, and ops KPIs in one place—fast to set up, priced for teams, not enterprises.',
+    tags: [{ label: 'Live', highlight: true }, { label: 'Business Intelligence' }, { label: 'Integrations' }],
+    stats: [
+      { value: 'Gmail', label: 'In sync' },
+      { value: 'Stripe', label: 'Revenue' },
+      { value: 'Calendar', label: 'Schedule' },
+    ],
+    cta: 'Learn More',
+    ctaHref: COMPASS_SITE,
+    mockup: 'compass',
+  },
 ];
 
 const biServices = [
@@ -74,7 +113,7 @@ const pricingPlans = [
     priceNote: '',
     description: 'A dashboard scoped and built around your exact data, workflow, and reporting needs.',
     features: ['Unlimited data sources', 'Custom modules & views', 'Brand-matched design', '60-day support window', 'Optional monthly retainer'],
-    cta: 'Request a Scope',
+    cta: 'Request a Quote',
     featured: true,
   },
   {
@@ -185,8 +224,10 @@ export function TechnologyPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {products.map((product, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+            {products.map((product, index) => {
+              const mock = productMockup[product.mockup];
+              return (
               <motion.div
                 key={product.name}
                 className="bg-white border border-border rounded-2xl overflow-hidden"
@@ -198,23 +239,9 @@ export function TechnologyPage() {
               >
                 {/* Mockup */}
                 <div
-                  className={`h-52 w-full overflow-hidden flex items-center justify-center ${
-                    product.mockup === 'runway' ? 'bg-[#f5f5f4]' : 'bg-[#e8e8e6]'
-                  }`}
+                  className={`h-52 w-full overflow-hidden flex items-center justify-center ${mock.shellClass}`}
                 >
-                  {product.mockup === 'runway' ? (
-                    <img
-                      src="/runway-product-preview.png"
-                      alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown"
-                      className="h-full w-full object-cover object-left-top"
-                    />
-                  ) : (
-                    <img
-                      src="/moneymate-dashboard.png"
-                      alt="MoneyMate personal finance dashboard: net worth, portfolio, cash buffer, and recent activity"
-                      className="h-full w-full object-cover object-top"
-                    />
-                  )}
+                  <img src={mock.src} alt={mock.alt} className={mock.imgClass} />
                 </div>
 
                 <div className="p-8">
@@ -266,7 +293,8 @@ export function TechnologyPage() {
                 )}
                 </div>
               </motion.div>
-            ))}
+            );
+            })}
           </div>
         </div>
       </section>
