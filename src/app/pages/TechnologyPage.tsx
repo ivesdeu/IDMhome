@@ -29,7 +29,7 @@ const productMockup: Record<
   runway: {
     src: '/runway-product-preview.png',
     alt: 'Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown',
-    imgClass: 'h-full w-full object-cover object-left-top',
+    imgClass: 'h-full w-full object-cover object-top',
     shellClass: 'bg-[#f5f5f4]',
   },
   moneymate: {
@@ -41,12 +41,26 @@ const productMockup: Record<
   compass: {
     src: '/compass-product-preview.png',
     alt: 'Compass business intelligence: performance dashboard with KPIs, revenue trend, and team overview',
-    imgClass: 'h-full w-full object-cover object-left-top',
+    imgClass: 'h-full w-full object-cover object-top',
     shellClass: 'bg-[#f5f5f4]',
   },
 };
 
 const products: TechnologyProduct[] = [
+  {
+    name: 'Compass',
+    tagline:
+      'One dashboard. Live numbers. Built for SMBs who want revenue, spend, leads, and ops KPIs in one place—fast to set up, priced for teams, not enterprises.',
+    tags: [{ label: 'Live', highlight: true }, { label: 'Business Intelligence' }, { label: 'Integrations' }],
+    stats: [
+      { value: 'Gmail', label: 'In sync' },
+      { value: 'Stripe', label: 'Revenue' },
+      { value: 'Calendar', label: 'Schedule' },
+    ],
+    cta: 'Learn More',
+    ctaHref: COMPASS_SITE,
+    mockup: 'compass',
+  },
   {
     name: 'Runway',
     tagline: 'A modular business intelligence dashboard built for small to mid-size businesses. Track revenue, ad spend, lead volume, and operational KPIs — all in one place, without enterprise pricing.',
@@ -72,20 +86,6 @@ const products: TechnologyProduct[] = [
     cta: 'Join Beta',
     mockup: 'moneymate',
   },
-  {
-    name: 'Compass',
-    tagline:
-      'One dashboard. Live numbers. Built for SMBs who want revenue, spend, leads, and ops KPIs in one place—fast to set up, priced for teams, not enterprises.',
-    tags: [{ label: 'Live', highlight: true }, { label: 'Business Intelligence' }, { label: 'Integrations' }],
-    stats: [
-      { value: 'Gmail', label: 'In sync' },
-      { value: 'Stripe', label: 'Revenue' },
-      { value: 'Calendar', label: 'Schedule' },
-    ],
-    cta: 'Learn More',
-    ctaHref: COMPASS_SITE,
-    mockup: 'compass',
-  },
 ];
 
 const biServices = [
@@ -97,7 +97,19 @@ const biServices = [
   { icon: Wallet, title: 'White-Label Solutions', description: 'Need a reporting tool to deliver to your own clients? We build and brand BI tools for agencies and consultants.' },
 ];
 
-const pricingPlans = [
+type PricingPlan = {
+  name: string;
+  price: string;
+  priceNote: string;
+  description: string;
+  features: string[];
+  cta: string;
+  featured: boolean;
+  /** External CTA (e.g. product app); omit to use /contact */
+  ctaHref?: string;
+};
+
+const pricingPlans: PricingPlan[] = [
   {
     name: 'Runway Starter',
     price: '$499',
@@ -106,6 +118,22 @@ const pricingPlans = [
     features: ['Up to 4 data sources', 'Revenue & ad spend views', 'Lead tracking module', '30-day setup support'],
     cta: 'Get Started',
     featured: false,
+  },
+  {
+    name: 'Compass Enterprise',
+    price: 'Free',
+    priceNote: '/ while we test',
+    description:
+      'Live Compass workspace with revenue, spend, and lead views plus integrations. Enterprise is free while we onboard early teams.',
+    features: [
+      'Gmail, Stripe & Calendar sync',
+      'Revenue, spend & pipeline views',
+      'Team KPI dashboard',
+      'Guided onboarding',
+    ],
+    cta: 'Get Started',
+    featured: false,
+    ctaHref: COMPASS_SITE,
   },
   {
     name: 'Custom Build',
@@ -348,7 +376,7 @@ export function TechnologyPage() {
             Pick a pre-built product or scope a custom engagement. No retainer lock-ins unless you want ongoing support.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {pricingPlans.map((plan, index) => (
               <motion.div
                 key={plan.name}
@@ -387,9 +415,22 @@ export function TechnologyPage() {
                           </li>
                         ))}
                       </ul>
-                      <Button to="/contact" variant="filled" className="mt-auto w-full text-sm font-semibold font-body">
-                        {plan.cta}
-                      </Button>
+                      {plan.ctaHref ? (
+                        <motion.a
+                          href={plan.ctaHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-auto block w-full text-center px-6 py-3 rounded-full transition-all duration-200 cursor-pointer bg-cta text-white hover:bg-cta-hover text-sm font-semibold font-body"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          {plan.cta}
+                        </motion.a>
+                      ) : (
+                        <Button to="/contact" variant="filled" className="mt-auto w-full text-sm font-semibold font-body">
+                          {plan.cta}
+                        </Button>
+                      )}
                     </div>
                   </>
                 ) : (
@@ -412,9 +453,22 @@ export function TechnologyPage() {
                         </li>
                       ))}
                     </ul>
-                    <Button to="/contact" variant="outlined" className="mt-auto w-full text-sm font-semibold font-body">
-                      {plan.cta}
-                    </Button>
+                    {plan.ctaHref ? (
+                      <motion.a
+                        href={plan.ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto block w-full text-center px-6 py-3 rounded-full transition-all duration-200 cursor-pointer bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-primary-foreground text-sm font-semibold font-body"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        {plan.cta}
+                      </motion.a>
+                    ) : (
+                      <Button to="/contact" variant="outlined" className="mt-auto w-full text-sm font-semibold font-body">
+                        {plan.cta}
+                      </Button>
+                    )}
                   </>
                 )}
               </motion.div>
