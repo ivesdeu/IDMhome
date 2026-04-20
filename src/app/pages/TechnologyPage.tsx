@@ -252,13 +252,13 @@ export function TechnologyPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
             {products.map((product, index) => {
               const mock = productMockup[product.mockup];
               return (
               <motion.div
                 key={product.name}
-                className="bg-white border border-border rounded-2xl overflow-hidden"
+                className="bg-white border border-border rounded-2xl overflow-hidden h-full flex flex-col"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -267,14 +267,14 @@ export function TechnologyPage() {
               >
                 {/* Mockup */}
                 <div
-                  className={`h-52 w-full overflow-hidden flex items-center justify-center ${mock.shellClass}`}
+                  className={`h-52 w-full shrink-0 overflow-hidden flex items-center justify-center ${mock.shellClass}`}
                 >
                   <img src={mock.src} alt={mock.alt} className={mock.imgClass} />
                 </div>
 
-                <div className="p-8">
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-5">
+                <div className="p-8 flex flex-col flex-1 min-h-0">
+                  {/* Tags — min height keeps titles aligned when pills wrap */}
+                  <div className="flex flex-wrap gap-2 mb-5 min-h-[4.5rem] items-start content-start">
                     {product.tags.map((tag, i) => (
                       <span
                         key={i}
@@ -289,11 +289,11 @@ export function TechnologyPage() {
                     ))}
                   </div>
 
-                  <h3 className="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">{product.name}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{product.tagline}</p>
+                  <h3 className="font-body text-[2rem] font-bold tracking-tight text-primary mb-3 shrink-0">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed flex-1 pb-6 min-h-0">{product.tagline}</p>
 
                   {/* Stats */}
-                  <div className="flex gap-8 border-t border-border pt-5 mb-6">
+                  <div className="flex gap-8 border-t border-border pt-5 mb-6 shrink-0">
                     {product.stats.map((stat, i) => (
                       <div key={i}>
                         <div className="font-body text-xl font-bold tracking-tight text-primary">{stat.value}</div>
@@ -307,14 +307,14 @@ export function TechnologyPage() {
                     href={product.ctaHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
+                    className="shrink-0 text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
                   >
                     {product.cta} <span>→</span>
                   </a>
                 ) : (
                   <Link
                     to="/contact"
-                    className="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
+                    className="shrink-0 text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2"
                   >
                     {product.cta} <span>→</span>
                   </Link>

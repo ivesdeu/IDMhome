@@ -55,73 +55,73 @@ $compass_ver   = file_exists( $compass_path ) ? (int) filemtime( $compass_path )
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-        <article class="bg-white border border-border rounded-2xl overflow-hidden">
-          <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-stretch">
+        <article class="bg-white border border-border rounded-2xl overflow-hidden h-full flex flex-col">
+          <div class="h-52 w-full shrink-0 overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
             <img src="<?php echo esc_url( $u . '/' . $compass_image . '?ver=' . $compass_ver ); ?>" alt="Compass business intelligence: performance dashboard with KPIs, revenue trend, and team overview" class="h-full w-full object-cover object-top" loading="lazy" width="1024" height="545" />
           </div>
-          <div class="p-8">
-            <div class="flex flex-wrap gap-2 mb-5">
+          <div class="p-8 flex flex-col flex-1 min-h-0">
+            <div class="flex flex-wrap gap-2 mb-5 min-h-[4.5rem] items-start content-start">
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-cta text-cta bg-cta/5">Live</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Business Intelligence</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Integrations</span>
             </div>
-            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">Compass</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed mb-6">
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3 shrink-0">Compass</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 pb-6 min-h-0">
               One dashboard. Live numbers. Built for SMBs who want revenue, spend, leads, and ops KPIs in one place—fast to set up, priced for teams, not enterprises.
             </p>
-            <div class="flex gap-8 border-t border-border pt-5 mb-6">
+            <div class="flex gap-8 border-t border-border pt-5 mb-6 shrink-0">
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Gmail</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">In sync</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Stripe</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Revenue</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Calendar</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Schedule</div></div>
             </div>
-            <a href="<?php echo esc_url( 'http://compass.ivesdeu.com' ); ?>" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
+            <a href="<?php echo esc_url( 'http://compass.ivesdeu.com' ); ?>" target="_blank" rel="noopener noreferrer" class="shrink-0 text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
           </div>
         </article>
 
-        <article class="bg-white border border-border rounded-2xl overflow-hidden">
-          <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
+        <article class="bg-white border border-border rounded-2xl overflow-hidden h-full flex flex-col">
+          <div class="h-52 w-full shrink-0 overflow-hidden flex items-center justify-center bg-[#f5f5f4]">
             <img src="<?php echo esc_url( $u . '/' . $runway_image . '?ver=' . $runway_ver ); ?>" alt="Runway product preview: dashboard with revenue, profit, and AR metrics, charts, and expense breakdown" class="h-full w-full object-cover object-top" loading="lazy" width="1024" height="545" />
           </div>
-          <div class="p-8">
-            <div class="flex flex-wrap gap-2 mb-5">
+          <div class="p-8 flex flex-col flex-1 min-h-0">
+            <div class="flex flex-wrap gap-2 mb-5 min-h-[4.5rem] items-start content-start">
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-cta text-cta bg-cta/5">Live</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Business Intelligence</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Dashboard</span>
             </div>
-            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">Runway</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed mb-6">
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3 shrink-0">Runway</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 pb-6 min-h-0">
               A modular business intelligence dashboard built for small to mid-size businesses. Track revenue, ad spend, lead volume, and operational KPIs — all in one place, without enterprise pricing.
             </p>
-            <div class="flex gap-8 border-t border-border pt-5 mb-6">
+            <div class="flex gap-8 border-t border-border pt-5 mb-6 shrink-0">
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Real-Time</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Data Sync</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Custom</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Per Client</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">No-Code</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Setup</div></div>
             </div>
-            <a href="<?php echo esc_url( 'https://runway.marketing' ); ?>" target="_blank" rel="noopener noreferrer" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
+            <a href="<?php echo esc_url( 'https://runway.marketing' ); ?>" target="_blank" rel="noopener noreferrer" class="shrink-0 text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Learn More <span>→</span></a>
           </div>
         </article>
 
-        <article class="bg-white border border-border rounded-2xl overflow-hidden">
-          <div class="h-52 w-full overflow-hidden flex items-center justify-center bg-[#e8e8e6]">
+        <article class="bg-white border border-border rounded-2xl overflow-hidden h-full flex flex-col">
+          <div class="h-52 w-full shrink-0 overflow-hidden flex items-center justify-center bg-[#e8e8e6]">
             <img src="<?php echo esc_url( $u . '/moneymate-dashboard.png' ); ?>" alt="MoneyMate personal finance dashboard: net worth, portfolio, cash buffer, and recent activity" class="h-full w-full object-cover object-top" loading="lazy" width="800" height="400" />
           </div>
-          <div class="p-8">
-            <div class="flex flex-wrap gap-2 mb-5">
+          <div class="p-8 flex flex-col flex-1 min-h-0">
+            <div class="flex flex-wrap gap-2 mb-5 min-h-[4.5rem] items-start content-start">
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-cta text-cta bg-cta/5">Beta</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">Personal Finance</span>
               <span class="text-[10px] font-bold uppercase tracking-wide px-3 py-1 border rounded-full border-border text-muted-foreground bg-muted/30">SaaS</span>
             </div>
-            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3">MoneyMate</h3>
-            <p class="text-sm text-muted-foreground leading-relaxed mb-6">
+            <h3 class="font-body text-[2rem] font-bold tracking-tight text-primary mb-3 shrink-0">MoneyMate</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed flex-1 pb-6 min-h-0">
               A personal finance and portfolio analytics platform built for young professionals who want more than a spreadsheet. Connects to accounts via Plaid, tracks spending, and surfaces insights automatically.
             </p>
-            <div class="flex gap-8 border-t border-border pt-5 mb-6">
+            <div class="flex gap-8 border-t border-border pt-5 mb-6 shrink-0">
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Plaid</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Connected</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">AI</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Insights</div></div>
               <div><div class="font-body text-xl font-bold tracking-tight text-primary">Beta</div><div class="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">Access Open</div></div>
             </div>
-            <a href="<?php echo esc_url( $cta ); ?>" class="text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Join Beta <span>→</span></a>
+            <a href="<?php echo esc_url( $cta ); ?>" class="shrink-0 text-xs font-bold uppercase tracking-wide text-primary hover:text-cta transition-colors inline-flex items-center gap-2">Join Beta <span>→</span></a>
           </div>
         </article>
       </div>
