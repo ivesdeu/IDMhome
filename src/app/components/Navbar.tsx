@@ -95,7 +95,7 @@ export function Navbar() {
             onClick={closeMobile}
           >
             <img
-              src="/idm-logo.png?v=14"
+              src="/idm-logo.png?v=15"
               alt="Ives Deutschmann Management"
               className="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
             />

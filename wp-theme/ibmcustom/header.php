@@ -45,7 +45,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
       </button>
       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center min-w-0" aria-label="Ives Deutschmann Management – Home">
         <img
-          src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=14"
+          src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=15"
           alt="Ives Deutschmann Management"
           class="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
         />
