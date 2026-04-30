@@ -2,7 +2,7 @@ import { useRef, type RefObject } from 'react';
 import { useScroll, useTransform, useReducedMotion, type MotionValue } from 'motion/react';
 
 /** Max vertical travel in px (scaled by per-element strength). */
-export const PARALLAX_MAX_PX = 28;
+export const PARALLAX_MAX_PX = 14;
 
 export function useReducedParallax(): boolean {
   return useReducedMotion() ?? false;

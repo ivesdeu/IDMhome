@@ -250,7 +250,7 @@
     const reduced =
       window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!reduced) {
-      const maxPx = 28;
+      const maxPx = 14;
       let ticking = false;
 
       const updateParallax = () => {
