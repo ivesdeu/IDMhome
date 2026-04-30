@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
-import { StatsBar } from '../components/StatsBar';
 import { About } from '../components/About';
-import { Collaborations } from '../components/Collaborations';
 import { Services } from '../components/Services';
 import { Works } from '../components/Works';
 import { SmartSteps } from '../components/SmartSteps';
@@ -27,10 +25,8 @@ export function HomePage() {
     <div className="min-h-screen bg-gradient-page">
       <Navbar />
       <Hero />
-      <StatsBar />
-      <About />
-      <Collaborations />
       <Services />
+      <About />
       <Works />
       <SmartSteps />
       <Team />

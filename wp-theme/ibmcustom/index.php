@@ -70,118 +70,6 @@ get_header();
     </div>
   </section>
 
-  <?php /* StatsBar section (from StatsBar.tsx) */ ?>
-  <section
-    class="w-full border-t border-b border-border"
-    data-countup-root
-    style="border-color: rgba(0,0,0,0.08);"
-  >
-    <div class="max-w-[1200px] mx-auto">
-      <div class="grid grid-cols-3 divide-x font-body" style="border-color: rgba(0,0,0,0.08);">
-        <div class="py-8 px-8 text-center">
-          <div class="font-headline text-4xl md:text-5xl text-primary">
-            <span class="stat-number" data-stat-value="4" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
-          </div>
-          <div class="text-sm text-muted-foreground mt-1">Clients Served</div>
-        </div>
-        <div class="py-8 px-8 text-center">
-          <div class="font-headline text-4xl md:text-5xl text-primary">
-            <span class="stat-number" data-stat-value="5" data-stat-decimals="0">0</span><span class="text-cta stat-suffix">+</span>
-          </div>
-          <div class="text-sm text-muted-foreground mt-1">Campaigns Launched</div>
-        </div>
-        <div class="py-8 px-8 text-center">
-          <div class="font-headline text-4xl md:text-5xl text-primary">
-            <span class="stat-number" data-stat-value="2.8" data-stat-decimals="1">0</span><span class="text-cta stat-suffix">x</span>
-          </div>
-          <div class="text-sm text-muted-foreground mt-1">Avg. ROAS Improvement</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <?php /* About section (from About.tsx) */ ?>
-  <section id="about" class="w-full py-24 font-body">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="flex items-center gap-3 text-cta mb-2 ">
-        <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
-        <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">
-          About Us
-        </span>
-      </div>
-
-      <h2 class="font-headline text-4xl md:text-5xl text-primary mb-12 max-w-4xl" data-parallax="0.05">
-        Strategy first. Execution second. Results always.
-      </h2>
-
-      <p class="text-lg text-muted-foreground max-w-4xl leading-relaxed">
-        We partner with ambitious brands to build measurable growth engines. By combining paid media, search visibility, brand positioning, and conversion optimization, we create marketing systems that scale predictably. Every decision is backed by data. Every campaign is built for performance.
-      </p>
-    </div>
-  </section>
-
-  <?php
-  /* Collaborations section (from Collaborations.tsx): infinite marquee */
-  $ibm_collab_clients = array(
-    array(
-      'category' => 'Home Improvement',
-      'service'  => 'Website Construction & SEO',
-      'logo'     => 'whirly-wash-logo.png',
-      'alt'      => 'Whirly Wash',
-    ),
-    array(
-      'category' => 'Professional Development Services',
-      'service'  => 'Website Construction & SEO',
-      'logo'     => 'amauwm-logo.png',
-      'alt'      => 'AMAUWM',
-    ),
-    array(
-      'category' => 'Home Services',
-      'service'  => 'Full Growth Partner',
-      'logo'     => 'badger-window-cleaners-logo.png',
-      'alt'      => 'Badger Window Cleaners West',
-    ),
-  );
-  $ibm_collab_uri = get_template_directory_uri();
-  ?>
-  <section class="w-full bg-[#F5F5F5] py-24 overflow-hidden">
-    <div class="max-w-[1200px] mx-auto px-6">
-      <div class="mb-10" data-parallax="0.06">
-        <h2 class="text-4xl md:text-5xl font-bold text-primary">Trusted by growing businesses.</h2>
-      </div>
-    </div>
-
-    <div class="ibm-collab-marquee" aria-label="<?php echo esc_attr__( 'Client logos', 'ibmhome' ); ?>">
-      <div class="ibm-collab-marquee-track">
-        <?php
-        for ( $ibm_half = 0; $ibm_half < 2; $ibm_half++ ) :
-          for ( $ibm_copy = 0; $ibm_copy < 4; $ibm_copy++ ) :
-            foreach ( $ibm_collab_clients as $ibm_c ) :
-              ?>
-        <div class="ibm-collab-card bg-[#e8e8e8] rounded-2xl p-6 flex flex-col shadow-sm border border-white/50 min-h-[260px] shrink-0" style="width:min(100vw - 3rem, 380px);max-width:380px;">
-          <h3 class="font-bold text-primary text-lg mb-1"><?php echo esc_html( $ibm_c['category'] ); ?></h3>
-          <span class="inline-block w-fit px-3 py-1.5 rounded-full bg-[#f0f0f0] text-sm text-primary/90 font-medium mb-6">
-            <?php echo esc_html( $ibm_c['service'] ); ?>
-          </span>
-          <div class="mt-auto pt-2">
-            <div class="w-full rounded-full bg-white py-5 px-4 flex items-center justify-center min-h-[72px] shadow-inner text-primary">
-              <img
-                src="<?php echo esc_url( $ibm_collab_uri . '/assets/images/' . $ibm_c['logo'] ); ?>"
-                alt="<?php echo esc_attr( $ibm_c['alt'] ); ?>"
-                class="h-14 w-auto object-contain"
-              />
-            </div>
-          </div>
-        </div>
-              <?php
-            endforeach;
-          endfor;
-        endfor;
-        ?>
-      </div>
-    </div>
-  </section>
-
   <?php /* Services section (from Services.tsx) */ ?>
   <section id="core-capabilities" class="w-full py-24 font-body">
     <div class="max-w-[1200px] mx-auto px-6">
@@ -240,6 +128,26 @@ get_header();
           <span class="absolute bottom-0 left-0 h-0.5 bg-cta origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" style="width: 100%;"></span>
         </div>
       </div>
+    </div>
+  </section>
+
+  <?php /* About section (from About.tsx) */ ?>
+  <section id="about" class="w-full py-24 font-body">
+    <div class="max-w-[1200px] mx-auto px-6">
+      <div class="flex items-center gap-3 text-cta mb-2 ">
+        <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
+        <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">
+          About Us
+        </span>
+      </div>
+
+      <h2 class="font-headline text-4xl md:text-5xl text-primary mb-12 max-w-4xl" data-parallax="0.05">
+        Strategy first. Execution second. Results always.
+      </h2>
+
+      <p class="text-lg text-muted-foreground max-w-4xl leading-relaxed">
+        We partner with ambitious brands to build measurable growth engines. By combining paid media, search visibility, brand positioning, and conversion optimization, we create marketing systems that scale predictably. Every decision is backed by data. Every campaign is built for performance.
+      </p>
     </div>
   </section>
 
