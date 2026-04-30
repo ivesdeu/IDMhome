@@ -25,7 +25,7 @@ $compass_ver   = file_exists( $compass_path ) ? (int) filemtime( $compass_path )
     <div class="max-w-[1200px] mx-auto px-6">
       <div class="flex items-center gap-3 text-cta mb-2">
         <span class="w-6 h-px bg-cta shrink-0" aria-hidden="true"></span>
-        <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Technology</span>
+        <span class="text-[0.72rem] uppercase tracking-[0.18em] font-medium" style="letter-spacing: 0.18em;">Solutions</span>
       </div>
       <h1 class="text-5xl font-semibold text-primary mb-4 max-w-3xl">
         Tools Built For Business.

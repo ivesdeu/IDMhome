@@ -12,7 +12,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
   <div class="max-w-[1200px] mx-auto px-6">
     <div class="grid md:grid-cols-4 gap-12 mb-12">
       <div>
-        <h3 class="font-bold text-primary mb-4">Ives Deutschmann Marketing</h3>
+        <h3 class="font-bold text-primary mb-4">Ives Deutschmann Management</h3>
         <p class="text-sm text-[#666666] mb-4">
           Performance marketing and growth infrastructure for ambitious brands.
         </p>
@@ -59,7 +59,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
         <ul class="space-y-2 text-sm">
           <li><a href="<?php echo esc_url( $ibm_home ); ?>#about" class="text-[#666666] hover:text-primary transition-colors">About</a></li>
           <li><a href="<?php echo esc_url( $ibm_home ); ?>#core-capabilities" class="text-[#666666] hover:text-primary transition-colors">Services</a></li>
-          <li><a href="<?php echo esc_url( home_url( '/technology' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Technology</a></li>
+          <li><a href="<?php echo esc_url( home_url( '/technology' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Solutions</a></li>
           <li><a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Case Studies</a></li>
           <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="text-[#666666] hover:text-primary transition-colors">Contact</a></li>
         </ul>
@@ -75,8 +75,8 @@ $ibm_home = trailingslashit( home_url( '/' ) );
 
     <div class="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
       <a href="#" class="text-sm text-[#666666] hover:text-primary transition-colors">Privacy Policy</a>
-      <div class="text-sm text-[#666666]">©<?php echo esc_html( date_i18n( 'Y' ) ); ?> Ives Deutschmann Marketing. All rights reserved.</div>
-      <div class="font-bold text-primary">Ives Deutschmann Marketing</div>
+      <div class="text-sm text-[#666666]">©<?php echo esc_html( date_i18n( 'Y' ) ); ?> Ives Deutschmann Management. All rights reserved.</div>
+      <div class="font-bold text-primary">Ives Deutschmann Management</div>
     </div>
   </div>
 </footer>

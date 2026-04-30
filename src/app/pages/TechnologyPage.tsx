@@ -200,7 +200,7 @@ function TechnologyCustomBuildCta() {
 export function TechnologyPage() {
   useEffect(() => {
     const prev = document.title;
-    document.title = 'Technology — IDM Agency';
+    document.title = 'Solutions — IDM Agency';
     return () => {
       document.title = prev;
     };
@@ -218,7 +218,7 @@ export function TechnologyPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <SectionLabel>Technology</SectionLabel>
+            <SectionLabel>Solutions</SectionLabel>
             <h1 className="text-5xl font-semibold text-primary mb-4 max-w-3xl">
               Tools Built For Business.
             </h1>

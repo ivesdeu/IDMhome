@@ -91,12 +91,12 @@ export function Navbar() {
           <Link
             to="/"
             className="flex items-center min-w-0"
-            aria-label="Ives Deutschmann Marketing – Home"
+            aria-label="Ives Deutschmann Management – Home"
             onClick={closeMobile}
           >
             <img
-              src="/idm-logo.png?v=2"
-              alt="Ives Deutschmann Marketing"
+              src="/idm-logo.png?v=14"
+              alt="Ives Deutschmann Management"
               className="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
             />
           </Link>
@@ -120,7 +120,7 @@ export function Navbar() {
             to="/technology"
             className={({ isActive }) => `${navLinkClass} whitespace-nowrap ${isActive ? navLinkActive : ''}`}
           >
-            Technology
+            Solutions
           </NavLink>
           <Link to="/case-studies" className={`${navLinkClass} whitespace-nowrap`}>
             Case Studies
@@ -172,7 +172,7 @@ export function Navbar() {
             className={({ isActive }) => `${mobileLinkClass} ${isActive ? navLinkActive : ''}`}
             onClick={closeMobile}
           >
-            Technology
+            Solutions
           </NavLink>
           <Link to="/case-studies" className={mobileLinkClass} onClick={closeMobile}>
             Case Studies

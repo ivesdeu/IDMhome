@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Info & Address */}
           <div>
-            <h3 className="font-bold text-primary mb-4">Ives Deutschmann Marketing</h3>
+            <h3 className="font-bold text-primary mb-4">Ives Deutschmann Management</h3>
             <p className="text-sm text-[#666666] mb-4">
               Performance marketing and growth infrastructure for ambitious brands.
             </p>
@@ -50,7 +50,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="#about" className="text-[#666666] hover:text-primary transition-colors">About</a></li>
               <li><a href="#core-capabilities" className="text-[#666666] hover:text-primary transition-colors">Services</a></li>
-              <li><Link to="/technology" className="text-[#666666] hover:text-primary transition-colors">Technology</Link></li>
+              <li><Link to="/technology" className="text-[#666666] hover:text-primary transition-colors">Solutions</Link></li>
               <li><a href="/case-studies" className="text-[#666666] hover:text-primary transition-colors">Case Studies</a></li>
               <li><Link to="/contact" className="text-[#666666] hover:text-primary transition-colors">Contact</Link></li>
             </ul>
@@ -68,8 +68,8 @@ export function Footer() {
         {/* Bottom Row */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <a href="#" className="text-sm text-[#666666] hover:text-primary transition-colors">Privacy Policy</a>
-          <div className="text-sm text-[#666666]">©2025 Ives Deutschmann Marketing. All rights reserved.</div>
-          <div className="font-bold text-primary">Ives Deutschmann Marketing</div>
+          <div className="text-sm text-[#666666]">©2025 Ives Deutschmann Management. All rights reserved.</div>
+          <div className="font-bold text-primary">Ives Deutschmann Management</div>
         </div>
       </div>
     </footer>

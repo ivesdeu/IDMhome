@@ -43,10 +43,10 @@ $ibm_home = trailingslashit( home_url( '/' ) );
         <span class="ibm-mm-line" aria-hidden="true"></span>
         <span class="ibm-mm-line" aria-hidden="true"></span>
       </button>
-      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center min-w-0" aria-label="Ives Deutschmann Marketing – Home">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center min-w-0" aria-label="Ives Deutschmann Management – Home">
         <img
-          src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=2"
-          alt="Ives Deutschmann Marketing"
+          src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/idm-logo.png?v=14"
+          alt="Ives Deutschmann Management"
           class="h-10 w-auto max-w-[min(100%,200px)] sm:max-w-none"
         />
       </a>
@@ -63,7 +63,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
         Services
       </a>
       <a href="<?php echo esc_url( home_url( '/technology' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
-        Technology
+        Solutions
       </a>
       <a href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>" class="text-primary hover:text-muted-foreground transition-colors text-[0.78rem] uppercase tracking-[0.12em] whitespace-nowrap">
         Case Studies
@@ -104,7 +104,7 @@ $ibm_home = trailingslashit( home_url( '/' ) );
         href="<?php echo esc_url( home_url( '/technology' ) ); ?>"
         class="py-3.5 text-primary hover:text-muted-foreground transition-colors text-[0.85rem] uppercase tracking-[0.12em] border-b border-border font-body"
       >
-        <?php echo esc_html__( 'Technology', 'ibmhome' ); ?>
+        <?php echo esc_html__( 'Solutions', 'ibmhome' ); ?>
       </a>
       <a
         href="<?php echo esc_url( home_url( '/case-studies' ) ); ?>"
